@@ -14,6 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Hola mundo, esta es una prueba</h1>
+        <h2>hola ana</h2>
 
         <p className={styles.description}>
           Get started by editing{" "}
