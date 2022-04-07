@@ -1,25 +1,93 @@
 cms_manual_init: true
 
 backend:
-  name: test-repo
+  name: github
   repo: claudioquirozipi/cquirozipi
   branch: main
 
 media_folder: "public/img"
 public_folder: "img"
+logo_url: "https://deluxe-sfogliatella-257244.netlify.app/vercel.svg"
+locale: es
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home"
-        name: "home"
-        file: "content/pages/home.md"
-        fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - {
-              label: "Hero Description",
-              name: "hero_description",
-              widget: "markdown",
-            }
-          - { label: "Hero Image", name: "hero_image", widget: "image" }
+  - name: home
+    label: Destacados
+    label_singular: Destacado
+    description: redes sociales, del portafolio
+    create: true
+    folder: src/content/home
+    slug: "{{title}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: certificates
+    label: Certificados
+    label_singular: Certificado
+    description: redes sociales, del portafolio
+    create: true
+    folder: src/content/certificates
+    slug: "{{title}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: technologies
+    label: Tecnologías
+    label_singular: Tecnología
+    description: redes sociales, del portafolio
+    create: true
+    folder: src/content/technologies
+    slug: "{{title}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: Projects
+    label: Proyectos
+    label_singular: proyecto
+    description: redes sociales, del portafolio
+    create: true
+    folder: src/content/projects
+    slug: "{{title}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: social_media
+    label: Redes sociales
+    label_singular: red social
+    description: redes sociales, del portafolio
+    create: true
+    folder: src/content/social_media
+    slug: "{{title}}"
+    fields:
+      - { label: "Red social", name: "title", widget: "string" }
+      - {
+          label: "Imagen",
+          name: "social_media_image",
+          widget: "image",
+          required: true,
+        }
+      - { label: "Link", name: "urk", widget: "string" }
