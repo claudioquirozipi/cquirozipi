@@ -12,21 +12,17 @@ locale: es
 
 collections:
   - name: home
-    label: Destacados
-    label_singular: Destacado
+    label: Home
+    label_singular: Home
     description: redes sociales, del portafolio
     create: true
     folder: content/home
     slug: "{{title}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - {
-          label: "Featured Image",
-          name: "thumbnail",
-          widget: "image",
-          required: false,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Imagen", name: "home_image", widget: "image" }
+      - { label: "Descripción", name: "description", widget: "markdown" }
+      - { label: "Link", name: "url", widget: "string" }
   - name: certificates
     label: Certificados
     label_singular: Certificado
@@ -35,14 +31,20 @@ collections:
     folder: content/certificates
     slug: "{{title}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - {
-          label: "Featured Image",
-          name: "thumbnail",
-          widget: "image",
-          required: false,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Certificado", name: "title", widget: "string" }
+      - { label: "Imagen", name: "Certificates_image", widget: "image" }
+      - { label: "Descripción", name: "description", widget: "markdown" }
+      - { label: "Fecha", name: "date", widget: "date" }
+      - label: "Insituto"
+        name: "institute"
+        widget: "select"
+        default: ""
+        options:
+          - { label: "otro", value: "" }
+          - { label: "Platzi", value: "platzi" }
+          - { label: "Udemy", value: "udemy" }
+          - { label: "ED-team", value: "edteam" }
+          - { label: "NttData", value: "nttdata" }
   - name: technologies
     label: Tecnologías
     label_singular: Tecnología
@@ -51,14 +53,8 @@ collections:
     folder: content/technologies
     slug: "{{title}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - {
-          label: "Featured Image",
-          name: "thumbnail",
-          widget: "image",
-          required: false,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tecnología", name: "technology", widget: "string" }
+      - { label: "Imagen", name: "technology_image", widget: "image" }
   - name: Projects
     label: Proyectos
     label_singular: proyecto
@@ -69,12 +65,7 @@ collections:
     fields:
       - { label: "Proyecto", name: "title", widget: "string" }
       - { label: "Descripción", name: "description", widget: "markdown" }
-      - {
-          label: "Imagen",
-          name: "project_image",
-          widget: "image",
-          required: true,
-        }
+      - { label: "Imagen", name: "project_image", widget: "image" }
       - { label: "urlWeb", name: "urlWeb", widget: "string" }
       - { label: "urlGithub", name: "urlGithub", widget: "string" }
     img: tracsa,
@@ -87,10 +78,5 @@ collections:
     slug: "{{title}}"
     fields:
       - { label: "Red social", name: "title", widget: "string" }
-      - {
-          label: "Imagen",
-          name: "social_media_image",
-          widget: "image",
-          required: true,
-        }
+      - { label: "Imagen", name: "social_media_image", widget: "image" }
       - { label: "Link", name: "urk", widget: "string" }
