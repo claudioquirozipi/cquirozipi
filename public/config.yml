@@ -16,7 +16,7 @@ collections:
     label_singular: Destacado
     description: redes sociales, del portafolio
     create: true
-    folder: src/content/home
+    folder: content/home
     slug: "{{title}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
@@ -32,7 +32,7 @@ collections:
     label_singular: Certificado
     description: redes sociales, del portafolio
     create: true
-    folder: src/content/certificates
+    folder: content/certificates
     slug: "{{title}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
@@ -48,7 +48,7 @@ collections:
     label_singular: Tecnología
     description: redes sociales, del portafolio
     create: true
-    folder: src/content/technologies
+    folder: content/technologies
     slug: "{{title}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
@@ -64,7 +64,7 @@ collections:
     label_singular: proyecto
     description: redes sociales, del portafolio
     create: true
-    folder: src/content/projects
+    folder: content/projects
     slug: "{{title}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
@@ -80,7 +80,7 @@ collections:
     label_singular: red social
     description: redes sociales, del portafolio
     create: true
-    folder: src/content/social_media
+    folder: content/social_media
     slug: "{{title}}"
     fields:
       - { label: "Red social", name: "title", widget: "string" }
