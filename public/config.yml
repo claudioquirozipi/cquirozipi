@@ -53,7 +53,7 @@ collections:
     folder: content/technologies
     slug: "{{title}}"
     fields:
-      - { label: "Tecnología", name: "technology", widget: "string" }
+      - { label: "Tecnología", name: "title", widget: "string" }
       - { label: "Imagen", name: "technology_image", widget: "image" }
   - name: Projects
     label: Proyectos
