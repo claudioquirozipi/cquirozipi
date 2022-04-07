@@ -67,14 +67,17 @@ collections:
     folder: content/projects
     slug: "{{title}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Proyecto", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "markdown" }
       - {
-          label: "Featured Image",
-          name: "thumbnail",
+          label: "Imagen",
+          name: "project_image",
           widget: "image",
-          required: false,
+          required: true,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "urlWeb", name: "urlWeb", widget: "string" }
+      - { label: "urlGithub", name: "urlGithub", widget: "string" }
+    img: tracsa,
   - name: social_media
     label: Redes sociales
     label_singular: red social
