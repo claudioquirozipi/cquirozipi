@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Remarkable from "remarkable";
+import { Remarkable } from "remarkable";
 let md = new Remarkable();
 // import marked from "marked";
 interface Props {
