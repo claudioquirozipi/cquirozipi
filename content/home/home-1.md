@@ -1,5 +1,5 @@
 ---
-title: Home 1
+title: Home 1  modificado
 home_image: img/174848.png
 description: |-
   descripción 
