@@ -1,5 +1,5 @@
 ---
-title: Home 2
+title: "Home 2adf "
 home_image: img/174848.png
 description: |-
   descripción 
