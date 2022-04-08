@@ -5,8 +5,8 @@ import styles from "../styles/Home.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Remarkable } from "remarkable";
-let md = new Remarkable();
+// import  Remarkable  from "remarkable";
+// let md = new Remarkable();
 // import marked from "marked";
 interface Props {
   content: { attributes: HomeAttributes };
@@ -32,10 +32,11 @@ const Home: NextPage<any> = (props) => {
       {home.map((d: any, i: number) => (
         <div key={i}>
           <h1>{d.data.title}</h1>
-          <div
+          {/* <div
             dangerouslySetInnerHTML={{ __html: md.render(d.data.description) }}
-          ></div>
-          <p>{md.render(d.data.description)}</p>
+          ></div> */}
+          {/* <p>{md.render(d.data.description)}</p> */}
+          <p>{d.data.description}</p>
           <img src={d.data.home_image} alt="" />
           <a href={d.data.url}>link</a>
         </div>
