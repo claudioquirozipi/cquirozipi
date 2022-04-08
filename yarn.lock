@@ -522,6 +522,11 @@
     "ufo" "^0.7.10"
     "unstorage" "^0.2.8"
 
+"@netlify/open-api@^2.8.0":
+  "integrity" "sha512-lfNB/QYDgaP07pwm/nWEaWPvRAAGyhxvJqNzvxMijc7A4uwquMjlbYve8yYyd0LJXPwgBpGobwiQj5RA76xzUQ=="
+  "resolved" "https://registry.npmjs.org/@netlify/open-api/-/open-api-2.8.0.tgz"
+  "version" "2.8.0"
+
 "@netlify/plugin-nextjs@^4.3.2":
   "integrity" "sha512-jRCDoYTH3LV6rK+5nciE8Kf60iF+xa/nQskLldct0iOmFg3zW2d318RGm67UUrTiia8E+32YVIkB+dTOv7wZAQ=="
   "resolved" "https://registry.npmjs.org/@netlify/plugin-nextjs/-/plugin-nextjs-4.3.2.tgz"
@@ -3059,6 +3064,11 @@
   "resolved" "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
   "version" "4.17.21"
 
+"lodash.camelcase@^4.3.0":
+  "integrity" "sha1-soqmKIorn8ZRA1x3EfZathkDMaY="
+  "resolved" "https://registry.npmjs.org/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz"
+  "version" "4.3.0"
+
 "lodash.clonedeep@^4.5.0":
   "integrity" "sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8="
   "resolved" "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
@@ -3319,7 +3329,7 @@
   "resolved" "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   "version" "1.4.1"
 
-"micro-api-client@^3.2.1":
+"micro-api-client@^3.2.1", "micro-api-client@^3.3.0":
   "integrity" "sha512-y0y6CUB9RLVsy3kfgayU28746QrNMpSm9O/AYGNsBgOkJr/X/Jk0VLGoO8Ude7Bpa8adywzF+MzXNZRFRsNPhg=="
   "resolved" "https://registry.npmjs.org/micro-api-client/-/micro-api-client-3.3.0.tgz"
   "version" "3.3.0"
@@ -3812,6 +3822,19 @@
   dependencies:
     "react-textarea-autosize" "^8.0.0"
 
+"netlify@^11.0.1":
+  "integrity" "sha512-TkVuTvmhlAtvAdgqb+iA5wMehEHS5QcPOrULm1t809Q6KmZIhe+7b0+jwZSsDqgX3OWK/P3xgk/AU0ZbTv7ufw=="
+  "resolved" "https://registry.npmjs.org/netlify/-/netlify-11.0.1.tgz"
+  "version" "11.0.1"
+  dependencies:
+    "@netlify/open-api" "^2.8.0"
+    "lodash.camelcase" "^4.3.0"
+    "micro-api-client" "^3.3.0"
+    "node-fetch" "^3.0.0"
+    "omit.js" "^2.0.2"
+    "p-wait-for" "^4.0.0"
+    "qs" "^6.9.6"
+
 "next@^12.1.4", "next@>=10.2.0":
   "integrity" "sha512-DA4g97BM4Z0nKtDvCTm58RxdvoQyYzeg0AeVbh0N4Y/D8ELrNu47lQeEgRGF8hV4eQ+Sal90zxrJQQG/mPQ8CQ=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.4.tgz"
@@ -4022,6 +4045,11 @@
     "pbf" "3.2.1"
     "rbush" "^3.0.1"
 
+"omit.js@^2.0.2":
+  "integrity" "sha512-hJmu9D+bNB40YpL9jYebQl4lsTW6yEHRTroJzNLqQJYHm7c+NQnJGfZmIWh8S3q3KoaxV1aLhV6B3+0N0/kyJg=="
+  "resolved" "https://registry.npmjs.org/omit.js/-/omit.js-2.0.2.tgz"
+  "version" "2.0.2"
+
 "once@^1.3.0", "once@^1.3.1", "once@^1.4.0":
   "integrity" "sha1-WDsap3WWHUsROsF9nFC6753Xa9E="
   "resolved" "https://registry.npmjs.org/once/-/once-1.4.0.tgz"
@@ -4095,10 +4123,22 @@
   "resolved" "https://registry.npmjs.org/p-map/-/p-map-2.1.0.tgz"
   "version" "2.1.0"
 
+"p-timeout@^5.0.0":
+  "integrity" "sha512-sEmji9Yaq+Tw+STwsGAE56hf7gMy9p0tQfJojIAamB7WHJYJKf1qlsg9jqBWG8q9VCxKPhZaP/AcXwEoBcYQhQ=="
+  "resolved" "https://registry.npmjs.org/p-timeout/-/p-timeout-5.0.2.tgz"
+  "version" "5.0.2"
+
 "p-try@^1.0.0":
   "integrity" "sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M="
   "resolved" "https://registry.npmjs.org/p-try/-/p-try-1.0.0.tgz"
   "version" "1.0.0"
+
+"p-wait-for@^4.0.0":
+  "integrity" "sha512-i8nE5q++9h8oaQHWltS1Tnnv4IoMDOlqN7C0KFG2OdbK0iFJIt6CROZ8wfBM+K4Pxqfnq4C4lkkpXqTEpB5DZw=="
+  "resolved" "https://registry.npmjs.org/p-wait-for/-/p-wait-for-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "p-timeout" "^5.0.0"
 
 "pako@^2.0.4":
   "integrity" "sha512-v8tweI900AUkZN6heMU/4Uy4cXRc2AYNRggVmTR+dEncawDJgCdLMximOVA2p4qO57WMynangsfGRb5WD6L1Bg=="
@@ -4348,6 +4388,13 @@
   "integrity" "sha1-llOgNvt8HuQjQvIyXM7v6jkmxI0="
   "resolved" "https://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz"
   "version" "1.3.2"
+
+"qs@^6.9.6":
+  "integrity" "sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ=="
+  "resolved" "https://registry.npmjs.org/qs/-/qs-6.10.3.tgz"
+  "version" "6.10.3"
+  dependencies:
+    "side-channel" "^1.0.4"
 
 "querystring@0.2.0":
   "integrity" "sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA="
