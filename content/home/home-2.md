@@ -1,10 +1,6 @@
 ---
-title: "Home 2adf "
-home_image: img/174848.png
-description: |-
-  descripción 
-
-  * ul 11
-  * ul 22
-url: https://cquirozipi.firebaseapp.com/
+title: "Game"
+home_image: img/game.png
+description: Game made with the phaser library.
+url: https://hola2-fd53e.web.app/
 ---

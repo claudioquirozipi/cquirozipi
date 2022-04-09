@@ -1,18 +1,25 @@
 import { FooterProps } from "./interface";
+import style from "./footer.module.css";
 
 const Footer = (props: FooterProps) => {
   const { socialMedia } = props;
+  console.log(socialMedia);
+
   return (
-    <div>
+    <footer className={style.footerContainer}>
       {socialMedia.map((sm, i) => (
-        <div key={i}>
-          <a href={sm.url} target="_blank" rel="noopener noreferrer">
-            <h1>{sm.title}</h1>
-            <img src={sm.social_media_image} alt="" />
-          </a>
-        </div>
+        <a href={sm.data.url} target="_blank" rel="" key={i}>
+          <div className={style.link}>
+            <img
+              className={style.img}
+              src={sm.data.social_media_image}
+              alt=""
+            />
+            <span className={style.title}>{sm.data.title}</span>
+          </div>
+        </a>
       ))}
-    </div>
+    </footer>
   );
 };
 

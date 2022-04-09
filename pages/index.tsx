@@ -1,9 +1,9 @@
 import type { NextPage, GetStaticProps } from "next";
-import ReactMarkdown from "react-markdown";
 
 import { getMarkdown } from "../utils/functions";
 import Layout from "../components/layout";
 import { Data, Home, SocialMedia } from "../utils/interface";
+import CardHome from "../components/cardHome";
 
 interface HomeProps {
   home: Data<Home>[];
@@ -15,12 +15,7 @@ const Home: NextPage<HomeProps> = (props) => {
   return (
     <Layout socialMedia={socialMedia}>
       {home.map((d, i) => (
-        <div key={i}>
-          <h1>{d.data.title}</h1>
-          <ReactMarkdown>{d.data.description}</ReactMarkdown>
-          <img src={d.data.home_image} alt="" />
-          <a href={d.data.url}>link</a>
-        </div>
+        <CardHome home={d} key={i} isEven={i % 2 !== 0} />
       ))}
     </Layout>
   );

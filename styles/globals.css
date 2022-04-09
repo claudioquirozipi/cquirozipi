@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: var(--background-light);
 }
 
 a {
@@ -13,13 +14,22 @@ a {
 
 * {
   box-sizing: border-box;
+  color: var(--contrast);
 }
 
 :root {
   --margin-container: 10%;
+  
   --media-query-xs: 200px;
   --media-query-sm: 350px;
   --media-query-md: 600px;
   --media-query-lg: 1400px;
+
+  --background: #2C2648;
+  --background-light  : #322F5A ;
+
+  --primary: #41FFA7;
+  --secondary: #FF657D;
+  --contrast: white;
 }
 

@@ -1,5 +1,5 @@
-import { SocialMedia } from "../../utils/interface";
+import { Data, SocialMedia } from "../../utils/interface";
 
 export interface FooterProps {
-    socialMedia: SocialMedia[]
+    socialMedia: Data<SocialMedia>[]
 }

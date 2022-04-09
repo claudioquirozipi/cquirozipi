@@ -1,8 +1,9 @@
 import Head from "next/head";
 
 import { LayoutProps } from "./interface";
-import Footer from "../footer";
+import style from "./style.module.css";
 import Navbar from "../navbar";
+import Footer from "../footer";
 
 const Layout = (props: LayoutProps) => {
   const { children, socialMedia } = props;
@@ -14,7 +15,7 @@ const Layout = (props: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {children}
+      <div className={style.children}>{children}</div>
       <Footer socialMedia={socialMedia} />
     </div>
   );

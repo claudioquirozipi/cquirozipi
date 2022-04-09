@@ -1,10 +1,8 @@
 ---
-title: Home 1  modificado
-home_image: img/174848.png
+title: About me
+home_image: img/home1.svg
 description: |-
-  descripción 
-
-  * ul 1
-  * ul 2
-url: https://cquirozipi.firebaseapp.com/
+  * I am an engineer in industrial processes passionate about frontend web development
+  * I have more than 3 years in frontend development.
+  * And my specialty is working with react.
 ---
