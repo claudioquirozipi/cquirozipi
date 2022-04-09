@@ -3,23 +3,25 @@ import ReactMarkdown from "react-markdown";
 
 import { getMarkdown } from "../utils/functions";
 import Layout from "../components/layout";
-import { Data, Home, SocialMedia } from "../utils/interface";
+import { Data, Certificates, SocialMedia } from "../utils/interface";
 
-interface HomeProps {
-  home: Data<Home>[];
+interface CertificatesProps {
+  certificates: Data<Certificates>[];
   socialMedia: Data<SocialMedia>[];
 }
 
-const Home: NextPage<HomeProps> = (props) => {
-  const { home, socialMedia } = props;
+const Certificates: NextPage<CertificatesProps> = (props) => {
+  console.log("props", props);
+  const { certificates, socialMedia } = props;
   return (
     <Layout socialMedia={socialMedia}>
-      {home.map((d, i) => (
+      {certificates.map((d, i) => (
         <div key={i}>
           <h1>{d.data.title}</h1>
           <ReactMarkdown>{d.data.description}</ReactMarkdown>
-          <img src={d.data.home_image} alt="" />
-          <a href={d.data.url}>link</a>
+          <img src={d.data.certificates_image} alt="" />
+          <p>{d.data.institute}</p>
+          <p style={{ marginLeft: "20px" }}>{d.data.date + " " + new Date()}</p>
         </div>
       ))}
     </Layout>
@@ -27,14 +29,14 @@ const Home: NextPage<HomeProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const home = getMarkdown("home");
+  const certificates = getMarkdown("certificates");
   const socialMedia = getMarkdown("social_media");
   return {
     props: {
-      home,
+      certificates,
       socialMedia,
     },
   };
 };
 
-export default Home;
+export default Certificates;

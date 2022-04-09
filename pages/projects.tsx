@@ -3,23 +3,24 @@ import ReactMarkdown from "react-markdown";
 
 import { getMarkdown } from "../utils/functions";
 import Layout from "../components/layout";
-import { Data, Home, SocialMedia } from "../utils/interface";
+import { Data, Projects, SocialMedia } from "../utils/interface";
 
 interface HomeProps {
-  home: Data<Home>[];
+  projects: Data<Projects>[];
   socialMedia: Data<SocialMedia>[];
 }
 
 const Home: NextPage<HomeProps> = (props) => {
-  const { home, socialMedia } = props;
+  const { projects, socialMedia } = props;
   return (
     <Layout socialMedia={socialMedia}>
-      {home.map((d, i) => (
+      {projects.map((d, i) => (
         <div key={i}>
           <h1>{d.data.title}</h1>
           <ReactMarkdown>{d.data.description}</ReactMarkdown>
-          <img src={d.data.home_image} alt="" />
-          <a href={d.data.url}>link</a>
+          <img src={d.data.project_image} alt="" />
+          {d.data.urlGithub && <a href={d.data.urlGithub}>link gitgun</a>}
+          {d.data.urlGithub && <a href={d.data.urlWeb}>link web</a>}
         </div>
       ))}
     </Layout>
@@ -27,11 +28,11 @@ const Home: NextPage<HomeProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const home = getMarkdown("home");
+  const projects = getMarkdown("projects");
   const socialMedia = getMarkdown("social_media");
   return {
     props: {
-      home,
+      projects,
       socialMedia,
     },
   };

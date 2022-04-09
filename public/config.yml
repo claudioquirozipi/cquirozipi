@@ -32,9 +32,9 @@ collections:
     slug: "{{title}}"
     fields:
       - { label: "Certificado", name: "title", widget: "string" }
-      - { label: "Imagen", name: "Certificates_image", widget: "image" }
+      - { label: "Imagen", name: "certificates_image", widget: "image" }
       - { label: "Descripción", name: "description", widget: "markdown" }
-      - { label: "Fecha", name: "date", widget: "date" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
       - label: "Insituto"
         name: "institute"
         widget: "select"
@@ -79,4 +79,4 @@ collections:
     fields:
       - { label: "Red social", name: "title", widget: "string" }
       - { label: "Imagen", name: "social_media_image", widget: "image" }
-      - { label: "Link", name: "urk", widget: "string" }
+      - { label: "Link", name: "url", widget: "string" }
