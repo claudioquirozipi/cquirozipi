@@ -1,3 +1,5 @@
 .children {
     padding: 5rem var(--margin-container);
+    background-color: var(--background-light);
+    color: var(--contrast)
 }

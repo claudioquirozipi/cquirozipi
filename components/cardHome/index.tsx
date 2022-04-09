@@ -14,7 +14,12 @@ const CardHome = (props: CardHomeProps) => {
           {home.data.description}
         </ReactMarkdown>
         {home.data.url && (
-          <a className={style.link} href={home.data.url} target="_blank">
+          <a
+            className={style.link}
+            href={home.data.url}
+            rel="noreferrer"
+            target="_blank"
+          >
             Go to
           </a>
         )}

@@ -8,7 +8,7 @@ const Footer = (props: FooterProps) => {
   return (
     <footer className={style.footerContainer}>
       {socialMedia.map((sm, i) => (
-        <a href={sm.data.url} target="_blank" rel="" key={i}>
+        <a href={sm.data.url} target="_blank" rel="noreferrer" key={i}>
           <div className={style.link}>
             <img
               className={style.img}
