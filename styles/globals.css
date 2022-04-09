@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --margin-container: 10%;
+  --media-query-xs: 200px;
+  --media-query-sm: 350px;
+  --media-query-md: 600px;
+  --media-query-lg: 1400px;
+}
+

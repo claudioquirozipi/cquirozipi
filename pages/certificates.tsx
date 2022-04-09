@@ -19,9 +19,14 @@ const Certificates: NextPage<CertificatesProps> = (props) => {
         <div key={i}>
           <h1>{d.data.title}</h1>
           <ReactMarkdown>{d.data.description}</ReactMarkdown>
-          <img src={d.data.certificates_image} alt="" />
+          <img
+            style={{ width: "100px", height: "100px" }}
+            src={d.data.certificates_image}
+            alt=""
+          />
           <p>{d.data.institute}</p>
           <p style={{ marginLeft: "20px" }}>{d.data.date + " " + new Date()}</p>
+          <p>{new Date(d.data.date).toString()}</p>
         </div>
       ))}
     </Layout>

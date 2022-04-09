@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { NavbarProps } from "./interface";
+import style from "./nav.module.css";
 
 const Navbar = (props: NavbarProps) => {
   return (
-    <div>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
+    <nav className={style.navContainer}>
+      <Link href="/">Home</Link>
       <Link href="/projects">
         <a>Projects</a>
       </Link>
@@ -16,7 +15,7 @@ const Navbar = (props: NavbarProps) => {
       <Link href="/certificates">
         <a>Certificates</a>
       </Link>
-    </div>
+    </nav>
   );
 };
 
