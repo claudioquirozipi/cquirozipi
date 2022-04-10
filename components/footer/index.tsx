@@ -3,7 +3,6 @@ import style from "./footer.module.css";
 
 const Footer = (props: FooterProps) => {
   const { socialMedia } = props;
-  console.log(socialMedia);
 
   return (
     <footer className={style.footerContainer}>

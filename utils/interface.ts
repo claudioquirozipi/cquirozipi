@@ -3,7 +3,7 @@ export interface Data<T> {
   slug: string;
 }
 
-export interface Certificates {
+export interface Certificate {
   title: string;
   certificates_image: string;
   description: string;
