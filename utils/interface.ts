@@ -32,7 +32,7 @@ export interface SocialMedia {
   url: string;
 }
 
-export interface Technologies {
+export interface Technology {
   title: string;
   technology_image: string;
 }

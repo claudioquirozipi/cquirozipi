@@ -1,12 +1,13 @@
 import type { NextPage, GetStaticProps } from "next";
-import ReactMarkdown from "react-markdown";
 
+import { Data, SocialMedia, Technology } from "../utils/interface";
+import CardTechnology from "../components/cardTechnology";
+import style from "../styles/technologies.module.css";
 import { getMarkdown } from "../utils/functions";
 import Layout from "../components/layout";
-import { Data, SocialMedia, Technologies } from "../utils/interface";
 
 interface TechnologiesProps {
-  technologies: Data<Technologies>[];
+  technologies: Data<Technology>[];
   socialMedia: Data<SocialMedia>[];
 }
 
@@ -14,12 +15,12 @@ const Technologies: NextPage<TechnologiesProps> = (props) => {
   const { technologies, socialMedia } = props;
   return (
     <Layout socialMedia={socialMedia}>
-      {technologies.map((d, i) => (
-        <div key={i}>
-          <h1>{d.data.title}</h1>
-          <img src={d.data.technology_image} alt="" />
-        </div>
-      ))}
+      <h1 className={style.title}>Technologies</h1>
+      <div className={style.container}>
+        {technologies.map((d, i) => (
+          <CardTechnology key={i} technology={d} />
+        ))}
+      </div>
     </Layout>
   );
 };
