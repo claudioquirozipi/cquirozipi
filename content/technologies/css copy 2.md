@@ -1,4 +1,4 @@
 ---
-title: Css
-technology_image: img/174848.png
+title: Nest.js
+technology_image: img/nestjs.svg
 ---
