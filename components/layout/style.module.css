@@ -1,5 +1,17 @@
 .children {
+  padding: 1rem var(--margin-container);
+  background-color: var(--background-light);
+  color: var(--contrast);
+}
+
+@media (min-width: 450px) {
+  .container {
+    padding: 2.5rem var(--margin-container);
+  }
+}
+
+@media (min-width: 850px) {
+  .container {
     padding: 5rem var(--margin-container);
-    background-color: var(--background-light);
-    color: var(--contrast)
+  }
 }

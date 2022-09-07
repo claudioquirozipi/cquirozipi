@@ -2,21 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 1rem;
 }
-.reverse {
-  /* flex-direction: row-reverse; */
-}
 
-/* @media (min-width: 450px) {
+@media (min-width: 450px) {
   .cardContainer {
-    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2.5rem;
   }
-  .reverse {
-    flex-direction: row-reverse;
-  }
-} */
+}
 
 @media (min-width: 850px) {
   .cardContainer {
@@ -31,9 +25,19 @@
 }
 
 .img {
-  height: 30rem;
   object-fit: contain;
   object-position: center;
+}
+
+@media (min-width: 450px) {
+  .img {
+  }
+}
+
+@media (min-width: 850px) {
+  .img {
+    height: 30rem;
+  }
 }
 .textContainer {
   display: flex;

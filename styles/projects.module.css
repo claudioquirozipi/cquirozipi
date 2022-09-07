@@ -1,5 +1,19 @@
 .projectsContainer {
-    display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 450px) {
+  .projectsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .projectsContainer {
     grid-template-columns: repeat(3, 1fr);
     gap: 5rem;
+  }
 }

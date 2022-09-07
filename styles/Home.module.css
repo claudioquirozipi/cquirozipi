@@ -6,7 +6,21 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  border: 5px solid red;
+  background-color: yellow;
 }
+
+/* @media (min-width: 450px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 850px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+} */
 
 .main {
   padding: 5rem 0;
