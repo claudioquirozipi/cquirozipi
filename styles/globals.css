@@ -16,19 +16,56 @@ a {
 }
 
 :root {
-  --margin-container: 10%;
-  
+  --margin-container: 1rem;
+
   --media-query-xs: 200px;
   --media-query-sm: 350px;
   --media-query-md: 600px;
   --media-query-lg: 1400px;
 
-  --background: #2C2648;
-  --background-light  : #322F5A ;
+  --background: #2c2648;
+  --background-light: #322f5a;
 
-  --primary: #41FFA7;
-  --secondary: #FF657D;
+  --primary: #41ffa7;
+  --secondary: #ff657d;
   --secondary-transparent: rgba(255, 101, 125, 0.3);
   --contrast: white;
 }
 
+@media (min-width: 450px) {
+  :root {
+    --margin-container: 5%;
+
+    --media-query-xs: 200px;
+    --media-query-sm: 350px;
+    --media-query-md: 600px;
+    --media-query-lg: 1400px;
+
+    --background: #2c2648;
+    --background-light: #322f5a;
+
+    --primary: #41ffa7;
+    --secondary: #ff657d;
+    --secondary-transparent: rgba(255, 101, 125, 0.3);
+    --contrast: white;
+  }
+}
+
+@media (min-width: 850px) {
+  :root {
+    --margin-container: 10%;
+
+    --media-query-xs: 200px;
+    --media-query-sm: 350px;
+    --media-query-md: 600px;
+    --media-query-lg: 1400px;
+
+    --background: #2c2648;
+    --background-light: #322f5a;
+
+    --primary: #41ffa7;
+    --secondary: #ff657d;
+    --secondary-transparent: rgba(255, 101, 125, 0.3);
+    --contrast: white;
+  }
+}
