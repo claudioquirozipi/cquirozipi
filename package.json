@@ -1,34 +1,17 @@
 {
   "name": "cquirozipi",
-  "version": "0.1.0",
-  "private": true,
+  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@types/marked": "^4.0.3",
-    "@types/remarkable": "^1.7.5",
-    "gray-matter": "^4.0.3",
-    "marked": "^4.0.13",
-    "netlify": "^11.0.1",
-    "netlify-cms-app": "^2.15.70",
-    "next": "^12.1.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-markdown": "^8.0.2",
-    "remarkable": "^2.0.1"
-  },
-  "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.3.2",
-    "@types/node": "^17.0.23",
-    "@types/react": "17.0.18",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0",
-    "frontmatter-markdown-loader": "^3.6.3",
-    "typescript": "4.3.5"
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.12",
+    "tailwindcss": "^3.3.3"
   }
 }
