@@ -1,12 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { technologies } from "../data/technologies.ts";
+import Certificates from "../components/certificates.astro";
+import Experience from "../components/experience.astro";
+import Projects from "../components/projects.astro";
+import Technologies from "../components/technologies.astro";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <h1>hola</h1>
-    <div>
+  <LayoutGrid topLetf={1} topRight={2} bottomLeft={3} bottomRight={4}>
+    <Avatar slot="top-left" variant="2" />
+    <Projects slot="top-left-2" />
+    <Technologies slot="top-right" />
+    <Certificates slot="bottom-right" />
+    <Experience slot="bottom-left" />
+
+    <main>
       {
         technologies.map((tech) => (
           <div class="link-card">
@@ -15,8 +26,8 @@ import { technologies } from "../data/technologies.ts";
           </div>
         ))
       }
-    </div>
-  </main>
+    </main>
+  </LayoutGrid>
 </Layout>
 
 <style>
