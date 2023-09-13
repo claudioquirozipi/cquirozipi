@@ -17,7 +17,26 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-indigo-950">
-    <slot />
-  </body><style is:global></style>
+  <body>
+    <div class="wrapper">
+      <slot />
+    </div>
+    <style>
+      body {
+        background: rgb(0, 107, 222);
+        background: radial-gradient(
+          circle,
+          rgba(0, 107, 222, 1) 0%,
+          rgba(0, 2, 10, 1) 51%,
+          rgba(0, 2, 10, 1) 100%
+        );
+      }
+      .wrapper {
+        background-image: url("./svg/main-background.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+      }
+    </style>
+  </body><!-- 00FFFF --><!-- 006BDE --><!-- 00020A -->
 </html>
