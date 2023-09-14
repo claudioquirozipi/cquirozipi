@@ -3,20 +3,16 @@
 ---
 
 <main class="main">
-  <div class="top-left">
+  <div class="top">
     <slot name="top-left" />
     <slot name="top-left-2" />
-  </div>
-  <div class="top-right">
     <slot name="top-right" />
   </div>
   <div class="center">
     <slot />
   </div>
-  <div class="bottom-left">
+  <div class="bottom">
     <slot name="bottom-left" />
-  </div>
-  <div class="bottom-right">
     <slot name="bottom-right" />
   </div>
 </main>
@@ -24,35 +20,27 @@
 <style>
   .main {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 1fr auto;
     grid-gap: 1rem;
-    height: 100vh;
+    height: 100%;
+    padding: 0 1rem 1rem;
   }
-  .top-left {
-    grid-column: 1/6;
-    grid-row: 1/2;
+  .top {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-end;
     gap: 1rem;
+    width: 100%;
   }
 
-  .top-right {
-    grid-column: 12/13;
-    grid-row: 1/2;
-  }
   .center {
-    grid-column: 1/13;
-    grid-row: 2/3;
     overflow-y: auto;
   }
-  .bottom-left {
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
-  .bottom-right {
-    grid-column: 12/13;
-    grid-row: 3/4;
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
   }
 </style>

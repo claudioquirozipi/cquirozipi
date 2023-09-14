@@ -1,8 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
 
 
-    <line x1="5" y1="5" x2="5" y2="95" stroke-width="0.2" stroke="#006BDE" />
-    <line x1="5" y1="5" x2="95" y2="5" stroke-width="0.2" stroke="#006BDE" />
-    <line x1="95" y1="5" x2="95" y2="95" stroke-width="0.2" stroke="#006BDE" />
-    <line x1="5" y1="95" x2="95" y2="95" stroke-width="0.2" stroke="#006BDE" />
+    <!-- <line x1="5" y1="5" x2="5" y2="95" stroke-width="0.2" stroke="#006BDE" /> -->
+    <!-- <line x1="5" y1="5" x2="95" y2="5" stroke-width="0.2" stroke="#006BDE" /> -->
+    <!-- <line x1="95" y1="5" x2="95" y2="95" stroke-width="0.2" stroke="#006BDE" /> -->
+    <!-- <line x1="5" y1="95" x2="95" y2="95" stroke-width="0.2" stroke="#006BDE" /> -->
+    <path
+        d="M100 5 L100,25.5 L97.5,27.5 L97.5,47.5 L100,50 L100, 97.5 L97.5, 100 L50, 100 L47.5,97.5 L2.5,97.5 L0,95 L0,75 L2.5,72.5 L2.5,50 L0,47.5 L0,2.5 L2.5,0 L50,0 L52.5,2.5 97.5,2.5 Z" />
+    <style>
+        path {
+            fill: transparent;
+            stroke: #006BDE;
+            stroke-width: 0.2;
+        }
+    </style>
 </svg>

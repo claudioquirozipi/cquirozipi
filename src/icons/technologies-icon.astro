@@ -9,3 +9,26 @@
   >
   </path>
 </svg>
+<style>
+  path {
+    fill: #006bde;
+    stroke: #00ffff;
+    filter: drop-shadow(0 0 0.15rem #00ffff);
+    transition: filter 0.2s ease-in-out;
+    animation-name: shadow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shadow {
+    0% {
+      filter: drop-shadow(0 0 0.15rem #00ffff);
+    }
+    50% {
+      filter: drop-shadow(0 0 0rem #00ffff);
+    }
+    100% {
+      filter: drop-shadow(0 0 0.15rem #00ffff);
+    }
+  }
+</style>

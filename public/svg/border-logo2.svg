@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200">
+
+
+    <!-- 
+    <path
+        d="M100 5 L100,25.5 L97.5,27.5 L97.5,47.5 L100,50 L100, 97.5 L97.5, 100 L50, 100 L47.5,97.5 L2.5,97.5 L0,95 L0,75 L2.5,72.5 L2.5,50 L0,47.5 L0,2.5 L2.5,0 L50,0 L52.5,2.5 97.5,2.5 Z" /> -->
+
+    <!-- <circle cx="0" cy="0" r="100" stroke="red" stroke-width="1" fill="transparent" />
+    <circle cx="0" cy="0" r="90" stroke="red" stroke-width="1" fill="transparent" />
+    <circle cx="-100" cy="-100" r="3" fill="yellow" />
+    <circle cx="100" cy="100" r="3" fill="yellow" />
+    <circle cx="-100" cy="100" r="3" fill="yellow" />
+    <circle cx="100" cy="-100" r="3" fill="yellow" />
+    <circle cx="0" cy="0" r="3" fill="yellow" /> -->
+    <path d="M  -86.60 -50
+        A 100 100 0 0 1 -17.36 -98.48 
+        " />
+
+    <path d="M  -68.93 12.15
+        A 70 70 0 0 0 23.94 65.78
+        " />
+
+
+
+    <style>
+        path {
+            fill: transparent;
+            stroke: #006BDE;
+            stroke-width: 2;
+        }
+    </style>
+</svg>
+<!-- <svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+    <path d="M  110 215
+        A 50 50 0 0 1 162.55 162.45
+        " fill="green" stroke-width="2" fill-opacity="0.5" />
+    <circle cx="110" cy="215" r="5" fill="red" />
+    <circle cx="162.55" cy="162.45" r="5" fill="red" />
+    <circle cx="50" cy="50" r="5" fill="red" />
+    <circle cx="50" cy="50" r="50" stroke="red" stroke-width="1" />
+
+    <style>
+        path {
+            /* fill: transparent; */
+            stroke: yellow;
+            stroke-width: 2;
+        }
+    </style>
+</svg> -->

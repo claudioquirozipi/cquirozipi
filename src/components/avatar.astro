@@ -1,18 +1,111 @@
 ---
 interface Props {
-  variant: "1" | "2";
+  variant: string;
 }
 const { variant } = Astro.props;
 ---
 
-<a href="/" transition:name="avatar">
-  <img
-    class={`rounded-full ${
-      variant === "1" ? "h-64 w-64" : "h-14 w-14"
-    } border-4 border-green-400`}
-    src="https://avatars.githubusercontent.com/u/35742082?v=4"
-    alt=""
-  />
-</a>
+<div class={`myContainer ${variant}`}>
+  <a href="/" transition:name="avatar">
+    <img
+      class="avatar"
+      src="https://avatars.githubusercontent.com/u/35742082?v=4"
+      alt=""
+    />
+  </a>
+</div>
 
-<style></style>
+<style>
+  .myContainer {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./svg/border-logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-origin: center;
+  }
+  .home {
+    width: 22rem;
+    height: 22rem;
+  }
+  .myContainer::before {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-image: url("./svg/border-logo2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: rotation1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+    z-index: -1;
+  }
+  .home::before {
+    width: 22rem;
+    height: 22rem;
+  }
+  @keyframes rotation1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(30deg);
+    }
+    75% {
+      transform: rotate(-25deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .myContainer::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-image: url("./svg/border-logo3.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: rotation2;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+  }
+  .home::after {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  @keyframes rotation2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-60deg);
+    }
+    75% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+  .home .avatar {
+    border-radius: 50%;
+    width: 13rem;
+    height: 13rem;
+  }
+</style>

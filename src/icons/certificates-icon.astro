@@ -2,5 +2,29 @@
   ><path
     fill="#006BDE"
     d="m11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
-  ></path></svg
->
+  ></path>
+</svg>
+
+<style>
+  path {
+    fill: #006bde;
+    stroke: #00ffff;
+    filter: drop-shadow(0 0 0.15rem #00ffff);
+    transition: filter 0.2s ease-in-out;
+    animation-name: shadow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shadow {
+    0% {
+      filter: drop-shadow(0 0 0.15rem #00ffff);
+    }
+    50% {
+      filter: drop-shadow(0 0 0rem #00ffff);
+    }
+    100% {
+      filter: drop-shadow(0 0 0.15rem #00ffff);
+    }
+  }
+</style>

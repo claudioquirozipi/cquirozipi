@@ -11,18 +11,18 @@ import Technologies from "../components/technologies.astro";
 
 <Layout title="cQuiroz">
   <main>
-    <div class="relative">
-      <Avatar variant="1" />
-      <div class="absolute -top-10 -left-10 w-20">
+    <div class="avatarContainer">
+      <Avatar variant="home" />
+      <div class="iconLink certificate">
         <Certificates />
       </div>
-      <div class="absolute -top-10 left-56 w-20">
+      <div class="iconLink exprerience">
         <Experience />
       </div>
-      <div class="absolute top-56 left-56 w-20">
+      <div class="iconLink projects">
         <Projects />
       </div>
-      <div class="absolute top-56 -left-10 w-20">
+      <div class="iconLink technologies">
         <Technologies />
       </div>
     </div>
@@ -34,6 +34,30 @@ import Technologies from "../components/technologies.astro";
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
+  }
+  .avatarContainer {
+    position: relative;
+  }
+  .iconLink {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+  }
+  .certificate {
+    top: 0;
+    left: 0;
+  }
+  .exprerience {
+    top: 0;
+    right: 0;
+  }
+  .projects {
+    bottom: 0;
+    right: 0;
+  }
+  .technologies {
+    bottom: 0;
+    left: 0;
   }
 </style>
