@@ -7,6 +7,7 @@ import Projects from "../components/projects.astro";
 import Technologies from "../components/technologies.astro";
 import Avatar from "../components/avatar.astro";
 import LayoutGrid from "../layouts/layout-grid.astro";
+import CertificatesCard from "../components/certificatesCard.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,17 +17,21 @@ import LayoutGrid from "../layouts/layout-grid.astro";
     <Certificates slot="top-right" />
     <Experience slot="bottom-right" />
     <Projects slot="bottom-left" />
-    <main>
+    <main class="main">
       {
         certificates.map((certificate) => (
-          <div>
-            <h1>{certificate.title}</h1>
-            <img src={certificate.certificates_image} alt="" />
-          </div>
+          <CertificatesCard certificate={certificate} />
         ))
       }
     </main>
   </LayoutGrid>
 </Layout>
 
-<style></style>
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+</style>
