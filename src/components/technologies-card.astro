@@ -1,0 +1,50 @@
+---
+import type { Technology } from "../data/technologies";
+import { Image } from "astro:assets";
+interface Props {
+  technology: Technology;
+}
+const { technology } = Astro.props;
+---
+
+<div class="card">
+  <Image
+    width="14"
+    height="14"
+    class="image"
+    src={technology.technologyImage}
+    alt={technology.title}
+  />
+  <h1 class="title">{technology.title}</h1>
+</div>
+
+<style>
+  .card {
+    padding: 1rem;
+    border: 1px solid #006bde;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+    object-fit: contain;
+    object-position: center;
+    grid-row: 1/3;
+    max-width: 2rem;
+    max-height: 2rem;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    grid-column: 2/3;
+    color: #00ffff;
+    text-shadow: 1px 1px 5px #006bde;
+    text-align: center;
+  }
+</style>
