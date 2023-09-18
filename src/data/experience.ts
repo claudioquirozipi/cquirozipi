@@ -1,4 +1,15 @@
-export const experience = [
+export interface Experience {
+    title: string;
+    company: string;
+    location: string;
+    startDate: Date;
+    endDate: Date;
+    description: string;
+    logo?: string;
+    url?: string;
+}
+
+export const experiences: Experience[] = [
     {
         title: 'Fullstack developer',
         company: 'Nttdata',

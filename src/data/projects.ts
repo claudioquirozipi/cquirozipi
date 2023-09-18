@@ -1,8 +1,17 @@
-export const projects = [
+export interface Project {
+  title: string;
+  description: string;
+  projectImage: string;
+  urlWeb?: string;
+  urlGithub?: string;
+  slug: string;
+}
+
+export const projects : Project[]= [
     {
       title: 'Game',
       description: 'Game made with the phaser library.',
-      project_image: 'img/juego.png',
+      projectImage: 'img/juego.png',
       urlWeb: 'https://hola2-fd53e.web.app/',
       urlGithub: 'https://github.com/claudioquirozipi/juegophaser',
       slug: '10game'
@@ -10,28 +19,28 @@ export const projects = [
     {
       title: 'Tracsa',
       description: 'Created with react, in firebase',
-      project_image: 'img/tracsa.png',
+      projectImage: 'img/tracsa.png',
       urlGithub: 'https://github.com/claudioquirozipi/tracsaReact',
       slug: '1tracsa'
     },
     {
       title: 'Sellboot',
       description: 'Created with html and uploaded in godaddy',
-      project_image: 'img/sellboot.png',
+      projectImage: 'img/sellboot.png',
       urlGithub: 'https://github.com/claudioquirozipi/sellun',
       slug: '2Sellboot'
     },
     {
       title: 'Wulpers',
       description: 'Created with html and uploaded in godaddy',
-      project_image: 'img/wulpers.png',
+      projectImage: 'img/wulpers.png',
       urlGithub: 'https://github.com/claudioquirozipi/wulpers',
       slug: '3wulpers'
     },
     {
       title: 'Wulpers Studio',
       description: 'Created with React and firebase',
-      project_image: 'img/wulperstudio.png',
+      projectImage: 'img/wulperstudio.png',
       urlWeb: 'https://www.wulperstudio.com/',
       urlGithub: 'https://github.com/claudioquirozipi/wulpers-studio-react',
       slug: '4wulpersStudio'
@@ -39,13 +48,13 @@ export const projects = [
     {
       title: 'Boolanews',
       description: 'Created with js',
-      project_image: 'img/boolanews.png',
+      projectImage: 'img/boolanews.png',
       slug: '5boolanews'
     },
     {
       title: 'Personal portfolio',
       description: 'Old version of the Portfolio with React',
-      project_image: 'img/cquirozipi.png',
+      projectImage: 'img/cquirozipi.png',
       urlWeb: 'https://cquirozipi.firebaseapp.com/projects',
       urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
       slug: '6portfolio'
@@ -53,7 +62,7 @@ export const projects = [
     {
       title: 'Accountant',
       description: 'Personal project, accountant created with React',
-      project_image: 'img/accountant.png',
+      projectImage: 'img/accountant.png',
       urlWeb: 'https://contador-55ade.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/contadorReact',
       slug: '7accountant'
@@ -61,7 +70,7 @@ export const projects = [
     {
       title: 'Screen meter',
       description: 'Tool created to measure screen sizes.',
-      project_image: 'img/medidorpantalla.png',
+      projectImage: 'img/medidorpantalla.png',
       urlWeb: 'https://medidorpantalla.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
       slug: '8screenMeter'
@@ -69,7 +78,7 @@ export const projects = [
     {
       title: 'Cost calculator',
       description: 'Tool to measure the costs of a dish in a restaurant.',
-      project_image: 'img/calculadoracostos.png',
+      projectImage: 'img/calculadoracostos.png',
       urlWeb: 'https://calculadoradecostos.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/calculadoradecostos',
       slug: '9costCalculator'
@@ -77,7 +86,7 @@ export const projects = [
     {
       title: 'Dashboard',
       description: 'Practice a dashboard with react and bootstrap',
-      project_image: 'img/dashboard.png',
+      projectImage: 'img/dashboard.png',
       urlWeb: 'https://dashboard-a0059.web.app/',
       urlGithub: 'https://github.com/claudioquirozipi/React-Bootstrap-Dashboard',
       slug: 'dashboard'
@@ -85,7 +94,7 @@ export const projects = [
     {
       title: 'MangoPP',
       description: 'Personal blog with react and firebase',
-      project_image: 'img/mangopp.png',
+      projectImage: 'img/mangopp.png',
       urlWeb: 'https://mangopp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/mangopp',
       slug: 'proyecto-1 copy 12'
@@ -93,7 +102,7 @@ export const projects = [
     {
       title: 'Mango lybrary',
       description: 'Personal jewelery for landing page',
-      project_image: 'img/mangoLy.jpg',
+      projectImage: 'img/mangoLy.jpg',
       urlGithub: 'https://github.com/claudioquirozipi/mangoly',
       slug: 'proyecto-1 copy'
     }
