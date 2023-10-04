@@ -46,11 +46,9 @@ const { variant } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url("./svg/border-logo.svg"); */
     background-repeat: no-repeat;
     background-size: contain;
     transform-origin: center;
-    /* border: 1px solid yellow; */
     position: relative;
   }
   .avatarBackground {
@@ -74,28 +72,10 @@ const { variant } = Astro.props;
     animation-timing-function: linear;
   }
   .home {
-    width: 22rem;
-    height: 22rem;
+    width: 19rem;
+    height: 19rem;
   }
-  .myContainer::before {
-    content: "";
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    /* background-image: url("./svg/border-logo2.svg"); */
-    background-repeat: no-repeat;
-    background-size: contain;
-    animation-name: rotation1;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transform-origin: center;
-    z-index: -1;
-  }
-  .home::before {
-    width: 22rem;
-    height: 22rem;
-  }
+
   @keyframes rotation1 {
     0% {
       transform: rotate(0deg);
@@ -109,24 +89,6 @@ const { variant } = Astro.props;
     100% {
       transform: rotate(0deg);
     }
-  }
-  .myContainer::after {
-    content: "";
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    /* background-image: url("./svg/border-logo3.svg"); */
-    background-repeat: no-repeat;
-    background-size: contain;
-    animation-name: rotation2;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    z-index: -1;
-  }
-  .home::after {
-    width: 22rem;
-    height: 22rem;
   }
 
   @keyframes rotation2 {
