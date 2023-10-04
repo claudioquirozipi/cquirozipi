@@ -22,13 +22,15 @@ const path = Astro.url.origin;
   <body>
     <div class="wrapper">
       <slot />
-      <Image
-        class="svgBackground"
-        width={360}
-        height={800}
-        src="./svg/main-background.svg"
-        alt=""
-      />
+      <div class="backgroundContainer">
+        <Image
+          class="svgBackground"
+          width={360}
+          height={800}
+          src="./svg/main-background.svg"
+          alt=""
+        />
+      </div>
       <style>
         body {
           background: rgb(0, 107, 222);
@@ -42,20 +44,21 @@ const path = Astro.url.origin;
           height: 100vh;
         }
         .wrapper {
-          /* background-image: url("./svg/main-background.svg"); */
-          background-repeat: no-repeat;
-          background-size: 100%;
-          background-position: center;
           padding: 0.5rem;
           height: 100%;
         }
-        .svgBackground {
+        .backgroundContainer {
           position: fixed;
           top: 0;
           left: 0;
           width: 100vw;
           height: 100%;
           z-index: -1;
+          padding: 1rem;
+        }
+        .svgBackground {
+          width: 100vw;
+          height: 100%;
         }
       </style>
     </div><!-- 00FFFF --><!-- 006BDE --><!-- 00020A -->

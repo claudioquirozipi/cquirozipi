@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
   variant: string;
 }
@@ -6,8 +7,31 @@ const { variant } = Astro.props;
 ---
 
 <div class={`myContainer ${variant}`}>
+  <Image
+    width={208}
+    height={208}
+    class="avatarBackground"
+    src="./svg/border-logo.svg"
+    alt=""
+  />
+  <Image
+    width={208}
+    height={208}
+    class="avatarBackground avatarBackground2"
+    src="./svg/border-logo2.svg"
+    alt=""
+  />
+  <Image
+    width={208}
+    height={208}
+    class="avatarBackground avatarBackground3"
+    src="./svg/border-logo3.svg"
+    alt=""
+  />
   <a href="/" transition:name="avatar">
-    <img
+    <Image
+      width={208}
+      height={208}
       class="avatar"
       src="https://avatars.githubusercontent.com/u/35742082?v=4"
       alt=""
@@ -22,10 +46,32 @@ const { variant } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("./svg/border-logo.svg");
+    /* background-image: url("./svg/border-logo.svg"); */
     background-repeat: no-repeat;
     background-size: contain;
     transform-origin: center;
+    /* border: 1px solid yellow; */
+    position: relative;
+  }
+  .avatarBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .avatarBackground2 {
+    animation-name: rotation1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .avatarBackground3 {
+    animation-name: rotation2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   .home {
     width: 22rem;
@@ -36,7 +82,7 @@ const { variant } = Astro.props;
     position: absolute;
     width: 5rem;
     height: 5rem;
-    background-image: url("./svg/border-logo2.svg");
+    /* background-image: url("./svg/border-logo2.svg"); */
     background-repeat: no-repeat;
     background-size: contain;
     animation-name: rotation1;
@@ -69,7 +115,7 @@ const { variant } = Astro.props;
     position: absolute;
     width: 5rem;
     height: 5rem;
-    background-image: url("./svg/border-logo3.svg");
+    /* background-image: url("./svg/border-logo3.svg"); */
     background-repeat: no-repeat;
     background-size: contain;
     animation-name: rotation2;

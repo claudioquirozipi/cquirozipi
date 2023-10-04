@@ -76,7 +76,7 @@ export const technologies : Technology[]= [
     },
     {
       title: 'Next.js',
-      technologyImage: 'img/nextjs.png',
+      technologyImage: 'img/nextjs.svg',
       slug: '18nextjs'
     },
     {
