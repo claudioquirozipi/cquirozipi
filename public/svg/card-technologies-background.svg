@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none">
+    <!-- <circle cx="0" cy="0" r="1" fill="yellow" />
+    <circle cx="100" cy="0" r="1" fill="yellow" />
+    <circle cx="0" cy="10" r="1" fill="yellow" />
+    <circle cx="100" cy="10" r="1" fill="yellow" /> -->
+
+    <path d="M 5 0 H 15 L 20 4 H 45 L 50 0 H 95 L 100 4
+    V 12 L 95 16 H 60 L 55 20 H 5 L 0 16 V 4 Z
+    " />
+    <path class="background" d="M 20 0 L 22.5 2 H 42.5 L 45 0 Z " />
+    <path class="background" d="M 60 20 L 62.5 18 H 92.5 L 90 20 Z " />
+
+
+    <style>
+        path {
+            fill: transparent;
+            stroke: #006BDE;
+            stroke-width: 1;
+        }
+
+        .background {
+            fill: #00FFFF;
+            stroke: none;
+        }
+    </style>
+</svg>

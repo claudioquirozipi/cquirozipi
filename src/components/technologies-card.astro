@@ -9,6 +9,13 @@ const { technology } = Astro.props;
 
 <div class="card">
   <Image
+    width="300"
+    height="64"
+    class="cardTechnologiesBackground"
+    src="svg/card-technologies-background.svg"
+    alt="border"
+  />
+  <Image
     width="14"
     height="14"
     class="image"
@@ -21,12 +28,21 @@ const { technology } = Astro.props;
 <style>
   .card {
     padding: 1rem;
-    border: 1px solid #006bde;
-    border-radius: 0.5rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    position: relative;
+  }
+  .cardTechnologiesBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
   }
   .image {
     width: 100%;
