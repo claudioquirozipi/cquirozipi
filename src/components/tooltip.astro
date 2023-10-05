@@ -1,0 +1,185 @@
+---
+interface Props {
+  title: string;
+  position: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+}
+const { title, position } = Astro.props;
+---
+
+<div class={`tooltip ${position}`}>
+  <p class="title">{title}</p>
+  <div class="line"></div>
+  <slot />
+</div>
+
+<style>
+  .tooltip {
+    position: relative;
+  }
+  .tooltip .title,
+  .tooltip .line {
+    /* display: none; */
+  }
+  /*
+  .tooltip:hover .title,
+  .tooltip:hover .line {
+    display: block;
+    border: 1px solid red;
+    display: block;
+  } */
+  .title,
+  .line {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .bottom-left .title,
+  .bottom-left .line {
+    animation-name: bottom-left-animation;
+  }
+  @keyframes bottom-left-animation {
+    0% {
+      display: block;
+    }
+    25% {
+      display: none;
+    }
+    50% {
+      display: none;
+    }
+    75% {
+      display: none;
+    }
+    100% {
+      display: none;
+    }
+  }
+  .top-right .title,
+  .top-right .line {
+    animation-name: top-right-animation;
+  }
+  @keyframes top-right-animation {
+    0% {
+      display: none;
+    }
+    25% {
+      display: block;
+    }
+    50% {
+      display: none;
+    }
+    75% {
+      display: none;
+    }
+    100% {
+      display: none;
+    }
+  }
+  .bottom-right .title,
+  .bottom-right .line {
+    animation-name: bottom-right-animation;
+  }
+  @keyframes bottom-right-animation {
+    0% {
+      display: none;
+    }
+    25% {
+      display: none;
+    }
+    50% {
+      display: block;
+    }
+    75% {
+      display: none;
+    }
+    100% {
+      display: none;
+    }
+  }
+  .top-left .title,
+  .top-left .line {
+    animation-name: top-left-animation;
+  }
+  @keyframes hide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes top-left-animation {
+    0% {
+      display: none;
+    }
+    25% {
+      display: none;
+    }
+    50% {
+      display: none;
+    }
+    75% {
+      display: block;
+    }
+    100% {
+      display: none;
+    }
+  }
+
+  .title {
+    position: absolute;
+    padding: 0.25rem;
+    color: #006bde;
+  }
+  .top-left .title {
+    border-bottom: 2px solid #006bde;
+    top: -3.5rem;
+    left: 3rem;
+  }
+  .top-right .title {
+    border-bottom: 2px solid #006bde;
+    top: -3.5rem;
+    right: 3rem;
+  }
+  .bottom-left .title {
+    border-top: 2px solid #006bde;
+    bottom: -3.5rem;
+    left: 3rem;
+  }
+  .bottom-right .title {
+    border-top: 2px solid #006bde;
+    bottom: -3.5rem;
+    right: 3rem;
+  }
+  .line {
+    content: "hola";
+    position: absolute;
+    background-color: #006bde;
+    width: 2px;
+    height: 2rem;
+  }
+  .top-left .line {
+    top: -1.5rem;
+    left: 3rem;
+    transform: rotate(45deg);
+    transform-origin: top center;
+  }
+  .top-right .line {
+    top: -1.5rem;
+    right: 3rem;
+    transform: rotate(-45deg);
+    transform-origin: top center;
+  }
+  .bottom-right .line {
+    bottom: -1.5rem;
+    right: 3rem;
+    transform: rotate(45deg);
+    transform-origin: bottom center;
+  }
+  .bottom-left .line {
+    bottom: -1.5rem;
+    left: 3rem;
+    transform: rotate(-45deg);
+    transform-origin: bottom center;
+  }
+</style>

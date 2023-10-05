@@ -5,6 +5,7 @@ import Certificates from "../components/certificates.astro";
 import Experience from "../components/experience.astro";
 import Projects from "../components/projects.astro";
 import Technologies from "../components/technologies.astro";
+import Tooltip from "../components/tooltip.astro";
 
 // console.log(certificates); f
 ---
@@ -14,16 +15,24 @@ import Technologies from "../components/technologies.astro";
     <div class="avatarContainer">
       <Avatar variant="home" />
       <div class="iconLink certificate">
-        <Certificates />
+        <Tooltip title="Certificados" position="top-left">
+          <Certificates />
+        </Tooltip>
       </div>
       <div class="iconLink exprerience">
-        <Experience />
+        <Tooltip title="Experiencia" position="top-right">
+          <Experience />
+        </Tooltip>
       </div>
       <div class="iconLink projects">
-        <Projects />
+        <Tooltip title="Proyectos" position="bottom-right">
+          <Projects />
+        </Tooltip>
       </div>
       <div class="iconLink technologies">
-        <Technologies />
+        <Tooltip title="tecnologías" position="bottom-left">
+          <Technologies />
+        </Tooltip>
       </div>
     </div>
   </main>
