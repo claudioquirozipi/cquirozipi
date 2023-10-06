@@ -41,7 +41,7 @@ const { certificate } = Astro.props;
   />
   <h2 class="title">{certificate.title}</h2>
   <p class="description">{certificate.description}</p>
-  <a class="link" href="">
+  <a class="link" href={`certificados/${certificate.slug}`}>
     <svg
       class="svgLink"
       xmlns="http://www.w3.org/2000/svg"

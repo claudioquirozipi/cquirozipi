@@ -14,28 +14,28 @@ export const projects : Project[]= [
       projectImage: 'img/juego.png',
       urlWeb: 'https://hola2-fd53e.web.app/',
       urlGithub: 'https://github.com/claudioquirozipi/juegophaser',
-      slug: '10game'
+      slug: 'game'
     },
     {
       title: 'Tracsa',
       description: 'Created with react, in firebase',
       projectImage: 'img/tracsa.png',
       urlGithub: 'https://github.com/claudioquirozipi/tracsaReact',
-      slug: '1tracsa'
+      slug: 'tracsa'
     },
     {
       title: 'Sellboot',
       description: 'Created with html and uploaded in godaddy',
       projectImage: 'img/sellboot.png',
       urlGithub: 'https://github.com/claudioquirozipi/sellun',
-      slug: '2Sellboot'
+      slug: 'sellboot'
     },
     {
       title: 'Wulpers',
       description: 'Created with html and uploaded in godaddy',
       projectImage: 'img/wulpers.png',
       urlGithub: 'https://github.com/claudioquirozipi/wulpers',
-      slug: '3wulpers'
+      slug: 'wulpers'
     },
     {
       title: 'Wulpers Studio',
@@ -43,13 +43,13 @@ export const projects : Project[]= [
       projectImage: 'img/wulperstudio.png',
       urlWeb: 'https://www.wulperstudio.com/',
       urlGithub: 'https://github.com/claudioquirozipi/wulpers-studio-react',
-      slug: '4wulpersStudio'
+      slug: 'wulpers-studio'
     },
     {
       title: 'Boolanews',
       description: 'Created with js',
       projectImage: 'img/boolanews.png',
-      slug: '5boolanews'
+      slug: 'boolanews'
     },
     {
       title: 'Personal portfolio',
@@ -57,7 +57,7 @@ export const projects : Project[]= [
       projectImage: 'img/cquirozipi.png',
       urlWeb: 'https://cquirozipi.firebaseapp.com/projects',
       urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
-      slug: '6portfolio'
+      slug: 'portfolio'
     },
     {
       title: 'Accountant',
@@ -65,7 +65,7 @@ export const projects : Project[]= [
       projectImage: 'img/accountant.png',
       urlWeb: 'https://contador-55ade.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/contadorReact',
-      slug: '7accountant'
+      slug: 'accountant'
     },
     {
       title: 'Screen meter',
@@ -73,7 +73,7 @@ export const projects : Project[]= [
       projectImage: 'img/medidorpantalla.png',
       urlWeb: 'https://medidorpantalla.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
-      slug: '8screenMeter'
+      slug: 'screenMeter'
     },
     {
       title: 'Cost calculator',
@@ -81,7 +81,7 @@ export const projects : Project[]= [
       projectImage: 'img/calculadoracostos.png',
       urlWeb: 'https://calculadoradecostos.firebaseapp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/calculadoradecostos',
-      slug: '9costCalculator'
+      slug: 'costCalculator'
     },
     {
       title: 'Dashboard',
@@ -97,13 +97,13 @@ export const projects : Project[]= [
       projectImage: 'img/mangopp.png',
       urlWeb: 'https://mangopp.com/',
       urlGithub: 'https://github.com/claudioquirozipi/mangopp',
-      slug: 'proyecto-1 copy 12'
+      slug: 'mangopp'
     },
     {
       title: 'Mango lybrary',
       description: 'Personal jewelery for landing page',
       projectImage: 'img/mangoLy.jpg',
       urlGithub: 'https://github.com/claudioquirozipi/mangoly',
-      slug: 'proyecto-1 copy'
+      slug: 'mangoly'
     }
   ]
