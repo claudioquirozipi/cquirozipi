@@ -17,7 +17,7 @@ const certificate = certificates.find((data) => data.slug === slug);
 ---
 
 <Layout title="Welcome to Astro.">
-  <LayoutGrid topLetf={1} topRight={2} bottomLeft={3} bottomRight={4}>
+  <LayoutGrid title={certificate!.title}>
     <Avatar slot="top-left" variant="2" />
     <Technologies slot="top-left-2" />
     <Certificates slot="top-right" />

@@ -1,5 +1,8 @@
 ---
-
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
 ---
 
 <main class="main">
@@ -7,6 +10,25 @@
     <slot name="top-left" />
     <slot name="top-left-2" />
     <slot name="top-right" />
+  </div>
+  <div class="titleContainer">
+    <svg
+      viewBox="0 0 50 10"
+      class="svg"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="path1"
+        d="M 2 0 H 35 L 40 5 V 8
+        L 38 10 H 2 L 0 8 V 2
+      Z"></path>
+      <path
+        class="path2"
+        d="M 40 10 H 48 L 50 8 V 2 
+      L 48 0 H 37 L 42 5 V 8 Z"></path>
+    </svg>
+    <h1 class="title">{title}</h1>
   </div>
   <div class="center">
     <slot />
@@ -20,10 +42,10 @@
 <style>
   .main {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     grid-gap: 1rem;
     height: 100%;
-    padding-bottom: 1rem;
+    padding: 0 1rem 1.5rem;
   }
   .top {
     display: flex;
@@ -33,6 +55,33 @@
     width: 100%;
   }
 
+  .titleContainer {
+    position: relative;
+    width: fit-content;
+  }
+  .title {
+    color: #00020a;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.3rem 3rem 0.3rem 1rem;
+  }
+  .svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .svg .path1 {
+    fill: #00ffff;
+    stroke: none;
+  }
+  .svg .path2 {
+    fill: rgba(0, 107, 222, 0.3);
+    stroke: #006bde;
+    stroke-width: 1;
+  }
   .center {
     overflow-y: auto;
   }

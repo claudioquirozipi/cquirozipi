@@ -11,7 +11,7 @@ import TechnologiesCard from "../components/technologies-card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <LayoutGrid topLetf={1} topRight={2} bottomLeft={3} bottomRight={4}>
+  <LayoutGrid title="Tecnologías">
     <Avatar slot="top-left" variant="2" />
     <Projects slot="top-left-2" />
     <Technologies slot="top-right" />
@@ -31,6 +31,5 @@ import TechnologiesCard from "../components/technologies-card.astro";
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 2rem 1rem;
-    padding: 1rem;
   }
 </style>

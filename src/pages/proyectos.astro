@@ -11,7 +11,7 @@ import ProjectCard from "../components/project-card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <LayoutGrid topLetf={1} topRight={2} bottomLeft={3} bottomRight={4}>
+  <LayoutGrid title="Proyectos">
     <Avatar slot="top-left" variant="2" />
     <Experience slot="top-left-2" />
     <Projects slot="top-right" />
@@ -28,6 +28,5 @@ import ProjectCard from "../components/project-card.astro";
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 3rem 1rem;
-    padding: 1rem;
   }
 </style>
