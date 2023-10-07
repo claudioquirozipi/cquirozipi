@@ -24,16 +24,15 @@ const certificate = certificates.find((data) => data.slug === slug);
     <Experience slot="bottom-right" />
     <Projects slot="bottom-left" />
     <main class="main">
-      <h1>{certificate!.title}</h1>
       <Image
         src={certificate!.certificates_image}
         alt={certificate!.title}
         width={400}
         height={400}
       />
-      <p>{certificate!.description}</p>
-      <p>{certificate!.date}</p>
-      <p>{certificate!.institute}</p>
+      <p class="text">{certificate!.description}</p>
+      <p class="text">{certificate!.date}</p>
+      <p class="text">{certificate!.institute}</p>
       {certificate?.url && <a href={certificate.url}>Url</a>}
     </main>
   </LayoutGrid>
@@ -41,8 +40,11 @@ const certificate = certificates.find((data) => data.slug === slug);
 <style>
   .main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 3rem 1rem;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
     padding: 1rem;
+  }
+  .text {
+    color: #00ffff;
   }
 </style>

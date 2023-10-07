@@ -5,7 +5,6 @@ interface Props {
 import { Image } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
 const { title } = Astro.props;
-const path = Astro.url.origin;
 ---
 
 <!doctype html>
@@ -14,7 +13,8 @@ const path = Astro.url.origin;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.jpg" />
+    <link rel="shortcut icon" href="/logo.jpg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
