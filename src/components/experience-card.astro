@@ -1,6 +1,7 @@
 ---
 import type { Experience } from "../data/experience";
 import { Image } from "astro:assets";
+import { formatDate } from "../utils/functions/formatDate";
 
 interface Props {
   experience: Experience;
@@ -37,6 +38,13 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
       }
     </div>
   </div>
+  <h3 class="date">
+    {
+      `del ${formatDate(experience.startDate)} al ${formatDate(
+        experience.endDate
+      )}`
+    }
+  </h3>
   <h2 class="title">{experience.title}</h2>
   <p class="description">{experience.description}</p>
   <!-- <h1 class="bg-white">{showLineAfter}</h1>
@@ -50,6 +58,7 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0 1rem;
+    margin-bottom: 1rem;
   }
   .imageContainer {
     width: 3rem;
@@ -77,7 +86,7 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
   .line {
     position: absolute;
     width: 1px;
-    height: 50%;
+    height: 55%;
     background-color: #00ffff;
     z-index: -1;
   }
@@ -100,6 +109,12 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
     height: 2rem;
     filter: invert(80%) sepia(50%) saturate(996%) hue-rotate(119deg)
       brightness(104%) contrast(104%);
+  }
+  .date {
+    font-size: 0.7rem;
+    margin: 0;
+    grid-column: 2/3;
+    color: #00ffff;
   }
   .title {
     font-size: 1rem;

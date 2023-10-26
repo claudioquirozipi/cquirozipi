@@ -28,7 +28,7 @@ export const  certificates : Certificate[]= [
       title: 'Go',
       certificates_image: 'img/diploma-programacion-golang-2020.jpg',
       description: 'Curso práctico de go, creación de un servidor web',
-      date: new Date('2021-11-20T22:17:41.136Z'),
+      date: new Date('2021-11-20T00:00:00.101Z'),
       institute: 'platzi',
       slug: 'go'
     },
@@ -286,7 +286,7 @@ export const  certificates : Certificate[]= [
       title: 'Rxjs',
       certificates_image: 'img/rxjs.jpg',
       description: 'ReactiveX - Rxjs: De cero hasta los detalles',
-      date: new Date('2022-03-20T00:00:00.414Z'),
+      date: new Date('2022-03-20T00:00:00.101Z'),
       institute: 'udemy',
       slug: 'rxjs'
     },

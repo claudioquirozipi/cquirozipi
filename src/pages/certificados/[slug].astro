@@ -8,6 +8,7 @@ import Technologies from "../../components/technologies.astro";
 import Avatar from "../../components/avatar.astro";
 import LayoutGrid from "../../layouts/layout-grid.astro";
 import { Image } from "astro:assets";
+import { formatDate } from "../../utils/functions/formatDate";
 
 export function getStaticPaths() {
   return certificates.flatMap((data) => [{ params: { slug: data.slug } }]);
@@ -31,8 +32,8 @@ const certificate = certificates.find((data) => data.slug === slug);
         height={400}
       />
       <p class="text">{certificate!.description}</p>
-      <p class="text">{certificate!.date}</p>
-      <p class="text">{certificate!.institute}</p>
+      <p class="text">{`Fecha: ${formatDate(certificate!.date)}`}</p>
+      <p class="text">{`Instituto: ${certificate!.institute}`}</p>
       {certificate?.url && <a href={certificate.url}>Url</a>}
     </main>
   </LayoutGrid>

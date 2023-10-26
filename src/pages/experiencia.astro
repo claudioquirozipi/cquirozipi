@@ -18,16 +18,36 @@ import ExperienceCard from "../components/experience-card.astro";
     <Projects slot="bottom-right" />
     <Technologies slot="bottom-left" />
 
-    <main>
-      {
-        experiences.map((experience, i) => (
-          <ExperienceCard
-            experience={experience}
-            showLineAfter={i !== 0}
-            showLineBefore={i !== experiences.length - 1}
-          />
-        ))
-      }
+    <main class="main">
+      <h2 class="title">Experiencia 7 años de experiencia</h2>
+      <div>
+        {
+          experiences.map((experience, i) => (
+            <ExperienceCard
+              experience={experience}
+              showLineAfter={i !== 0}
+              showLineBefore={i !== experiences.length - 1}
+            />
+          ))
+        }
+      </div>
     </main>
   </LayoutGrid>
 </Layout>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    grid-column: 2/3;
+    color: #00ffff;
+    text-shadow: 1px 1px 5px #006bde;
+  }
+</style>
