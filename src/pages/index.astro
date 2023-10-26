@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { experiences } from "../data/experience.ts";
 import Avatar from "../components/avatar.astro";
 import Certificates from "../components/certificates.astro";
 import Experience from "../components/experience.astro";
@@ -7,6 +8,11 @@ import Projects from "../components/projects.astro";
 import Technologies from "../components/technologies.astro";
 import Tooltip from "../components/tooltip.astro";
 import { Image } from "astro:assets";
+import { getDateDifference } from "../utils/functions/getDateDifference";
+
+const { years, months, days } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
 ---
 
 <Layout title="cQuiroz">
@@ -14,7 +20,7 @@ import { Image } from "astro:assets";
     <div class="header">
       <p>Ing. Claudio Quiroz</p>
       <p>Fullstack Developer | React Node</p>
-      <p>7 años de experiencia</p>
+      <p>{`${years} años ${months} meses y ${days} días de experiencia`}</p>
     </div>
     <div class="avatarContainer">
       <Avatar variant="home" />

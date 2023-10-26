@@ -8,6 +8,11 @@ import Technologies from "../components/technologies.astro";
 import Avatar from "../components/avatar.astro";
 import LayoutGrid from "../layouts/layout-grid.astro";
 import ExperienceCard from "../components/experience-card.astro";
+import { getDateDifference } from "../utils/functions/getDateDifference.ts";
+
+const { years, months, days } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,7 +24,9 @@ import ExperienceCard from "../components/experience-card.astro";
     <Technologies slot="bottom-left" />
 
     <main class="main">
-      <h2 class="title">Experiencia 7 años de experiencia</h2>
+      <h2 class="title">
+        {`${years} años ${months} meses y ${days} días de experiencia`}
+      </h2>
       <div>
         {
           experiences.map((experience, i) => (
