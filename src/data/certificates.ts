@@ -6,8 +6,119 @@ export interface Certificate {
   institute: string;
   slug: string;
   url?: string;
+  category?: string[];
+  isSpecial?: boolean;
+  isCore?: boolean;
 }
 export const certificates: Certificate[] = [
+  {
+    title: "Next.js",
+    certificates_image:
+      "img/certificates/platzi/diploma-web-next_page-0001.jpg",
+    description: "Full stack con Next.js",
+    date: new Date("2024-09-18T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "full-stack-next-platzi",
+    category: ["frontend", "backend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
+    title: "Python venv",
+    certificates_image:
+      "img/certificates/platzi/diploma-python-pip_page-0001.jpg",
+    description: "Python: entornos virtuales y pip",
+    date: new Date("2024-09-30T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "python-venv-platzi",
+  },
+  {
+    title: "Python",
+    certificates_image: "img/certificates/platzi/diploma-python_page-0001.jpg",
+    description: "Python",
+    date: new Date("2024-09-28T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "python-platzi",
+  },
+  {
+    title: "Next.js OWASP",
+    certificates_image:
+      "img/certificates/platzi/diploma-nextjs-owasp_page-0001.jpg",
+    description: "Next.js: Seguridad web con OWASP",
+    date: new Date("2024-09-16T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "nextjs-owasp-platzi",
+  },
+  {
+    title: "Next.js I18n",
+    certificates_image:
+      "img/certificates/platzi/diploma-nextjs-internacionalizacion_page-0001.jpg",
+    description: "Next.js: Internacionalización de aplicaciones web con I18n",
+    date: new Date("2024-09-10T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "nextjs-i18n-platzi",
+  },
+  {
+    title: "Next.js GraphQL",
+    certificates_image:
+      "img/certificates/platzi/diploma-nextjs-graphql_page-0001.jpg",
+    description: "Next.js con Grasphql",
+    date: new Date("2024-09-10T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "nextjs-graphql-platzi",
+  },
+  {
+    title: "Next.js Datasets",
+    certificates_image:
+      "img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
+    description: "Next.js: Grandes datasets",
+    date: new Date("2024-09-11T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "nextjs-datasets-platzi",
+  },
+  {
+    title: "Next.js 14",
+    certificates_image:
+      "img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
+    description: "Next.js 14",
+    date: new Date("2024-09-07T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "nextjs-14-platzi",
+  },
+  {
+    title: "Modelos Negocio",
+    certificates_image:
+      "img/certificates/platzi/diploma-modelos-negocio_page-0001.jpg",
+    description: "Modelos de negocio",
+    date: new Date("2024-09-20T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "modelos-negocio-platzi",
+  },
+  {
+    title: "FastApi",
+    certificates_image: "img/certificates/platzi/diploma-fastapi_page-0001.jpg",
+    description: "FastApi",
+    date: new Date("2024-09-18T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "fastapi-platzi",
+  },
+  {
+    title: "Marketing",
+    certificates_image:
+      "img/certificates/platzi/diploma-diseno-marketing_page-0001.jpg",
+    description: "Diseño básico para marketing",
+    date: new Date("2024-08-31T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "diseno-marketing-platzi",
+  },
+  {
+    title: "Backend",
+    certificates_image: "img/certificates/platzi/diploma-backend_page-0001.jpg",
+    description: "Introducción al desarrollo Backend",
+    date: new Date("2024-09-20T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "introduccion-backend-platzi",
+  },
   {
     title: "Java 17",
     certificates_image: "img/certificates/java.jpg",
