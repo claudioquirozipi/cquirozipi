@@ -12,6 +12,17 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "Django",
+    certificates_image: "img/certificates/platzi/diploma-django_page-0001.jpg",
+    description: "Django",
+    date: new Date("2024-10-19T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "django-platzi",
+    category: ["frontend", "backend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "Next.js",
     certificates_image:
       "img/certificates/platzi/diploma-web-next_page-0001.jpg",
