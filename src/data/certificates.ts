@@ -12,6 +12,17 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "Astro",
+    certificates_image: "img/certificates/platzi/diploma-astro_page-0001.jpg",
+    description: "Creación de páginas web con Astro",
+    date: new Date("2024-10-20T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "astro-platzi",
+    category: ["frontend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "Django",
     certificates_image: "img/certificates/platzi/diploma-django_page-0001.jpg",
     description: "Django",
