@@ -12,6 +12,18 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "GCP",
+    certificates_image:
+      "img/certificates/platzi/diploma-fundamentos-google_page-0001.jpg",
+    description: "Curso de introducción a Google Cloud Platform",
+    date: new Date("2024-10-21T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "introduccion-gcp-platzi",
+    category: ["cloud"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "Astro",
     certificates_image: "img/certificates/platzi/diploma-astro_page-0001.jpg",
     description: "Creación de páginas web con Astro",
