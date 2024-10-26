@@ -12,6 +12,30 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "Testing python",
+    certificates_image:
+      "img/certificates/platzi/diploma-unit-testing-python_page-0001.jpg",
+    description: "Unit testing en python",
+    date: new Date("2024-10-25T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "testing-python-platzi",
+    category: ["backend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
+    title: "Python",
+    certificates_image:
+      "img/certificates/platzi/diploma-python-funciones_page-0001.jpg",
+    description: "Python: Comprehensions, funciones y manejo de errores",
+    date: new Date("2024-10-23T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "python-manejo-errores-platzi",
+    category: ["backend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "GCP",
     certificates_image:
       "img/certificates/platzi/diploma-fundamentos-google_page-0001.jpg",
