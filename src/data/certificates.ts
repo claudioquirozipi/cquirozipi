@@ -12,6 +12,18 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "Patrones de diseño",
+    certificates_image:
+      "img/certificates/platzi/diploma-solid-python_page-0001.jpg",
+    description: "Patrones de diseño y solid en python",
+    date: new Date("2024-11-12T00:00:00.101Z"),
+    institute: "platzi",
+    slug: "patrones-diseño-solid-python-platzi",
+    category: ["backend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "Testing python",
     certificates_image:
       "img/certificates/platzi/diploma-unit-testing-python_page-0001.jpg",
