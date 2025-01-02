@@ -12,6 +12,17 @@ export interface Certificate {
 }
 export const certificates: Certificate[] = [
   {
+    title: "Shadcn/ui",
+    certificates_image: "img/certificates/devtalles/shadcn-ui.jpg",
+    description: "Shadcn/ui: Componentes accesibles y personalizables",
+    date: new Date("2025-01-02T00:00:00.101Z"),
+    institute: "devtalles",
+    slug: "shadow-ui-devtalles",
+    category: ["frontend"],
+    isSpecial: true,
+    isCore: true,
+  },
+  {
     title: "Patrones de diseño",
     certificates_image:
       "img/certificates/platzi/diploma-solid-python_page-0001.jpg",
@@ -231,7 +242,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Qwik",
-    certificates_image: "img/certificates/qwik.jpg",
+    certificates_image: "img/certificates/devtalles/qwik.jpg",
     description: "Qwik: Introducción al framework",
     date: new Date("2023-05-24T00:00:00.101Z"),
     institute: "devtalles",
