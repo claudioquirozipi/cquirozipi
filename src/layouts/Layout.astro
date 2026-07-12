@@ -3,7 +3,7 @@ interface Props {
   title: string;
 }
 import { Image } from "astro:assets";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 const { title } = Astro.props;
 ---
 
@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <meta property="og:image" content="avatar.jpg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <div class="wrapper">
