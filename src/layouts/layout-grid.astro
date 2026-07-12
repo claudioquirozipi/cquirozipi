@@ -1,9 +1,12 @@
 ---
+import SectionNav from "../components/section-nav.astro";
+
 interface Props {
   title: string;
   backHref?: string;
+  activeSection?: string;
 }
-const { title, backHref = "/" } = Astro.props;
+const { title, backHref = "/", activeSection } = Astro.props;
 ---
 
 <main class="main">
@@ -17,6 +20,7 @@ const { title, backHref = "/" } = Astro.props;
   </div>
   <div class="titleContainer">
     <h1 class="title">{title}</h1>
+    {activeSection && <SectionNav active={activeSection} />}
   </div>
   <div class="center">
     <slot />
@@ -58,14 +62,20 @@ const { title, backHref = "/" } = Astro.props;
     background: var(--glass-bg-strong, rgba(45, 22, 53, 0.6));
   }
   .titleContainer {
-    width: fit-content;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
   .title {
     margin: 0;
+    min-width: 0;
     color: var(--color-text-main, #f8f9fa);
     font-size: 1.5rem;
     font-weight: 600;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    overflow-wrap: break-word;
   }
   .center {
     overflow-y: auto;

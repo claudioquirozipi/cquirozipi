@@ -1,0 +1,70 @@
+---
+interface Props {
+  active: string;
+}
+
+const { active } = Astro.props;
+
+const sections = [
+  { key: "sobre-mi", label: "Sobre mí", href: "/sobre-mi" },
+  { key: "experiencia", label: "Experiencia", href: "/experiencia" },
+  { key: "certificados", label: "Certificados", href: "/certificados" },
+  { key: "proyectos", label: "Proyectos", href: "/proyectos" },
+  { key: "tecnologias", label: "Tecnologías", href: "/tecnologias" },
+  { key: "recomendaciones", label: "Recomendaciones", href: "/recomendaciones" },
+];
+---
+
+<nav class="sectionNav" aria-label="Secciones">
+  {
+    sections.map((section) =>
+      section.key === active ? (
+        <span class="chip active" aria-current="page">
+          {section.label}
+        </span>
+      ) : (
+        <a class="chip" href={section.href}>
+          {section.label}
+        </a>
+      )
+    )
+  }
+</nav>
+
+<style>
+  .sectionNav {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scrollbar-width: none;
+  }
+  .sectionNav::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    color: var(--color-text-muted, #d2b4de);
+    text-decoration: none;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  a.chip:hover {
+    background: var(--glass-bg-strong, rgba(45, 22, 53, 0.6));
+    color: var(--color-text-main, #f8f9fa);
+  }
+  .chip.active {
+    background: rgba(243, 156, 18, 0.14);
+    border-color: rgba(243, 156, 18, 0.4);
+    color: var(--color-secondary, #f39c12);
+    font-weight: 600;
+  }
+</style>

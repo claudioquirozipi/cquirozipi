@@ -15,7 +15,7 @@ const certificate = certificates.find((data) => data.slug === slug);
 ---
 
 <Layout title={`${certificate!.title} | Claudio Quiroz`}>
-  <LayoutGrid title={certificate!.title} backHref="/certificados">
+  <LayoutGrid title={certificate!.title} backHref="/certificados" activeSection="certificados">
     <Avatar slot="avatar" variant="header" />
     <main class="main">
       <Image
