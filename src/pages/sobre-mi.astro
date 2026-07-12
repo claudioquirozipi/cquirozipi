@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { experiences } from "../data/experience";
+import Certificates from "../components/certificates.astro";
+import Experience from "../components/experience.astro";
+import Projects from "../components/projects.astro";
+import Technologies from "../components/technologies.astro";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import { getDateDifference } from "../utils/functions/getDateDifference";
+
+const { years } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
+---
+
+<Layout title="Sobre mí | Claudio Quiroz">
+  <LayoutGrid title="Sobre mí">
+    <Avatar slot="top-left" variant="2" />
+    <Technologies slot="top-left-2" />
+    <Certificates slot="top-right" />
+    <Experience slot="bottom-right" />
+    <Projects slot="bottom-left" />
+    <main class="main">
+      <p class="placeholder">
+        (Contenido placeholder — reemplazar con texto real)
+      </p>
+      <p class="text">
+        Soy Claudio Quiroz, ingeniero de software fullstack con {years}+ años
+        de experiencia construyendo aplicaciones web con React y Node.js. Me
+        interesa el detalle en la experiencia de usuario tanto como la
+        solidez del backend que la sostiene.
+      </p>
+      <p class="text">
+        Disponibilidad: [completar — full-time / freelance / remoto / ubicación].
+      </p>
+      <p class="text">
+        Idiomas: [completar — español nativo, inglés nivel X].
+      </p>
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 640px;
+  }
+  .placeholder {
+    color: rgba(0, 255, 255, 0.6);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .text {
+    color: #00ffff;
+    line-height: 1.6;
+  }
+</style>

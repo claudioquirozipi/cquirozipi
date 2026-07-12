@@ -25,15 +25,41 @@ const { title } = Astro.props;
   <body>
     <div class="wrapper">
       <slot />
-      <div class="backgroundContainer">
-        <Image
-          class="svgBackground"
-          width={360}
-          height={800}
-          src={getImage("site/main-background.svg")}
-          alt=""
-        />
-      </div>
+      <nav class="contactBar" aria-label="Contacto">
+        <a
+          href="https://github.com/claudioquirozipi"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <Image
+            class="contactIcon"
+            width="30"
+            height="30"
+            src={getImage("site/github.png")}
+            alt=""
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/claudio-quiroz-214630bb/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#00ffff"
+            width="24"
+            height="24"
+            focusable="false"
+          >
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+            ></path>
+          </svg>
+        </a>
+      </nav>
       <style>
         body {
           background: rgb(0, 107, 222);
@@ -51,18 +77,18 @@ const { title } = Astro.props;
           padding: 0.5rem;
           height: 100%;
         }
-        .backgroundContainer {
+        .contactBar {
           position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100%;
-          z-index: -1;
-          padding: 1rem;
+          top: 1rem;
+          right: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          z-index: 10;
         }
-        .svgBackground {
-          width: 100vw;
-          height: 100%;
+        .contactIcon {
+          filter: invert(80%) sepia(50%) saturate(996%) hue-rotate(119deg)
+            brightness(104%) contrast(104%);
         }
       </style>
     </div>

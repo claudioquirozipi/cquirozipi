@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { recommendations } from "../data/recommendations";
+import Certificates from "../components/certificates.astro";
+import Experience from "../components/experience.astro";
+import Projects from "../components/projects.astro";
+import Technologies from "../components/technologies.astro";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+---
+
+<Layout title="Recomendaciones | Claudio Quiroz">
+  <LayoutGrid title="Recomendaciones">
+    <Avatar slot="top-left" variant="2" />
+    <Technologies slot="top-left-2" />
+    <Certificates slot="top-right" />
+    <Experience slot="bottom-right" />
+    <Projects slot="bottom-left" />
+    <main class="main">
+      {
+        recommendations.map((r) => (
+          <article class="recommendation">
+            <p class="quote">“{r.quote}”</p>
+            <p class="author">
+              {r.name} — {r.role}
+              {r.company && `, ${r.company}`}
+            </p>
+          </article>
+        ))
+      }
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .recommendation {
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 1rem;
+    background: rgba(0, 107, 222, 0.08);
+  }
+  .quote {
+    margin: 0;
+    color: #00ffff;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .author {
+    margin: 0.75rem 0 0;
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+</style>

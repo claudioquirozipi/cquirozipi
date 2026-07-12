@@ -1,85 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { experiences } from "../data/experience";
 import Avatar from "../components/avatar.astro";
-import Certificates from "../components/certificates.astro";
-import Experience from "../components/experience.astro";
-import Projects from "../components/projects.astro";
-import Technologies from "../components/technologies.astro";
-import Tooltip from "../components/tooltip.astro";
-import { Image } from "astro:assets";
-import { getImage } from "../utils/images";
+import SectionCard from "../components/section-card.astro";
+import AboutIcon from "../icons/about-icon.astro";
+import ExperienceIcon from "../icons/experience-icon.astro";
+import ProjectIcon from "../icons/project-icon.astro";
+import CertificatesIcon from "../icons/certificates-icon.astro";
+import RecommendationsIcon from "../icons/recommendations-icon.astro";
+import { experiences } from "../data/experience";
 import { getDateDifference } from "../utils/functions/getDateDifference";
 
-const { years, months, days } = getDateDifference(
+const { years } = getDateDifference(
   experiences[experiences.length - 1].startDate
 );
 ---
 
-<Layout title="cQuiroz">
+<Layout title="Claudio Quiroz | Fullstack Developer">
   <main>
+    <Avatar variant="home" />
     <div class="header">
-      <p>Ing. Claudio Quiroz</p>
-      <p>Fullstack Developer | React Node</p>
-      <p>{`${years} años ${months} meses y ${days} días de experiencia`}</p>
+      <p class="name">Ing. Claudio Quiroz</p>
+      <p class="role">Fullstack Developer | React Node</p>
     </div>
-    <div class="avatarContainer">
-      <Avatar variant="home" />
-      <div class="iconLink certificate">
-        <Tooltip title="Certificados" position="top-left">
-          <Certificates />
-        </Tooltip>
-      </div>
-      <div class="iconLink exprerience">
-        <Tooltip title="Experiencia" position="top-right">
-          <Experience />
-        </Tooltip>
-      </div>
-      <div class="iconLink projects">
-        <Tooltip title="Proyectos" position="bottom-right">
-          <Projects />
-        </Tooltip>
-      </div>
-      <div class="iconLink technologies">
-        <Tooltip title="Tecnologías" position="bottom-left">
-          <Technologies />
-        </Tooltip>
-      </div>
-    </div>
-    <div class="footer">
-      <a
-        href="https://github.com/claudioquirozipi"
-        target="_blank"
-        rel="noopener noreferrer"
+    <div class="bento">
+      <SectionCard
+        href="/sobre-mi"
+        title="Sobre mí"
+        description="Quién soy y cómo trabajo."
+        index={0}
+        large
       >
-        <Image
-          class="icon"
-          width="100"
-          height="100"
-          src={getImage("site/github.png")}
-          alt="github"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/claudio-quiroz-214630bb/"
-        target="_blank"
-        rel="noopener noreferrer"
+        <AboutIcon />
+      </SectionCard>
+      <SectionCard
+        href="/experiencia"
+        title="Experiencia"
+        description={`${years}+ años construyendo software.`}
+        index={1}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          data-supported-dps="24x24"
-          fill="#00ffff"
-          class="mercado-match"
-          width="30"
-          height="30"
-          focusable="false"
-        >
-          <path
-            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-          ></path>
-        </svg>
-      </a>
+        <ExperienceIcon />
+      </SectionCard>
+      <SectionCard
+        href="/proyectos"
+        title="Proyectos"
+        description="Cosas que construí."
+        index={2}
+      >
+        <ProjectIcon />
+      </SectionCard>
+      <SectionCard
+        href="/certificados"
+        title="Certificados"
+        description="Formación y cursos."
+        index={3}
+      >
+        <CertificatesIcon />
+      </SectionCard>
+      <SectionCard
+        href="/recomendaciones"
+        title="Recomendaciones"
+        description="Lo que dicen de trabajar conmigo."
+        index={4}
+      >
+        <RecommendationsIcon />
+      </SectionCard>
     </div>
   </main>
 </Layout>
@@ -87,90 +71,38 @@ const { years, months, days } = getDateDifference(
 <style>
   main {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-direction: column;
-    height: 100%;
     width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 5rem;
   }
   .header {
-    position: relative;
-    width: 100%;
-    height: 2rem;
-    overflow: hidden;
-  }
-  .header p {
-    width: 100%;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    font-size: 1.2rem;
     text-align: center;
+    margin-bottom: 2rem;
+  }
+  .name {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 1px 1px 5px #006bde;
+  }
+  .role {
+    margin: 0.25rem 0 0;
     color: #006bde;
-    opacity: 0;
-    animation: aparecer 6s ease infinite;
+    font-size: 1rem;
   }
-  .header p:nth-child(1) {
-    animation-delay: 0s;
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(140px, auto);
+    grid-auto-flow: dense;
+    gap: 1rem;
   }
-
-  .header p:nth-child(2) {
-    animation-delay: 2s;
-  }
-
-  .header p:nth-child(3) {
-    animation-delay: 4s;
-  }
-
-  @keyframes aparecer {
-    0% {
-      opacity: 0;
-      left: -300%;
+  @media (max-width: 640px) {
+    .bento {
+      grid-template-columns: 1fr;
     }
-    50% {
-      opacity: 1;
-      left: 50%;
-    }
-
-    100% {
-      opacity: 0;
-      left: 300%;
-    }
-  }
-  .avatarContainer {
-    position: relative;
-  }
-  .iconLink {
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-  }
-  .certificate {
-    top: 0;
-    left: 0;
-  }
-  .exprerience {
-    top: 0;
-    right: 0;
-  }
-  .projects {
-    bottom: 0;
-    right: 0;
-  }
-  .technologies {
-    bottom: 0;
-    left: 0;
-  }
-  .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-  }
-  .icon {
-    filter: invert(80%) sepia(50%) saturate(996%) hue-rotate(119deg)
-      brightness(104%) contrast(104%);
-    width: 30px;
-    height: 30px;
   }
 </style>
