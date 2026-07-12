@@ -99,40 +99,53 @@ const { years } = getDateDifference(
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(31, 20, 36, 0.55) 0%,
-      rgba(31, 20, 36, 0.75) 100%
+      rgba(31, 20, 36, 0.25) 0%,
+      rgba(31, 20, 36, 0.35) 100%
     );
   }
   main {
     display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 960px;
+    height: 100%;
     margin: 0 auto;
     padding-top: 3rem;
     padding-bottom: 4rem;
+    box-sizing: border-box;
   }
   .bento {
     display: grid;
+    flex: 1;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(140px, auto));
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7,1fr);
     grid-template-areas:
-      "photo about about"
-      "photo experience certificates"
-      "projects recommendations recommendations";
+      "photo photo about about experience experience"
+      "photo photo about about experience experience"
+      "certificates certificates certificates certificates experience experience"
+      "certificates certificates certificates certificates experience experience"
+      "recommendations recommendations projects projects projects projects"
+      "recommendations recommendations projects projects projects projects"
+      "recommendations recommendations projects projects projects projects";
+
     gap: 1.5rem;
   }
   @media (max-width: 640px) {
+    main {
+      height: auto;
+    }
     .bento {
-      grid-template-columns: 1fr;
-      grid-template-rows: none;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(7,1fr);
       grid-template-areas:
-        "photo"
-        "about"
-        "experience"
-        "projects"
-        "certificates"
-        "recommendations";
+        "photo photo about about about"
+        "photo photo about about about"
+        "certificates certificates certificates experience experience"
+        "certificates certificates certificates experience experience"
+        "recommendations recommendations projects projects projects"
+        "recommendations recommendations projects projects projects"
+        "recommendations recommendations projects projects projects";
     }
   }
   .photoTile {
