@@ -12,9 +12,13 @@ interface Props {
 
 const { company, showLineAfter, showLineBefore } = Astro.props;
 const currentRole = company.roles[company.roles.length - 1];
+
+function getInitial(name: string) {
+  return name.trim().charAt(0).toUpperCase();
+}
 ---
 
-<details class="main">
+<details class="main experienceCard">
   <summary class="summary">
     <div class="imageContainer">
       <div class="subImageContainer">
@@ -23,8 +27,7 @@ const currentRole = company.roles[company.roles.length - 1];
         {
           company.logo ? (
             <Image
-              width={100}
-              height={100}
+              width={96}
               class="image"
               src={getImage(company.logo)}
               alt=""
@@ -53,6 +56,7 @@ const currentRole = company.roles[company.roles.length - 1];
   </summary>
 
   <div class="body">
+   <div class="bodyInner">
     {company.description && <p class="companyDescription">{company.description}</p>}
     {
       company.roles.map((role) => (
@@ -64,15 +68,27 @@ const currentRole = company.roles[company.roles.length - 1];
           <div class="clients">
             {role.clients.map((client) => (
               <div class="client">
-                <h5 class="clientName">
-                  {client.url ? (
-                    <a href={client.url} target="_blank" rel="noreferrer">
-                      {client.name}
-                    </a>
+                <div class="clientHeader">
+                  {client.logo ? (
+                    <Image
+                      width={40}
+                      class="clientLogo"
+                      src={getImage(client.logo)}
+                      alt=""
+                    />
                   ) : (
-                    client.name
+                    <span class="clientInitial">{getInitial(client.name)}</span>
                   )}
-                </h5>
+                  <h5 class="clientName">
+                    {client.url ? (
+                      <a href={client.url} target="_blank" rel="noreferrer">
+                        {client.name}
+                      </a>
+                    ) : (
+                      client.name
+                    )}
+                  </h5>
+                </div>
                 <ul class="projects">
                   {client.projects.map((project) => (
                     <li class="project">
@@ -94,11 +110,77 @@ const currentRole = company.roles[company.roles.length - 1];
         </div>
       ))
     }
+   </div>
   </div>
 </details>
 
+<script>
+  function initAccordion() {
+    const cards = document.querySelectorAll<HTMLDetailsElement>(
+      ".experienceCard"
+    );
+
+    const collapse = (details: HTMLDetailsElement) => {
+      const body = details.querySelector<HTMLElement>(".body");
+      if (!body) return;
+      body.style.height = `${body.scrollHeight}px`;
+      requestAnimationFrame(() => {
+        body.style.height = "0px";
+      });
+      body.addEventListener(
+        "transitionend",
+        () => {
+          details.removeAttribute("open");
+          body.style.height = "";
+        },
+        { once: true }
+      );
+    };
+
+    const expand = (details: HTMLDetailsElement) => {
+      const body = details.querySelector<HTMLElement>(".body");
+      if (!body) return;
+      details.setAttribute("open", "");
+      const targetHeight = body.scrollHeight;
+      body.style.height = "0px";
+      requestAnimationFrame(() => {
+        body.style.height = `${targetHeight}px`;
+      });
+      body.addEventListener(
+        "transitionend",
+        () => {
+          body.style.height = "auto";
+        },
+        { once: true }
+      );
+    };
+
+    cards.forEach((details) => {
+      const summary = details.querySelector("summary");
+      summary?.addEventListener("click", (event) => {
+        event.preventDefault();
+        const isOpen = details.hasAttribute("open");
+        if (isOpen) {
+          collapse(details);
+          return;
+        }
+        cards.forEach((other) => {
+          if (other !== details && other.hasAttribute("open")) {
+            collapse(other);
+          }
+        });
+        expand(details);
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", initAccordion);
+</script>
+
 <style>
   .main {
+    width: 100%;
+    box-sizing: border-box;
     padding: var(--space-2, 1rem) var(--space-3, 1.5rem);
     border-radius: 16px;
     border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
@@ -131,7 +213,7 @@ const currentRole = company.roles[company.roles.length - 1];
     grid-column: 1/2;
     grid-row: 1/3;
     background-color: var(--color-primary, #d66879);
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,9 +235,13 @@ const currentRole = company.roles[company.roles.length - 1];
     left: 50%;
   }
   .image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    object-position: top center;
-    border-radius: 50%;
+    object-position: center;
+    border-radius: 8px;
   }
 
   .imageDefault {
@@ -184,12 +270,22 @@ const currentRole = company.roles[company.roles.length - 1];
   }
 
   .body {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease;
+  }
+  .bodyInner {
     margin-top: var(--space-2, 1rem);
     padding-top: var(--space-2, 1rem);
     border-top: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
     display: flex;
     flex-direction: column;
     gap: var(--space-2, 1rem);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .body {
+      transition: none;
+    }
   }
   .companyDescription {
     font-size: 0.85rem;
@@ -223,9 +319,36 @@ const currentRole = company.roles[company.roles.length - 1];
     padding-left: var(--space-2, 1rem);
     border-left: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
   }
+  .clientHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .clientLogo {
+    max-width: 1.75rem;
+    max-height: 1.75rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .clientInitial {
+    width: 1.75rem;
+    height: 1.75rem;
+    min-width: 1.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--color-secondary, #f39c12);
+    color: var(--color-bg, #2d1635);
+  }
   .clientName {
     font-size: 0.85rem;
-    margin: 0 0 0.3rem;
+    margin: 0;
     color: var(--color-secondary, #f39c12);
     font-weight: 500;
   }

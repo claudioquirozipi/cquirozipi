@@ -35,6 +35,7 @@ export const experiences: Company[] = [
     location: "Perú · En remoto",
     startDate: new Date("2025-07-01T05:00:00.000Z"),
     endDate: new Date(),
+    logo: "experience/indra.jpg",
     description:
       "Colaboración en la gestión operativa del equipo Cells en Indra, optimizando flujos de trabajo y procesos internos, y en células ágiles para la entrega de valor continua en la banca digital.",
     roles: [
@@ -45,6 +46,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "BBVA",
+            logo: "experience/bbva-pe.png",
             projects: [
               {
                 name: "Car Insurance",
@@ -83,6 +85,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "BBVA Perú",
+            logo: "experience/bbva-pe.png",
             projects: [
               {
                 name: "Glomo-Pe",
@@ -113,6 +116,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "Scotiabank Perú",
+            logo: "experience/scotiabank-pe.png",
             projects: [
               {
                 name: "Desarrollo frontend",
@@ -123,6 +127,7 @@ export const experiences: Company[] = [
           },
           {
             name: "Latam Airlines Chile",
+            logo: "experience/latam-cl.jpg",
             projects: [
               {
                 name: "Migración de microservicios",
@@ -134,6 +139,7 @@ export const experiences: Company[] = [
           },
           {
             name: "Telefónica Argentina",
+            logo: "experience/telefonica-ar.png",
             projects: [
               {
                 name: "Liderazgo técnico frontend",
@@ -152,6 +158,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "Axpo España",
+            logo: "experience/axpo-es.png",
             projects: [
               {
                 name: "Aplicación corporativa",
@@ -163,6 +170,7 @@ export const experiences: Company[] = [
           },
           {
             name: "Cepsa España",
+            logo: "experience/cepsa-es.jpg",
             projects: [
               {
                 name: "Aplicación corporativa",
@@ -191,6 +199,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "ID BI",
+            logo: "experience/idbi.jpg",
             projects: [
               {
                 name: "Sistema de gestión para restaurantes",
@@ -201,6 +210,7 @@ export const experiences: Company[] = [
           },
           {
             name: "UTEC",
+            logo: "experience/utec-pe.jpg",
             projects: [
               {
                 name: "Foro UTEC",
@@ -227,6 +237,7 @@ export const experiences: Company[] = [
         clients: [
           {
             name: "Wulpers Studio",
+            logo: "experience/wulpers.png",
             projects: [
               {
                 name: "Landing pages",
