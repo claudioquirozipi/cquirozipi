@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Avatar from "../components/avatar.astro";
 import SectionCard from "../components/section-card.astro";
+import AboutIcon from "../icons/about-icon.astro";
 import ExperienceIcon from "../icons/experience-icon.astro";
 import ProjectIcon from "../icons/project-icon.astro";
 import CertificatesIcon from "../icons/certificates-icon.astro";
@@ -17,20 +18,24 @@ const { years } = getDateDifference(
 <Layout title="Claudio Quiroz | Fullstack Developer">
   <main>
     <div class="bento">
-      <div class="profile">
-        <Avatar variant="home" href="/sobre-mi" />
-        <a href="/sobre-mi" class="identity">
-          <p class="name">Ing. Claudio Quiroz</p>
-          <p class="role">Fullstack Developer | React Node</p>
-          <span class="cta">Sobre mí →</span>
-        </a>
+      <div class="photoTile">
+        <Avatar variant="photo" href="/sobre-mi" />
       </div>
+      <SectionCard
+        area="about"
+        href="/sobre-mi"
+        title="Ing. Claudio Quiroz"
+        description="Fullstack Developer | React Node — quién soy y cómo trabajo."
+        index={0}
+      >
+        <AboutIcon />
+      </SectionCard>
       <SectionCard
         area="experience"
         href="/experiencia"
         title="Experiencia"
         description={`${years}+ años construyendo software.`}
-        index={0}
+        index={1}
       >
         <ExperienceIcon />
       </SectionCard>
@@ -39,7 +44,7 @@ const { years } = getDateDifference(
         href="/certificados"
         title="Certificados"
         description="Formación y cursos."
-        index={1}
+        index={2}
       >
         <CertificatesIcon />
       </SectionCard>
@@ -48,7 +53,7 @@ const { years } = getDateDifference(
         href="/proyectos"
         title="Proyectos"
         description="Cosas que construí."
-        index={2}
+        index={3}
       >
         <ProjectIcon />
       </SectionCard>
@@ -57,7 +62,7 @@ const { years } = getDateDifference(
         href="/recomendaciones"
         title="Recomendaciones"
         description="Lo que dicen de trabajar conmigo."
-        index={3}
+        index={4}
       >
         <RecommendationsIcon />
       </SectionCard>
@@ -80,57 +85,25 @@ const { years } = getDateDifference(
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, minmax(140px, auto));
     grid-template-areas:
-      "profile profile experience"
-      "profile profile certificates"
+      "photo about about"
+      "photo experience certificates"
       "projects recommendations recommendations";
     gap: 1rem;
   }
   @media (max-width: 640px) {
     .bento {
       grid-template-columns: 1fr;
+      grid-template-rows: none;
       grid-template-areas:
-        "profile"
+        "photo"
+        "about"
         "experience"
         "projects"
         "certificates"
         "recommendations";
     }
   }
-  .profile {
-    grid-area: profile;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 255, 255, 0.25);
-    background: rgba(0, 107, 222, 0.08);
-    text-align: center;
-  }
-  .identity {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    text-decoration: none;
-  }
-  .name {
-    margin: 0;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #00ffff;
-    text-shadow: 1px 1px 5px #006bde;
-  }
-  .role {
-    margin: 0;
-    color: #00ffff;
-    opacity: 0.85;
-    font-size: 0.95rem;
-  }
-  .cta {
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
-    color: #00ffff;
+  .photoTile {
+    grid-area: photo;
   }
 </style>
