@@ -1,14 +1,14 @@
 <svg viewBox="0 0 24 24"
   ><path
-    fill="#006BDE"
+    fill="var(--icon-fill, #006BDE)"
     d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
   ></path></svg
 >
 <style>
   path {
-    fill: #006bde;
-    stroke: #00ffff;
-    filter: drop-shadow(0 0 0.15rem #00ffff);
+    fill: var(--icon-fill, #006bde);
+    stroke: var(--icon-stroke, #00ffff);
+    filter: drop-shadow(0 0 0.15rem var(--icon-glow, #00ffff));
     transition: filter 0.2s ease-in-out;
     animation-name: shadow;
     animation-duration: 1s;
@@ -17,13 +17,13 @@
 
   @keyframes shadow {
     0% {
-      filter: drop-shadow(0 0 0.15rem #00ffff);
+      filter: drop-shadow(0 0 0.15rem var(--icon-glow, #00ffff));
     }
     50% {
-      filter: drop-shadow(0 0 0rem #00ffff);
+      filter: drop-shadow(0 0 0rem var(--icon-glow, #00ffff));
     }
     100% {
-      filter: drop-shadow(0 0 0.15rem #00ffff);
+      filter: drop-shadow(0 0 0.15rem var(--icon-glow, #00ffff));
     }
   }
 </style>
