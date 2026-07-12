@@ -1,54 +1,101 @@
 ---
-import type { Experience } from "../data/experience";
+import type { Company } from "../data/experience";
 import { Image } from "astro:assets";
 import { formatDate } from "../utils/functions/formatDate";
 import { getImage } from "../utils/images";
 
 interface Props {
-  experience: Experience;
+  company: Company;
   showLineAfter: boolean;
   showLineBefore: boolean;
 }
 
-const { experience, showLineAfter, showLineBefore } = Astro.props;
+const { company, showLineAfter, showLineBefore } = Astro.props;
+const currentRole = company.roles[company.roles.length - 1];
 ---
 
-<div class="main">
-  <div class="imageContainer">
-    <div class="subImageContainer">
-      {showLineAfter && <span class="line line-after" />}
-      {showLineBefore && <span class="line line-before" />}
-      {
-        experience.logo ? (
-          <Image
-            width={100}
-            height={100}
-            class="image"
-            src={getImage(experience.logo)}
-            alt=""
-          />
-        ) : (
-          <Image
-            width={100}
-            height={100}
-            class="image imageDefault"
-            src={getImage("experience/freelance.png")}
-            alt=""
-          />
-        )
-      }
+<details class="main">
+  <summary class="summary">
+    <div class="imageContainer">
+      <div class="subImageContainer">
+        {showLineAfter && <span class="line line-after" />}
+        {showLineBefore && <span class="line line-before" />}
+        {
+          company.logo ? (
+            <Image
+              width={100}
+              height={100}
+              class="image"
+              src={getImage(company.logo)}
+              alt=""
+            />
+          ) : (
+            <Image
+              width={100}
+              height={100}
+              class="image imageDefault"
+              src={getImage("experience/freelance.png")}
+              alt=""
+            />
+          )
+        }
+      </div>
     </div>
-  </div>
-  <h3 class="date">
+    <h3 class="date">
+      {
+        `del ${formatDate(company.startDate)} al ${formatDate(
+          company.endDate
+        )}`
+      }
+    </h3>
+    <h2 class="title">{company.name}</h2>
+    <p class="description">{currentRole.title} · {company.location}</p>
+  </summary>
+
+  <div class="body">
+    {company.description && <p class="companyDescription">{company.description}</p>}
     {
-      `del ${formatDate(experience.startDate)} al ${formatDate(
-        experience.endDate
-      )}`
+      company.roles.map((role) => (
+        <div class="role">
+          <h4 class="roleTitle">{role.title}</h4>
+          <p class="roleDate">
+            {`del ${formatDate(role.startDate)} al ${formatDate(role.endDate)}`}
+          </p>
+          <div class="clients">
+            {role.clients.map((client) => (
+              <div class="client">
+                <h5 class="clientName">
+                  {client.url ? (
+                    <a href={client.url} target="_blank" rel="noreferrer">
+                      {client.name}
+                    </a>
+                  ) : (
+                    client.name
+                  )}
+                </h5>
+                <ul class="projects">
+                  {client.projects.map((project) => (
+                    <li class="project">
+                      <p class="projectName">{project.name}</p>
+                      <p class="projectDescription">{project.description}</p>
+                      {project.technologies && (
+                        <ul class="technologies">
+                          {project.technologies.map((tech) => (
+                            <li class="technology">{tech}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
     }
-  </h3>
-  <h2 class="title">{experience.title}</h2>
-  <p class="description">{experience.description}</p>
-</div>
+  </div>
+</details>
 
 <style>
   .main {
@@ -56,10 +103,17 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
     border-radius: 16px;
     border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
     background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    margin-bottom: var(--space-2, 1rem);
+  }
+  .summary {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0 var(--space-2, 1rem);
-    margin-bottom: var(--space-2, 1rem);
+    cursor: pointer;
+    list-style: none;
+  }
+  .summary::-webkit-details-marker {
+    display: none;
   }
   .imageContainer {
     width: 3rem;
@@ -127,5 +181,94 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
     grid-column: 2/3;
     color: var(--color-text-muted, #d2b4de);
     font-weight: 300;
+  }
+
+  .body {
+    margin-top: var(--space-2, 1rem);
+    padding-top: var(--space-2, 1rem);
+    border-top: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2, 1rem);
+  }
+  .companyDescription {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 300;
+  }
+  .role {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .roleTitle {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+  }
+  .roleDate {
+    font-size: 0.7rem;
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 400;
+  }
+  .clients {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.3rem;
+  }
+  .client {
+    padding-left: var(--space-2, 1rem);
+    border-left: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+  }
+  .clientName {
+    font-size: 0.85rem;
+    margin: 0 0 0.3rem;
+    color: var(--color-secondary, #f39c12);
+    font-weight: 500;
+  }
+  .clientName a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .clientName a:hover {
+    text-decoration: underline;
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .projectName {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-weight: 500;
+  }
+  .projectDescription {
+    font-size: 0.8rem;
+    margin: 0.15rem 0 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 300;
+  }
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .technology {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    color: var(--color-text-muted, #d2b4de);
   }
 </style>

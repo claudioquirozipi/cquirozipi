@@ -29,9 +29,9 @@ const { years, months, days } = getDateDifference(
       </h2>
       <div>
         {
-          experiences.map((experience, i) => (
+          experiences.map((company, i) => (
             <ExperienceCard
-              experience={experience}
+              company={company}
               showLineAfter={i !== 0}
               showLineBefore={i !== experiences.length - 1}
             />
