@@ -15,7 +15,7 @@ const { years, months, days } = getDateDifference(
 );
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Experiencia | Claudio Quiroz">
   <LayoutGrid title="Experiencia">
     <Avatar slot="top-left" variant="2" />
     <Certificates slot="top-left-2" />
@@ -51,10 +51,9 @@ const { years, months, days } = getDateDifference(
   }
   .title {
     font-size: 1.1rem;
-    font-weight: bold;
     margin: 0;
     grid-column: 2/3;
-    color: #00ffff;
-    text-shadow: 1px 1px 5px #006bde;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 400;
   }
 </style>

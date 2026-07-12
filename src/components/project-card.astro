@@ -10,32 +10,9 @@ const { project } = Astro.props;
 ---
 
 <div class="certificate">
-  <svg
-    class="svg"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 30"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M 5 0 H 25 L 30 5 H 40 L 45 0 H 95 L 100 5 V 25 
-    L 95 30 H 75 L 70 25 H 35 L 30 30 H 5 L 0 25 V 5 
-    Z"
-    ></path>
-    <path class="path" d="M 30 0 H 40 L 37.5 2.5 H 32.5 L 30 0 
-    Z"></path>
-    <path class="path" d="M 35 30 L 37.5 27.5 H 67.5 L 70 30 
-    Z"></path>
-    <style>
-      path {
-        fill: rgba(0, 107, 222, 0.3);
-        stroke: #006bde;
-        stroke-width: 0.5;
-      }
-    </style>
-  </svg>
   <Image
-    width={100}
-    height={100}
+    width={200}
+    height={200}
     fit="contain"
     class="image"
     src={getImage(project.projectImage)}
@@ -43,126 +20,68 @@ const { project } = Astro.props;
   />
   <h2 class="title">{project.title}</h2>
   <p class="description">{project.description}</p>
-  {
-    project.urlGithub && (
-        <a class="linkGitHub" 
-        target="_blank"
-        href={project.urlGithub}>
-    <svg
-      class="svgLink"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 30"
-      preserveAspectRatio="none"
-    >
-      <path
-        class="path"
-        d="M 5 0  H 40 L 45 5 H 55 L 60 0 H 95 L 100 5 V 15 
-      L 85 30  H 15 L 0 15 V 5 
-      Z"
-      ></path>
-      <text x="20" y="22" font-family="Verdana" font-size="15" class="text">
-        GitHub</text>
-      <style>
-        .path {
-          fill: #00ffff;
-          stroke: none;
-          stroke-width: 0.5;
-        }
-        .text {
-          fill: #00020a;
-          font-weight: bold;
-          text-shadow: 1px 1px 5px #006bde;
-        }
-      </style>
-    </svg>
-  </a>
-    )
-  }
-  {
-    project.urlWeb && (
-        <a class="linkWeb" 
-        target="_blank"
-        href={project.urlWeb}>
-    <svg
-      class="svgLink"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 30"
-      preserveAspectRatio="none"
-    >
-      <path
-        class="path"
-        d="M 5 0  H 40 L 45 5 H 55 L 60 0 H 95 L 100 5 V 15 
-      L 85 30  H 15 L 0 15 V 5 
-      Z"
-      ></path>
-      <text x="34" y="22" font-family="Verdana" font-size="15" class="text">
-        Link</text>
-      <style>
-        .path {
-          fill: #00ffff;
-          stroke: none;
-          stroke-width: 0.5;
-        }
-        .text {
-          fill: #00020a;
-          font-weight: bold;
-          text-shadow: 1px 1px 5px #006bde;
-        }
-      </style>
-    </svg>
-  </a>
-    )
-  }
-
-  
+  <div class="links">
+    {
+      project.urlGithub && (
+        <a class="link" target="_blank" href={project.urlGithub}>
+          GitHub →
+        </a>
+      )
+    }
+    {
+      project.urlWeb && (
+        <a class="link" target="_blank" href={project.urlWeb}>
+          Link →
+        </a>
+      )
+    }
+  </div>
 </div>
 
 <style>
   .certificate {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row: auto auto;
-    grid-gap: 0.5rem 3rem;
-    position: relative;
-  }
-  .svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 0.5rem);
+    padding: var(--space-4, 2rem);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
   }
   .image {
     width: 100%;
-    height: 100%;
-    grid-column: 1/2;
-    grid-row: 1/3;
+    height: 10rem;
     object-fit: contain;
     object-position: center;
+    margin-bottom: var(--space-1, 0.5rem);
   }
   .title {
-    font-size: 1rem;
-    font-weight: bold;
     margin: 0;
-    grid-column: 2/4;
-    color: #00ffff;
-    text-align: right;
-    text-shadow: 1px 1px 5px #006bde;
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 1.1rem;
+    font-weight: 600;
   }
   .description {
-    font-size: 0.7rem;
     margin: 0;
-    grid-column: 2/4;
-    color: #00ffff;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.9rem;
+    font-weight: 300;
   }
-  .linkGitHub {
-    grid-column: 1/2;
+  .links {
+    margin-top: auto;
+    padding-top: var(--space-1, 0.5rem);
+    display: flex;
+    gap: var(--space-2, 1rem);
   }
-  .linkWeb {
-    grid-column: 3/4;
+  .link {
+    color: var(--color-primary, #d66879);
+    font-size: 0.85rem;
+    text-decoration: none;
   }
-  .svgLink {
-    width: 100%;
-    height: 100%;
+  .link:hover {
+    color: var(--color-secondary, #f39c12);
   }
 </style>

@@ -24,4 +24,22 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-blur: blur(16px) saturate(120%);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Color por defecto de los íconos (src/icons/*.astro) en todo el sitio */
+  --icon-fill: var(--color-primary);
+  --icon-stroke: var(--color-secondary);
+  --icon-glow: var(--color-secondary);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
 }

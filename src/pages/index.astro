@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Avatar from "../components/avatar.astro";
 import SectionCard from "../components/section-card.astro";
@@ -10,7 +9,6 @@ import CertificatesIcon from "../icons/certificates-icon.astro";
 import RecommendationsIcon from "../icons/recommendations-icon.astro";
 import { experiences } from "../data/experience";
 import { getDateDifference } from "../utils/functions/getDateDifference";
-import { getImage } from "../utils/images";
 
 const { years } = getDateDifference(
   experiences[experiences.length - 1].startDate
@@ -18,16 +16,6 @@ const { years } = getDateDifference(
 ---
 
 <Layout title="Claudio Quiroz | Fullstack Developer">
-  <div class="pageBackground">
-    <Image
-      src={getImage("site/background.png")}
-      alt=""
-      width={1920}
-      height={1080}
-      class="bgImage"
-    />
-    <div class="bgScrim"></div>
-  </div>
   <main>
     <div class="bento">
       <div class="photoTile">
@@ -83,26 +71,6 @@ const { years } = getDateDifference(
 </Layout>
 
 <style>
-  .pageBackground {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-  }
-  .bgImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .bgScrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(31, 20, 36, 0.25) 0%,
-      rgba(31, 20, 36, 0.35) 100%
-    );
-  }
   main {
     display: flex;
     flex-direction: column;

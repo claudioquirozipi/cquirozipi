@@ -39,21 +39,25 @@ import LayoutGrid from "../layouts/layout-grid.astro";
     padding: 1rem;
   }
   .recommendation {
-    padding: 1.25rem;
-    border: 1px solid rgba(0, 255, 255, 0.25);
-    border-radius: 1rem;
-    background: rgba(0, 107, 222, 0.08);
+    padding: var(--space-4, 2rem);
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    border-radius: 24px;
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
   }
   .quote {
     margin: 0;
-    color: #00ffff;
+    color: var(--color-text-main, #f8f9fa);
     font-style: italic;
     line-height: 1.5;
+    font-weight: 300;
   }
   .author {
     margin: 0.75rem 0 0;
-    color: #00ffff;
-    font-weight: bold;
+    color: var(--color-primary, #d66879);
+    font-weight: 600;
     font-size: 0.85rem;
   }
 </style>
