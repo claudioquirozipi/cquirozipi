@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { certificates } from "../../data/certificates.ts";
+import { certificates } from "../../data/certificates";
 import Certificates from "../../components/certificates.astro";
 import Experience from "../../components/experience.astro";
 import Projects from "../../components/projects.astro";
@@ -9,6 +9,7 @@ import Avatar from "../../components/avatar.astro";
 import LayoutGrid from "../../layouts/layout-grid.astro";
 import { Image } from "astro:assets";
 import { formatDate } from "../../utils/functions/formatDate";
+import { getImage } from "../../utils/images";
 
 export function getStaticPaths() {
   return certificates.flatMap((data) => [{ params: { slug: data.slug } }]);
@@ -26,10 +27,11 @@ const certificate = certificates.find((data) => data.slug === slug);
     <Projects slot="bottom-left" />
     <main class="main">
       <Image
-        src={certificate!.certificates_image}
+        src={getImage(certificate!.certificates_image)}
         alt={certificate!.title}
         width={400}
         height={400}
+        fit="contain"
       />
       <p class="text">{certificate!.description}</p>
       <p class="text">{`Fecha: ${formatDate(certificate!.date)}`}</p>

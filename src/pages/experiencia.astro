@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { experiences } from "../data/experience.ts";
+import { experiences } from "../data/experience";
 import Certificates from "../components/certificates.astro";
 import Experience from "../components/experience.astro";
 import Projects from "../components/projects.astro";
@@ -8,7 +8,7 @@ import Technologies from "../components/technologies.astro";
 import Avatar from "../components/avatar.astro";
 import LayoutGrid from "../layouts/layout-grid.astro";
 import ExperienceCard from "../components/experience-card.astro";
-import { getDateDifference } from "../utils/functions/getDateDifference.ts";
+import { getDateDifference } from "../utils/functions/getDateDifference";
 
 const { years, months, days } = getDateDifference(
   experiences[experiences.length - 1].startDate

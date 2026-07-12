@@ -2,6 +2,7 @@
 import type { Experience } from "../data/experience";
 import { Image } from "astro:assets";
 import { formatDate } from "../utils/functions/formatDate";
+import { getImage } from "../utils/images";
 
 interface Props {
   experience: Experience;
@@ -23,7 +24,7 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
             width={100}
             height={100}
             class="image"
-            src={experience.logo}
+            src={getImage(experience.logo)}
             alt=""
           />
         ) : (
@@ -31,7 +32,7 @@ const { experience, showLineAfter, showLineBefore } = Astro.props;
             width={100}
             height={100}
             class="image imageDefalt"
-            src="/img/experiences/freelance.png"
+            src={getImage("experience/freelance.png")}
             alt=""
           />
         )

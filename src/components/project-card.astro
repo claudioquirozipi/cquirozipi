@@ -1,6 +1,7 @@
 ---
 import type { Project } from "../data/projects";
 import { Image } from "astro:assets";
+import { getImage } from "../utils/images";
 interface Props {
   project: Project;
 }
@@ -35,8 +36,9 @@ const { project } = Astro.props;
   <Image
     width={100}
     height={100}
+    fit="contain"
     class="image"
-    src={project.projectImage}
+    src={getImage(project.projectImage)}
     alt=""
   />
   <h2 class="title">{project.title}</h2>

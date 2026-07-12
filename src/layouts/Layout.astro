@@ -4,6 +4,7 @@ interface Props {
 }
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import { getImage } from "../utils/images";
 import "../styles/global.css";
 const { title } = Astro.props;
 ---
@@ -29,7 +30,7 @@ const { title } = Astro.props;
           class="svgBackground"
           width={360}
           height={800}
-          src="/svg/main-background.svg"
+          src={getImage("site/main-background.svg")}
           alt=""
         />
       </div>

@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     endDate: new Date(),
     description:
       "Desarrollador de aplicaciones del lado del front y del backnend.",
-    logo: "/img/experiences/nttdata.png",
+    logo: "experience/nttdata.png",
     url: "https://www.linkedin.com/company/nttdata/mycompany/verification/",
   },
   {
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     startDate: new Date("2020-01-27T05:00:00.000Z"),
     endDate: new Date("2020-06-30T05:00:00.000Z"),
     description: "Desarrollé un sistema de inventarios para restaurantes",
-    logo: "/img/experiences/idbi.jpg",
+    logo: "experience/idbi.jpg",
     url: "https://www.negocios.idbi.pe/",
   },
   {
@@ -38,6 +38,6 @@ export const experiences: Experience[] = [
     startDate: new Date("2017-01-10T05:00:00.000Z"),
     endDate: new Date("2020-09-20T05:00:00.000Z"),
     description: "Desarrollé multiples landing pages para diferentes clientes",
-    logo: "/img/experiences/wulpers.png",
+    logo: "experience/wulpers.png",
   },
 ];

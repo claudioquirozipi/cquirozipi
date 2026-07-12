@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getImage } from "../utils/images";
 interface Props {
   variant: string;
 }
@@ -11,25 +12,25 @@ const { variant } = Astro.props;
     width={208}
     height={208}
     class="avatarBackground"
-    src="/svg/border-logo.svg"
+    src={getImage("site/border-logo.svg")}
     alt=""
   />
   <Image
     width={208}
     height={208}
     class="avatarBackground avatarBackground2"
-    src="/svg/border-logo2.svg"
+    src={getImage("site/border-logo2.svg")}
     alt=""
   />
   <Image
     width={208}
     height={208}
     class="avatarBackground avatarBackground3"
-    src="/svg/border-logo3.svg"
+    src={getImage("site/border-logo3.svg")}
     alt=""
   />
   <a href="/" transition:name="avatar">
-    <Image width={208} height={208} class="avatar" src="/avatar.jpg" alt="" />
+    <Image width={208} height={208} class="avatar" src={getImage("site/avatar.jpg")} alt="" />
   </a>
 </div>
 

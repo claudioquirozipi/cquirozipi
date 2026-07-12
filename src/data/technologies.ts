@@ -5,109 +5,109 @@ export interface Technology {
   }
 
 export const technologies : Technology[]= [
-    { title: 'HYML', technologyImage: '/img/technologies/html.png', slug: '01html' },
-    { title: 'Css', technologyImage: '/img/technologies/css.jpg', slug: '02css' },
+    { title: 'HYML', technologyImage: 'technologies/html.png', slug: '01html' },
+    { title: 'Css', technologyImage: 'technologies/css.jpg', slug: '02css' },
     {
       title: 'Javascript',
-      technologyImage: '/img/technologies/javascript.png',
+      technologyImage: 'technologies/javascript.png',
       slug: '03javascript'
     },
     {
       title: 'Typescript',
-      technologyImage: '/img/technologies/typescript.png',
+      technologyImage: 'technologies/typescript.png',
       slug: '04typescript'
     },
-    { title: 'Git', technologyImage: '/img/technologies/git.png', slug: '05git' },
-    { title: 'Sass', technologyImage: '/img/technologies/sass.png', slug: '06sass' },
+    { title: 'Git', technologyImage: 'technologies/git.png', slug: '05git' },
+    { title: 'Sass', technologyImage: 'technologies/sass.png', slug: '06sass' },
     {
       title: 'Bootstrap',
-      technologyImage: '/img/technologies/bootstrap.png',
+      technologyImage: 'technologies/bootstrap.png',
       slug: '07bootstrap'
     },
     {
       title: 'React',
-      technologyImage: '/img/technologies/react.png',
+      technologyImage: 'technologies/react.png',
       slug: '08react'
     },
     {
       title: 'Webpack',
-      technologyImage: '/img/technologies/webpack.png',
+      technologyImage: 'technologies/webpack.png',
       slug: '09webpack'
     },
     {
       title: 'Styled Components',
-      technologyImage: '/img/technologies/styledComponents.png',
+      technologyImage: 'technologies/styledComponents.png',
       slug: '10styledComponents'
     },
     {
       title: 'Redux',
-      technologyImage: '/img/technologies/redux.png',
+      technologyImage: 'technologies/redux.png',
       slug: '11redux'
     },
     {
       title: 'Node.js',
-      technologyImage: '/img/technologies/node.jpg',
+      technologyImage: 'technologies/node.jpg',
       slug: '12nodejs'
     },
     {
       title: 'Python',
-      technologyImage: '/img/technologies/python.png',
+      technologyImage: 'technologies/python.png',
       slug: '13python'
     },
     {
       title: 'MongoDb',
-      technologyImage: '/img/technologies/mongodb.jpg',
+      technologyImage: 'technologies/mongodb.jpg',
       slug: '14mongoDb'
     },
     {
       title: 'GraphQL',
-      technologyImage: '/img/technologies/graphql.png',
+      technologyImage: 'technologies/graphql.png',
       slug: '15graphQL'
     },
     {
       title: 'Firebase',
-      technologyImage: '/img/technologies/firebase.png',
+      technologyImage: 'technologies/firebase.png',
       slug: '16firebase'
     },
     {
       title: 'Gatsby',
-      technologyImage: '/img/technologies/gatsby.png',
+      technologyImage: 'technologies/gatsby.png',
       slug: '17gatsby'
     },
     {
       title: 'Next.js',
-      technologyImage: '/img/technologies/nextjs.svg',
+      technologyImage: 'technologies/nextjs.svg',
       slug: '18nextjs'
     },
     {
       title: 'Formik',
-      technologyImage: '/img/technologies/formik.png',
+      technologyImage: 'technologies/formik.png',
       slug: '19formik'
     },
-    { title: 'Deno', technologyImage: '/img/technologies/deno.png', slug: '20deno' },
+    { title: 'Deno', technologyImage: 'technologies/deno.png', slug: '20deno' },
     {
       title: 'Golang',
-      technologyImage: '/img/technologies/golang.png',
+      technologyImage: 'technologies/golang.png',
       slug: '21golang'
     },
     {
       title: 'Svelte',
-      technologyImage: '/img/technologies/svelte.png',
+      technologyImage: 'technologies/svelte.png',
       slug: '22svelte'
     },
     {
       title: 'Strapi',
-      technologyImage: '/img/technologies/strapi.svg',
+      technologyImage: 'technologies/strapi.svg',
       slug: '23strapi'
     },
     {
       title: 'Material-ui',
-      technologyImage: '/img/technologies/material-ui.svg',
+      technologyImage: 'technologies/material-ui.svg',
       slug: '24materialui'
     },
     {
       title: 'Nest.js',
-      technologyImage: '/img/technologies/nestjs.svg',
+      technologyImage: 'technologies/nestjs.svg',
       slug: 'css copy 2'
     }
   ]

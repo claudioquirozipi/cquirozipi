@@ -1,6 +1,7 @@
 ---
 import type { Technology } from "../data/technologies";
 import { Image } from "astro:assets";
+import { getImage } from "../utils/images";
 interface Props {
   technology: Technology;
 }
@@ -12,14 +13,14 @@ const { technology } = Astro.props;
     width="300"
     height="64"
     class="cardTechnologiesBackground"
-    src="/svg/card-technologies-background.svg"
+    src={getImage("site/card-technologies-background.svg")}
     alt="border"
   />
   <Image
     width="14"
     height="14"
     class="image"
-    src={technology.technologyImage}
+    src={getImage(technology.technologyImage)}
     alt={technology.title}
   />
   <h1 class="title">{technology.title}</h1>

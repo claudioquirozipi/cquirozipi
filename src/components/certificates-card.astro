@@ -1,6 +1,7 @@
 ---
 import type { Certificate } from "../data/certificates";
 import { Image } from "astro:assets";
+import { getImage } from "../utils/images";
 interface Props {
   certificate: Certificate;
 }
@@ -35,8 +36,9 @@ const { certificate } = Astro.props;
   <Image
     width={100}
     height={100}
+    fit="contain"
     class="image"
-    src={certificate.certificates_image}
+    src={getImage(certificate.certificates_image)}
     alt=""
   />
   <h2 class="title">{certificate.title}</h2>
