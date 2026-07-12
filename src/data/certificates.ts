@@ -13,7 +13,7 @@ export interface Certificate {
 export const certificates: Certificate[] = [
   {
     title: "Shadcn/ui",
-    certificates_image: "img/certificates/devtalles/shadcn-ui.jpg",
+    certificates_image: "/img/certificates/devtalles/shadcn-ui.jpg",
     description: "Shadcn/ui: Componentes accesibles y personalizables",
     date: new Date("2025-01-02T00:00:00.101Z"),
     institute: "devtalles",
@@ -25,7 +25,7 @@ export const certificates: Certificate[] = [
   {
     title: "Patrones de diseño",
     certificates_image:
-      "img/certificates/platzi/diploma-solid-python_page-0001.jpg",
+      "/img/certificates/platzi/diploma-solid-python_page-0001.jpg",
     description: "Patrones de diseño y solid en python",
     date: new Date("2024-11-12T00:00:00.101Z"),
     institute: "platzi",
@@ -37,7 +37,7 @@ export const certificates: Certificate[] = [
   {
     title: "Testing python",
     certificates_image:
-      "img/certificates/platzi/diploma-unit-testing-python_page-0001.jpg",
+      "/img/certificates/platzi/diploma-unit-testing-python_page-0001.jpg",
     description: "Unit testing en python",
     date: new Date("2024-10-25T00:00:00.101Z"),
     institute: "platzi",
@@ -49,7 +49,7 @@ export const certificates: Certificate[] = [
   {
     title: "Python",
     certificates_image:
-      "img/certificates/platzi/diploma-python-funciones_page-0001.jpg",
+      "/img/certificates/platzi/diploma-python-funciones_page-0001.jpg",
     description: "Python: Comprehensions, funciones y manejo de errores",
     date: new Date("2024-10-23T00:00:00.101Z"),
     institute: "platzi",
@@ -61,7 +61,7 @@ export const certificates: Certificate[] = [
   {
     title: "GCP",
     certificates_image:
-      "img/certificates/platzi/diploma-fundamentos-google_page-0001.jpg",
+      "/img/certificates/platzi/diploma-fundamentos-google_page-0001.jpg",
     description: "Curso de introducción a Google Cloud Platform",
     date: new Date("2024-10-21T00:00:00.101Z"),
     institute: "platzi",
@@ -72,7 +72,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Astro",
-    certificates_image: "img/certificates/platzi/diploma-astro_page-0001.jpg",
+    certificates_image: "/img/certificates/platzi/diploma-astro_page-0001.jpg",
     description: "Creación de páginas web con Astro",
     date: new Date("2024-10-20T00:00:00.101Z"),
     institute: "platzi",
@@ -83,7 +83,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Django",
-    certificates_image: "img/certificates/platzi/diploma-django_page-0001.jpg",
+    certificates_image: "/img/certificates/platzi/diploma-django_page-0001.jpg",
     description: "Django",
     date: new Date("2024-10-19T00:00:00.101Z"),
     institute: "platzi",
@@ -95,7 +95,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js",
     certificates_image:
-      "img/certificates/platzi/diploma-web-next_page-0001.jpg",
+      "/img/certificates/platzi/diploma-web-next_page-0001.jpg",
     description: "Full stack con Next.js",
     date: new Date("2024-09-18T00:00:00.101Z"),
     institute: "platzi",
@@ -107,7 +107,7 @@ export const certificates: Certificate[] = [
   {
     title: "Python venv",
     certificates_image:
-      "img/certificates/platzi/diploma-python-pip_page-0001.jpg",
+      "/img/certificates/platzi/diploma-python-pip_page-0001.jpg",
     description: "Python: entornos virtuales y pip",
     date: new Date("2024-09-30T00:00:00.101Z"),
     institute: "platzi",
@@ -115,7 +115,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Python",
-    certificates_image: "img/certificates/platzi/diploma-python_page-0001.jpg",
+    certificates_image: "/img/certificates/platzi/diploma-python_page-0001.jpg",
     description: "Python",
     date: new Date("2024-09-28T00:00:00.101Z"),
     institute: "platzi",
@@ -124,7 +124,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js OWASP",
     certificates_image:
-      "img/certificates/platzi/diploma-nextjs-owasp_page-0001.jpg",
+      "/img/certificates/platzi/diploma-nextjs-owasp_page-0001.jpg",
     description: "Next.js: Seguridad web con OWASP",
     date: new Date("2024-09-16T00:00:00.101Z"),
     institute: "platzi",
@@ -133,7 +133,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js I18n",
     certificates_image:
-      "img/certificates/platzi/diploma-nextjs-internacionalizacion_page-0001.jpg",
+      "/img/certificates/platzi/diploma-nextjs-internacionalizacion_page-0001.jpg",
     description: "Next.js: Internacionalización de aplicaciones web con I18n",
     date: new Date("2024-09-10T00:00:00.101Z"),
     institute: "platzi",
@@ -142,7 +142,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js GraphQL",
     certificates_image:
-      "img/certificates/platzi/diploma-nextjs-graphql_page-0001.jpg",
+      "/img/certificates/platzi/diploma-nextjs-graphql_page-0001.jpg",
     description: "Next.js con Grasphql",
     date: new Date("2024-09-10T00:00:00.101Z"),
     institute: "platzi",
@@ -151,7 +151,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js Datasets",
     certificates_image:
-      "img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
+      "/img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
     description: "Next.js: Grandes datasets",
     date: new Date("2024-09-11T00:00:00.101Z"),
     institute: "platzi",
@@ -160,7 +160,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js 14",
     certificates_image:
-      "img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
+      "/img/certificates/platzi/diploma-nextjs-14_page-0001.jpg",
     description: "Next.js 14",
     date: new Date("2024-09-07T00:00:00.101Z"),
     institute: "platzi",
@@ -169,7 +169,7 @@ export const certificates: Certificate[] = [
   {
     title: "Modelos Negocio",
     certificates_image:
-      "img/certificates/platzi/diploma-modelos-negocio_page-0001.jpg",
+      "/img/certificates/platzi/diploma-modelos-negocio_page-0001.jpg",
     description: "Modelos de negocio",
     date: new Date("2024-09-20T00:00:00.101Z"),
     institute: "platzi",
@@ -177,7 +177,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "FastApi",
-    certificates_image: "img/certificates/platzi/diploma-fastapi_page-0001.jpg",
+    certificates_image: "/img/certificates/platzi/diploma-fastapi_page-0001.jpg",
     description: "FastApi",
     date: new Date("2024-09-18T00:00:00.101Z"),
     institute: "platzi",
@@ -186,7 +186,7 @@ export const certificates: Certificate[] = [
   {
     title: "Marketing",
     certificates_image:
-      "img/certificates/platzi/diploma-diseno-marketing_page-0001.jpg",
+      "/img/certificates/platzi/diploma-diseno-marketing_page-0001.jpg",
     description: "Diseño básico para marketing",
     date: new Date("2024-08-31T00:00:00.101Z"),
     institute: "platzi",
@@ -194,7 +194,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Backend",
-    certificates_image: "img/certificates/platzi/diploma-backend_page-0001.jpg",
+    certificates_image: "/img/certificates/platzi/diploma-backend_page-0001.jpg",
     description: "Introducción al desarrollo Backend",
     date: new Date("2024-09-20T00:00:00.101Z"),
     institute: "platzi",
@@ -202,7 +202,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Java 17",
-    certificates_image: "img/certificates/java.jpg",
+    certificates_image: "/img/certificates/java.jpg",
     description: "Java 17 Backend developer",
     date: new Date("2024-02-27T00:00:00.101Z"),
     institute: "mitoode",
@@ -210,7 +210,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Google Cloud",
-    certificates_image: "img/certificates/gcp1.jpg",
+    certificates_image: "/img/certificates/gcp1.jpg",
     description: "Comienza con Google Cloud Platform",
     date: new Date("2024-05-09T00:00:00.101Z"),
     institute: "udemy",
@@ -218,7 +218,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Google Cloud",
-    certificates_image: "img/certificates/gcp2.jpg",
+    certificates_image: "/img/certificates/gcp2.jpg",
     description: "Google Cloud Platform - Fundamentos Laboratorios y Prácticas",
     date: new Date("2024-05-11T00:00:00.101Z"),
     institute: "udemy",
@@ -226,7 +226,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Google Cloud",
-    certificates_image: "img/certificates/gcp3.jpg",
+    certificates_image: "/img/certificates/gcp3.jpg",
     description: "Google Cloud Certified - Associate Cloud Engineer Español",
     date: new Date("2024-05-26T00:00:00.101Z"),
     institute: "udemy",
@@ -234,7 +234,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Nestjs",
-    certificates_image: "img/certificates/nest.jpg",
+    certificates_image: "/img/certificates/nest.jpg",
     description: "Nest: Desarrolo backend escalable con node",
     date: new Date("2022-11-07T00:00:00.101Z"),
     institute: "udemy",
@@ -242,7 +242,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Qwik",
-    certificates_image: "img/certificates/devtalles/qwik.jpg",
+    certificates_image: "/img/certificates/devtalles/qwik.jpg",
     description: "Qwik: Introducción al framework",
     date: new Date("2023-05-24T00:00:00.101Z"),
     institute: "devtalles",
@@ -250,7 +250,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "AWS",
-    certificates_image: "img/aws.jpg",
+    certificates_image: "/img/aws.jpg",
     description: "Curso de amazon web services (AWS) desde cero",
     date: new Date("2020-10-15T00:00:00.101Z"),
     institute: "udemy",
@@ -258,7 +258,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Firebase",
-    certificates_image: "img/firebaseEDTeam.png",
+    certificates_image: "/img/firebaseEDTeam.png",
     description:
       "Crear sitios y aplicaciónes webs usando Firebase como backend",
     date: new Date("2018-10-13T00:00:00.101Z"),
@@ -267,7 +267,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Go",
-    certificates_image: "img/diploma-programacion-golang-2020.jpg",
+    certificates_image: "/img/diploma-programacion-golang-2020.jpg",
     description: "Curso práctico de go, creación de un servidor web",
     date: new Date("2021-11-20T00:00:00.101Z"),
     institute: "platzi",
@@ -275,7 +275,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "JavaScript",
-    certificates_image: "img/javascriptEDTeam.png",
+    certificates_image: "/img/javascriptEDTeam.png",
     description: "JavaScript desde cero",
     date: new Date("2018-11-21T00:00:00.101Z"),
     institute: "EDTeam",
@@ -284,7 +284,7 @@ export const certificates: Certificate[] = [
   {
     title: "Aprender en linea",
     url: "https://platzi.com/p/cquirozipi/curso/1608-aprender-2019/diploma/detalle/",
-    certificates_image: "img/diploma-aprender-2019.jpg",
+    certificates_image: "/img/diploma-aprender-2019.jpg",
     description: "Curso de estrategias para aprender en línea efectivamente",
     date: new Date("2020-12-25T00:00:00.101Z"),
     institute: "platzi",
@@ -293,7 +293,7 @@ export const certificates: Certificate[] = [
   {
     title: "Arquitectura de Software",
     url: "https://platzi.com/p/cquirozipi/curso/1247-arquitectura-software/diploma/detalle/",
-    certificates_image: "img/diploma-arquitectura-software.jpg",
+    certificates_image: "/img/diploma-arquitectura-software.jpg",
     description: "Fundamentos de Arquitectura de software",
     date: new Date("2021-09-07T00:00:00.101Z"),
     institute: "platzi",
@@ -302,7 +302,7 @@ export const certificates: Certificate[] = [
   {
     title: "Python",
     url: "https://platzi.com/p/cquirozipi/curso/1937-python/diploma/detalle/",
-    certificates_image: "img/diploma-python.jpg",
+    certificates_image: "/img/diploma-python.jpg",
     description: "Curso básico de python",
     date: new Date("2020-12-31T00:00:00.101Z"),
     institute: "platzi",
@@ -311,7 +311,7 @@ export const certificates: Certificate[] = [
   {
     title: "Finanzas personales",
     url: "https://platzi.com/p/cquirozipi/curso/1940-finanzas/diploma/detalle/",
-    certificates_image: "img/diploma-finanzas.jpg",
+    certificates_image: "/img/diploma-finanzas.jpg",
     description: "Curso de finanzas personales",
     date: new Date("2020-12-13T00:00:00.101Z"),
     institute: "platzi",
@@ -320,7 +320,7 @@ export const certificates: Certificate[] = [
   {
     title: "Base de datos",
     url: "https://platzi.com/p/cquirozipi/curso/1566-bd/diploma/detalle/",
-    certificates_image: "img/diploma-bd.jpg",
+    certificates_image: "/img/diploma-bd.jpg",
     description: "Curso de fundamentos para bases de datos",
     date: new Date("2021-03-13T00:00:00.101Z"),
     institute: "platzi",
@@ -329,7 +329,7 @@ export const certificates: Certificate[] = [
   {
     title: "Gatsby",
     url: "https://platzi.com/p/cquirozipi/curso/1618-gatsby/diploma/detalle/",
-    certificates_image: "img/diploma-gatsby.jpg",
+    certificates_image: "/img/diploma-gatsby.jpg",
     description: "Curso de Gatsby",
     date: new Date("2021-07-18T00:00:00.101Z"),
     institute: "platzi",
@@ -338,7 +338,7 @@ export const certificates: Certificate[] = [
   {
     title: "Git",
     url: "https://platzi.com/p/cquirozipi/curso/1557-git-github/diploma/detalle/",
-    certificates_image: "img/diploma-git-github.jpg",
+    certificates_image: "/img/diploma-git-github.jpg",
     description: "Curso profesional de git y github",
     date: new Date("2020-12-29T00:00:00.101Z"),
     institute: "platzi",
@@ -347,7 +347,7 @@ export const certificates: Certificate[] = [
   {
     title: "Go Básico",
     url: "https://platzi.com/p/cquirozipi/course/1846-programacion-golang-2020/diploma/detalle/",
-    certificates_image: "img/diploma-programacion-golang.jpg",
+    certificates_image: "/img/diploma-programacion-golang.jpg",
     description: "Curso básico de programación en go",
     date: new Date("2021-11-20T00:00:00.101Z"),
     institute: "platzi",
@@ -356,7 +356,7 @@ export const certificates: Certificate[] = [
   {
     title: "Go intermedio",
     url: "https://platzi.com/p/cquirozipi/curso/2357-golang-intermedio/diploma/detalle/",
-    certificates_image: "img/diploma-golang-intermedio.jpg",
+    certificates_image: "/img/diploma-golang-intermedio.jpg",
     description:
       "Curso de Go intermedio, Programación orientada a objetos y concurrencia",
     date: new Date("2021-09-119T00:00:00.101Z"),
@@ -366,7 +366,7 @@ export const certificates: Certificate[] = [
   {
     title: "Inglés A1",
     url: "https://platzi.com/p/cquirozipi/curso/1945-ingles-principiantes/diploma/detalle/",
-    certificates_image: "img/diploma-ingles-principiantes.jpg",
+    certificates_image: "/img/diploma-ingles-principiantes.jpg",
     description: "Basic english course A1 for beginners",
     date: new Date("2020-11-26T00:00:00.101Z"),
     institute: "platzi",
@@ -376,7 +376,7 @@ export const certificates: Certificate[] = [
     title: "Inglés básico",
     url: "https://platzi.com/p/cquirozipi/curso/2196-ingles-basico-descripciones-comparativos/diploma/detalle/",
     certificates_image:
-      "img/diploma-ingles-basico-descripciones-comparativos.jpg",
+      "/img/diploma-ingles-basico-descripciones-comparativos.jpg",
     description: "Basic english course descriptions and comparatives",
     date: new Date("2021-08-15T00:00:00.101Z"),
     institute: "platzi",
@@ -385,7 +385,7 @@ export const certificates: Certificate[] = [
   {
     title: "Inglés principiante",
     url: "https://platzi.com/p/cquirozipi/curso/2005-taller-principiantes/diploma/detalle/",
-    certificates_image: "img/diploma-taller-principiantes.jpg",
+    certificates_image: "/img/diploma-taller-principiantes.jpg",
     description: "English workshop for beginners",
     date: new Date("2021-08-04T00:00:00.101Z"),
     institute: "platzi",
@@ -394,7 +394,7 @@ export const certificates: Certificate[] = [
   {
     title: "Java",
     url: "https://platzi.com/p/cquirozipi/curso/1631-java-basico/diploma/detalle/",
-    certificates_image: "img/diploma-java-basico.jpg",
+    certificates_image: "/img/diploma-java-basico.jpg",
     description: "Curso de introducción a java SE",
     date: new Date("2021-01-11T00:00:00.101Z"),
     institute: "platzi",
@@ -403,7 +403,7 @@ export const certificates: Certificate[] = [
   {
     title: "Java OOP",
     url: "https://platzi.com/p/cquirozipi/curso/1629-java-oop/diploma/detalle/",
-    certificates_image: "img/diploma-java-oop.jpg",
+    certificates_image: "/img/diploma-java-oop.jpg",
     description: "Curso práctico de go, Creación de un servidor web",
     date: new Date("2021-05-01T00:00:00.101Z"),
     institute: "platzi",
@@ -412,7 +412,7 @@ export const certificates: Certificate[] = [
   {
     title: "Java Spring",
     url: "https://platzi.com/p/cquirozipi/curso/1996-java-spring/diploma/detalle/",
-    certificates_image: "img/diploma-java-spring.jpg",
+    certificates_image: "/img/diploma-java-spring.jpg",
     description: "Curso de java sprint",
     date: new Date("2021-05-14T00:00:00.101Z"),
     institute: "platzi",
@@ -421,7 +421,7 @@ export const certificates: Certificate[] = [
   {
     title: "Jest",
     url: "https://platzi.com/p/cquirozipi/curso/1788-jest/diploma/detalle/",
-    certificates_image: "img/diploma-jest.jpg",
+    certificates_image: "/img/diploma-jest.jpg",
     description: "Curso de unit testing con jest en react",
     date: new Date("2021-02-06T00:00:00.101Z"),
     institute: "platzi",
@@ -430,7 +430,7 @@ export const certificates: Certificate[] = [
   {
     title: "Js",
     url: "https://platzi.com/p/cquirozipi/curso/1642-javascript-profesional/diploma/detalle/",
-    certificates_image: "img/diploma-javascript-profesional.jpg",
+    certificates_image: "/img/diploma-javascript-profesional.jpg",
     description: "Profesional de javascript",
     date: new Date("2021-05-14T00:00:00.101Z"),
     institute: "platzi",
@@ -439,7 +439,7 @@ export const certificates: Certificate[] = [
   {
     title: "JS ES 6",
     url: "https://platzi.com/p/cquirozipi/curso/1815-ecmascript-6/diploma/detalle/",
-    certificates_image: "img/diploma-ecmascript-6.jpg",
+    certificates_image: "/img/diploma-ecmascript-6.jpg",
     description: "Curso de Ecmascript 6",
     date: new Date("2020-12-25T00:00:00.101Z"),
     institute: "platzi",
@@ -448,7 +448,7 @@ export const certificates: Certificate[] = [
   {
     title: "Data Science",
     url: "https://platzi.com/p/cquirozipi/curso/2069-negocios-data-science/diploma/detalle/",
-    certificates_image: "img/diploma-negocios-data-science.jpg",
+    certificates_image: "/img/diploma-negocios-data-science.jpg",
     description: "Análisis de negocios para ciencia de datos",
     date: new Date("2020-12-20T00:00:00.101Z"),
     institute: "platzi",
@@ -457,7 +457,7 @@ export const certificates: Certificate[] = [
   {
     title: "Next.js",
     url: "https://platzi.com/p/cquirozipi/curso/1991-next/diploma/detalle/",
-    certificates_image: "img/diploma-next.jpg",
+    certificates_image: "/img/diploma-next.jpg",
     description: "Curso de next.js",
     date: new Date("2021-06-20T00:00:00.101Z"),
     institute: "platzi",
@@ -466,7 +466,7 @@ export const certificates: Certificate[] = [
   {
     title: "OOP",
     url: "https://platzi.com/p/cquirozipi/curso/1474-oop/diploma/detalle/",
-    certificates_image: "img/diploma-oop.jpg",
+    certificates_image: "/img/diploma-oop.jpg",
     description: "Curso de programación orientada a objetos",
     date: new Date("2021-02-20T00:00:00.101Z"),
     institute: "platzi",
@@ -475,7 +475,7 @@ export const certificates: Certificate[] = [
   {
     title: "Productividad",
     url: "https://platzi.com/p/cquirozipi/curso/1998-productividad/diploma/detalle/",
-    certificates_image: "img/diploma-productividad.jpg",
+    certificates_image: "/img/diploma-productividad.jpg",
     description: "Curso de productividad",
     date: new Date("2020-11-24T00:00:00.101Z"),
     institute: "platzi",
@@ -484,7 +484,7 @@ export const certificates: Certificate[] = [
   {
     title: "Python",
     url: "https://platzi.com/p/cquirozipi/curso/1764-python-cs/diploma/detalle/",
-    certificates_image: "img/diploma-python-cs.jpg",
+    certificates_image: "/img/diploma-python-cs.jpg",
     description:
       "Curso de introducción al pensamiento computacional con python",
     date: new Date("2021-01-24T00:00:00.101Z"),
@@ -494,7 +494,7 @@ export const certificates: Certificate[] = [
   {
     title: "React hooks",
     url: "https://platzi.com/p/cquirozipi/curso/2118-react-hooks/diploma/detalle/",
-    certificates_image: "img/diploma-react-hooks.jpg",
+    certificates_image: "/img/diploma-react-hooks.jpg",
     description: "Curso profesional de react hooks",
     date: new Date("2021-06-30T00:00:00.101Z"),
     institute: "platzi",
@@ -503,7 +503,7 @@ export const certificates: Certificate[] = [
   {
     title: "React Router Redux",
     url: "https://platzi.com/p/cquirozipi/curso/1652-react-router-redux/diploma/detalle/",
-    certificates_image: "img/diploma-react-router-redux.jpg",
+    certificates_image: "/img/diploma-react-router-redux.jpg",
     description: "React router redux",
     date: new Date("2021-01-21T00:00:00.101Z"),
     institute: "platzi",
@@ -512,7 +512,7 @@ export const certificates: Certificate[] = [
   {
     title: "Redux",
     url: "https://platzi.com/p/cquirozipi/curso/1613-redux/diploma/detalle/",
-    certificates_image: "img/diploma-redux.jpg",
+    certificates_image: "/img/diploma-redux.jpg",
     description: "Curso de redux por Bedu",
     date: new Date("2020-12-24T00:00:00.101Z"),
     institute: "platzi",
@@ -520,7 +520,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Redux React y GraphQl",
-    certificates_image: "img/reduxReactGraphQL.jpg",
+    certificates_image: "/img/reduxReactGraphQL.jpg",
     description: "Aprende Redux con React hooks y GraphQL fácilmente",
     date: new Date("2020-07-05T00:00:00.101Z"),
     institute: "udemy",
@@ -528,7 +528,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Rxjs",
-    certificates_image: "img/rxjs.jpg",
+    certificates_image: "/img/rxjs.jpg",
     description: "ReactiveX - Rxjs: De cero hasta los detalles",
     date: new Date("2022-03-20T00:00:00.101Z"),
     institute: "udemy",
@@ -536,7 +536,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Serverless AWS",
-    certificates_image: "img/serverlessAWS.jpg",
+    certificates_image: "/img/serverlessAWS.jpg",
     description: "Serverless en español con AWS y Serverless Framework",
     date: new Date("2020-05-29T00:00:00.101Z"),
     institute: "udemy",
@@ -544,7 +544,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Go",
-    certificates_image: "img/go.jpg",
+    certificates_image: "/img/go.jpg",
     description: "Curso de go -Como programar y crear APIs Restfull con golang",
     date: new Date("2020-08-11T00:00:00.101Z"),
     institute: "udemy",
@@ -552,7 +552,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Redux",
-    certificates_image: "img/redux.jpg",
+    certificates_image: "/img/redux.jpg",
     description: "React, Redux, Typescript, Firebase Fullstack Serveless",
     date: new Date("2020-08-05T00:00:00.101Z"),
     institute: "udemy",
@@ -560,7 +560,7 @@ export const certificates: Certificate[] = [
   },
   {
     title: "Css",
-    certificates_image: "img/varCssEDTeam.png",
+    certificates_image: "/img/varCssEDTeam.png",
     description: "Variables Css",
     date: new Date("2018-10-23T00:00:00.101Z"),
     institute: "EDTeam",
