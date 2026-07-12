@@ -1,21 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { recommendations } from "../data/recommendations";
-import Certificates from "../components/certificates.astro";
-import Experience from "../components/experience.astro";
-import Projects from "../components/projects.astro";
-import Technologies from "../components/technologies.astro";
 import Avatar from "../components/avatar.astro";
 import LayoutGrid from "../layouts/layout-grid.astro";
 ---
 
 <Layout title="Recomendaciones | Claudio Quiroz">
   <LayoutGrid title="Recomendaciones">
-    <Avatar slot="top-left" variant="2" />
-    <Technologies slot="top-left-2" />
-    <Certificates slot="top-right" />
-    <Experience slot="bottom-right" />
-    <Projects slot="bottom-left" />
+    <Avatar slot="avatar" variant="header" />
     <main class="main">
       {
         recommendations.map((r) => (

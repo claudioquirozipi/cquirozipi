@@ -1,10 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { technologies } from "../data/technologies";
-import Certificates from "../components/certificates.astro";
-import Experience from "../components/experience.astro";
-import Projects from "../components/projects.astro";
-import Technologies from "../components/technologies.astro";
 import Avatar from "../components/avatar.astro";
 import LayoutGrid from "../layouts/layout-grid.astro";
 import TechnologiesCard from "../components/technologies-card.astro";
@@ -12,11 +8,7 @@ import TechnologiesCard from "../components/technologies-card.astro";
 
 <Layout title="Tecnologías | Claudio Quiroz">
   <LayoutGrid title="Tecnologías">
-    <Avatar slot="top-left" variant="2" />
-    <Projects slot="top-left-2" />
-    <Technologies slot="top-right" />
-    <Certificates slot="bottom-right" />
-    <Experience slot="bottom-left" />
+    <Avatar slot="avatar" variant="header" />
     <main class="main">
       {
         technologies.map((technology) => (
