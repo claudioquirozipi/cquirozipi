@@ -109,5 +109,22 @@ export const technologies : Technology[]= [
       title: 'Nest.js',
       technologyImage: 'technologies/nestjs.svg',
       slug: 'css copy 2'
+    },
+    { title: 'Lit', technologyImage: 'technologies/lit.png', slug: '25lit' },
+    {
+      title: 'Polymer',
+      technologyImage: 'technologies/polymer.svg',
+      slug: '26polymer'
+    },
+    { title: 'Java', technologyImage: 'technologies/java.png', slug: '27java' },
+    {
+      title: 'Google Cloud Platform',
+      technologyImage: 'technologies/gcp.png',
+      slug: '28gcp'
+    },
+    {
+      title: 'Cells',
+      technologyImage: 'technologies/open-cells.svg',
+      slug: '29cells'
     }
   ]

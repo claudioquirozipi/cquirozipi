@@ -1,5 +1,6 @@
 ---
 import type { Company } from "../data/experience";
+import { technologies } from "../data/technologies";
 import { Image } from "astro:assets";
 import { formatDate } from "../utils/functions/formatDate";
 import { getImage } from "../utils/images";
@@ -15,6 +16,19 @@ const currentRole = company.roles[company.roles.length - 1];
 
 function getInitial(name: string) {
   return name.trim().charAt(0).toUpperCase();
+}
+
+function normalizeTechName(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/\.js$/, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function findTechnologyImage(name: string) {
+  const target = normalizeTechName(name);
+  return technologies.find((t) => normalizeTechName(t.title) === target)
+    ?.technologyImage;
 }
 ---
 
@@ -96,9 +110,22 @@ function getInitial(name: string) {
                       <p class="projectDescription">{project.description}</p>
                       {project.technologies && (
                         <ul class="technologies">
-                          {project.technologies.map((tech) => (
-                            <li class="technology">{tech}</li>
-                          ))}
+                          {project.technologies.map((tech) => {
+                            const icon = findTechnologyImage(tech);
+                            return (
+                              <li class="technology">
+                                {icon && (
+                                  <Image
+                                    width={14}
+                                    class="technologyIcon"
+                                    src={getImage(icon)}
+                                    alt=""
+                                  />
+                                )}
+                                <span>{tech}</span>
+                              </li>
+                            );
+                          })}
                         </ul>
                       )}
                     </li>
@@ -388,10 +415,21 @@ function getInitial(name: string) {
     list-style: none;
   }
   .technology {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.65rem;
-    padding: 0.15rem 0.5rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
     border-radius: 999px;
-    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
-    color: var(--color-text-muted, #d2b4de);
+    border: 1px solid rgba(243, 156, 18, 0.4);
+    background: rgba(243, 156, 18, 0.14);
+    color: var(--color-secondary, #f39c12);
+  }
+  .technologyIcon {
+    width: 0.85rem;
+    height: 0.85rem;
+    object-fit: contain;
+    border-radius: 2px;
   }
 </style>
