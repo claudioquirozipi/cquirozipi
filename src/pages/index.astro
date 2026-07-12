@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Avatar from "../components/avatar.astro";
 import SectionCard from "../components/section-card.astro";
-import AboutIcon from "../icons/about-icon.astro";
 import ExperienceIcon from "../icons/experience-icon.astro";
 import ProjectIcon from "../icons/project-icon.astro";
 import CertificatesIcon from "../icons/certificates-icon.astro";
@@ -17,30 +16,35 @@ const { years } = getDateDifference(
 
 <Layout title="Claudio Quiroz | Fullstack Developer">
   <main>
-    <Avatar variant="home" />
-    <div class="header">
-      <p class="name">Ing. Claudio Quiroz</p>
-      <p class="role">Fullstack Developer | React Node</p>
-    </div>
     <div class="bento">
+      <div class="profile">
+        <Avatar variant="home" href="/sobre-mi" />
+        <a href="/sobre-mi" class="identity">
+          <p class="name">Ing. Claudio Quiroz</p>
+          <p class="role">Fullstack Developer | React Node</p>
+          <span class="cta">Sobre mí →</span>
+        </a>
+      </div>
       <SectionCard
-        href="/sobre-mi"
-        title="Sobre mí"
-        description="Quién soy y cómo trabajo."
-        index={0}
-        large
-      >
-        <AboutIcon />
-      </SectionCard>
-      <SectionCard
+        area="experience"
         href="/experiencia"
         title="Experiencia"
         description={`${years}+ años construyendo software.`}
-        index={1}
+        index={0}
       >
         <ExperienceIcon />
       </SectionCard>
       <SectionCard
+        area="certificates"
+        href="/certificados"
+        title="Certificados"
+        description="Formación y cursos."
+        index={1}
+      >
+        <CertificatesIcon />
+      </SectionCard>
+      <SectionCard
+        area="projects"
         href="/proyectos"
         title="Proyectos"
         description="Cosas que construí."
@@ -49,18 +53,11 @@ const { years } = getDateDifference(
         <ProjectIcon />
       </SectionCard>
       <SectionCard
-        href="/certificados"
-        title="Certificados"
-        description="Formación y cursos."
-        index={3}
-      >
-        <CertificatesIcon />
-      </SectionCard>
-      <SectionCard
+        area="recommendations"
         href="/recomendaciones"
         title="Recomendaciones"
         description="Lo que dicen de trabajar conmigo."
-        index={4}
+        index={3}
       >
         <RecommendationsIcon />
       </SectionCard>
@@ -71,15 +68,52 @@ const { years } = getDateDifference(
 <style>
   main {
     display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    padding-top: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
   }
-  .header {
+  .bento {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(140px, auto));
+    grid-template-areas:
+      "profile profile experience"
+      "profile profile certificates"
+      "projects recommendations recommendations";
+    gap: 1rem;
+  }
+  @media (max-width: 640px) {
+    .bento {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "profile"
+        "experience"
+        "projects"
+        "certificates"
+        "recommendations";
+    }
+  }
+  .profile {
+    grid-area: profile;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    background: rgba(0, 107, 222, 0.08);
     text-align: center;
-    margin-bottom: 2rem;
+  }
+  .identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
   }
   .name {
     margin: 0;
@@ -89,20 +123,14 @@ const { years } = getDateDifference(
     text-shadow: 1px 1px 5px #006bde;
   }
   .role {
-    margin: 0.25rem 0 0;
-    color: #006bde;
-    font-size: 1rem;
+    margin: 0;
+    color: #00ffff;
+    opacity: 0.85;
+    font-size: 0.95rem;
   }
-  .bento {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(140px, auto);
-    grid-auto-flow: dense;
-    gap: 1rem;
-  }
-  @media (max-width: 640px) {
-    .bento {
-      grid-template-columns: 1fr;
-    }
+  .cta {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #00ffff;
   }
 </style>

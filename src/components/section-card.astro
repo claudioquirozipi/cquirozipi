@@ -4,15 +4,15 @@ interface Props {
   title: string;
   description: string;
   index?: number;
-  large?: boolean;
+  area: string;
 }
-const { href, title, description, index = 0, large = false } = Astro.props;
+const { href, title, description, index = 0, area } = Astro.props;
 ---
 
 <a
   href={href}
-  class={`card ${large ? "large" : ""}`}
-  style={`--delay: ${index * 0.12}s`}
+  class="card"
+  style={`grid-area: ${area}; --delay: ${index * 0.12}s`}
 >
   <div class="icon"><slot /></div>
   <h2 class="title">{title}</h2>
@@ -42,7 +42,7 @@ const { href, title, description, index = 0, large = false } = Astro.props;
       opacity: 0;
       transform: translateY(12px);
       animation: rise 0.5s ease-out forwards;
-      animation-delay: calc(0.9s + var(--delay));
+      animation-delay: calc(1.8s + var(--delay));
     }
   }
   @keyframes rise {
@@ -73,22 +73,5 @@ const { href, title, description, index = 0, large = false } = Astro.props;
     padding-top: 0.5rem;
     font-size: 0.75rem;
     color: #00ffff;
-  }
-  .large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  .large .icon {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .large .title {
-    font-size: 1.4rem;
-  }
-  @media (max-width: 640px) {
-    .large {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
   }
 </style>

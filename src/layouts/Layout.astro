@@ -25,7 +25,7 @@ const { title } = Astro.props;
   <body>
     <div class="wrapper">
       <slot />
-      <nav class="contactBar" aria-label="Contacto">
+      <footer class="contactBar" aria-label="Contacto">
         <a
           href="https://github.com/claudioquirozipi"
           target="_blank"
@@ -59,7 +59,7 @@ const { title } = Astro.props;
             ></path>
           </svg>
         </a>
-      </nav>
+      </footer>
       <style>
         body {
           background: rgb(0, 107, 222);
@@ -79,8 +79,9 @@ const { title } = Astro.props;
         }
         .contactBar {
           position: fixed;
-          top: 1rem;
-          right: 1rem;
+          bottom: 0.75rem;
+          left: 50%;
+          transform: translateX(-50%);
           display: flex;
           align-items: center;
           gap: 1rem;
