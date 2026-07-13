@@ -7,6 +7,7 @@ import ExperienceIcon from "../icons/experience-icon.astro";
 import ProjectIcon from "../icons/project-icon.astro";
 import CertificatesIcon from "../icons/certificates-icon.astro";
 import RecommendationsIcon from "../icons/recommendations-icon.astro";
+import TechnologiesIcon from "../icons/technologies-icon.astro";
 import { experiences } from "../data/experience";
 import { getDateDifference } from "../utils/functions/getDateDifference";
 
@@ -25,7 +26,7 @@ const { years } = getDateDifference(
         area="about"
         href="/sobre-mi"
         title="Ing. Claudio Quiroz"
-        description="Fullstack Developer | React Node — quién soy y cómo trabajo."
+        description="Fullstack Developer"
         index={0}
       >
         <AboutIcon />
@@ -40,11 +41,20 @@ const { years } = getDateDifference(
         <ExperienceIcon />
       </SectionCard>
       <SectionCard
+        area="technologies"
+        href="/tecnologias"
+        title="Tecnologías"
+        description="Mi stack."
+        index={2}
+      >
+        <TechnologiesIcon />
+      </SectionCard>
+      <SectionCard
         area="certificates"
         href="/certificados"
         title="Certificados"
         description="Formación y cursos."
-        index={2}
+        index={3}
       >
         <CertificatesIcon />
       </SectionCard>
@@ -53,7 +63,7 @@ const { years } = getDateDifference(
         href="/proyectos"
         title="Proyectos"
         description="Cosas que construí."
-        index={3}
+        index={4}
       >
         <ProjectIcon />
       </SectionCard>
@@ -62,7 +72,7 @@ const { years } = getDateDifference(
         href="/recomendaciones"
         title="Recomendaciones"
         description="Lo que dicen de trabajar conmigo."
-        index={4}
+        index={5}
       >
         <RecommendationsIcon />
       </SectionCard>
@@ -87,15 +97,15 @@ const { years } = getDateDifference(
     flex: 1;
     width: 100%;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(7,1fr);
+    grid-template-rows: repeat(7, auto);
     grid-template-areas:
-      "photo photo about about experience experience"
-      "photo photo about about experience experience"
-      "certificates certificates certificates certificates experience experience"
-      "certificates certificates certificates certificates experience experience"
-      "recommendations recommendations projects projects projects projects"
-      "recommendations recommendations projects projects projects projects"
-      "recommendations recommendations projects projects projects projects";
+    "photo photo technologies technologies experience experience"
+    "about about about about experience experience"
+    "certificates certificates recommendations recommendations experience experience"
+    "certificates certificates recommendations recommendations experience experience"
+    "certificates certificates projects projects projects projects"
+    "certificates certificates projects projects projects projects"
+    "certificates certificates projects projects projects projects";
 
     gap: 1.5rem;
   }
@@ -105,15 +115,16 @@ const { years } = getDateDifference(
     }
     .bento {
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(7,1fr);
+      grid-template-rows: repeat(8, 1fr);
       grid-template-areas:
         "photo photo about about about"
         "photo photo about about about"
-        "certificates certificates certificates experience experience"
-        "certificates certificates certificates experience experience"
-        "recommendations recommendations projects projects projects"
-        "recommendations recommendations projects projects projects"
-        "recommendations recommendations projects projects projects";
+        "experience experience technologies technologies technologies"
+        "experience experience technologies technologies technologies"
+        "certificates certificates certificates projects projects"
+        "certificates certificates certificates projects projects"
+        "recommendations recommendations recommendations recommendations recommendations"
+        "recommendations recommendations recommendations recommendations recommendations";
     }
   }
   .photoTile {
