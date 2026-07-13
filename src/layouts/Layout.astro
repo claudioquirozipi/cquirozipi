@@ -7,18 +7,32 @@ import { ClientRouter } from "astro:transitions";
 import { getImage } from "../utils/images";
 import "../styles/global.css";
 const { title } = Astro.props;
+const description = "Claudio Quiroz | fullstack developer";
+const ogImage = new URL("/rocks.png", Astro.site);
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Claudio Quiroz | fullstack developer" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo.jpg" />
-    <link rel="shortcut icon" href="/logo.jpg" />
-    <meta property="og:image" content="avatar.jpg" />
+    <link rel="icon" type="image/png" href="/rocks.png" />
+    <link rel="shortcut icon" type="image/png" href="/rocks.png" />
+    <link rel="apple-touch-icon" href="/rocks.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
