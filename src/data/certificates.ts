@@ -216,7 +216,7 @@ export const certificates: Certificate[] = [
     certificates_image: "certificates/mitocode/javamitocode.jpg",
     description: "Java 17 Backend developer",
     date: new Date("2024-02-27T00:00:00.101Z"),
-    institute: "mitoode",
+    institute: "mitocode",
     slug: "javamitocode",
     category: ["backend"],
   },
