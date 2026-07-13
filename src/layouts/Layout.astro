@@ -5,15 +5,20 @@ interface Props {
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { getImage } from "../utils/images";
+import { experiences } from "../data/experience";
+import { getDateDifference } from "../utils/functions/getDateDifference";
 import "../styles/global.css";
 const { title } = Astro.props;
-const description = "Claudio Quiroz | fullstack developer";
+const { years } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
+const description = `Claudio Quiroz — Ingeniero de software fullstack con ${years}+ años de experiencia en React, Node.js y TypeScript. Perú, disponible remoto.`;
 const ogImage = new URL("/rocks.png", Astro.site);
 const pageUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
