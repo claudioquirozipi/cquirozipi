@@ -42,7 +42,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-10-25T00:00:00.101Z"),
     institute: "platzi",
     slug: "testing-python-platzi",
-    category: ["backend"],
+    category: ["backend", "testing"],
     isSpecial: true,
     isCore: true,
   },
@@ -112,6 +112,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-30T00:00:00.101Z"),
     institute: "platzi",
     slug: "python-venv-platzi",
+    category: ["backend"],
   },
   {
     title: "Python",
@@ -120,6 +121,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-28T00:00:00.101Z"),
     institute: "platzi",
     slug: "python-platzi",
+    category: ["backend"],
   },
   {
     title: "Next.js OWASP",
@@ -129,6 +131,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-16T00:00:00.101Z"),
     institute: "platzi",
     slug: "nextjs-owasp-platzi",
+    category: ["frontend"],
   },
   {
     title: "Next.js I18n",
@@ -138,6 +141,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-10T00:00:00.101Z"),
     institute: "platzi",
     slug: "nextjs-i18n-platzi",
+    category: ["frontend"],
   },
   {
     title: "Next.js GraphQL",
@@ -147,6 +151,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-10T00:00:00.101Z"),
     institute: "platzi",
     slug: "nextjs-graphql-platzi",
+    category: ["frontend"],
   },
   {
     title: "Next.js Datasets",
@@ -156,6 +161,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-11T00:00:00.101Z"),
     institute: "platzi",
     slug: "nextjs-datasets-platzi",
+    category: ["frontend"],
   },
   {
     title: "Next.js 14",
@@ -165,6 +171,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-07T00:00:00.101Z"),
     institute: "platzi",
     slug: "nextjs-14-platzi",
+    category: ["frontend"],
   },
   {
     title: "Modelos Negocio",
@@ -174,6 +181,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "modelos-negocio-platzi",
+    category: ["otros"],
   },
   {
     title: "FastApi",
@@ -182,6 +190,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-18T00:00:00.101Z"),
     institute: "platzi",
     slug: "fastapi-platzi",
+    category: ["backend"],
   },
   {
     title: "Marketing",
@@ -191,6 +200,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-08-31T00:00:00.101Z"),
     institute: "platzi",
     slug: "diseno-marketing-platzi",
+    category: ["otros"],
   },
   {
     title: "Backend",
@@ -199,6 +209,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-09-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "introduccion-backend-platzi",
+    category: ["backend"],
   },
   {
     title: "Java 17",
@@ -207,6 +218,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-02-27T00:00:00.101Z"),
     institute: "mitoode",
     slug: "javamitocode",
+    category: ["backend"],
   },
   {
     title: "Google Cloud",
@@ -215,6 +227,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-05-09T00:00:00.101Z"),
     institute: "udemy",
     slug: "gcp1udemy",
+    category: ["cloud"],
   },
   {
     title: "Google Cloud",
@@ -223,6 +236,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-05-11T00:00:00.101Z"),
     institute: "udemy",
     slug: "gcp2udemy",
+    category: ["cloud"],
   },
   {
     title: "Google Cloud",
@@ -231,6 +245,7 @@ export const certificates: Certificate[] = [
     date: new Date("2024-05-26T00:00:00.101Z"),
     institute: "udemy",
     slug: "gcp3udemy",
+    category: ["cloud"],
   },
   {
     title: "Nestjs",
@@ -239,6 +254,7 @@ export const certificates: Certificate[] = [
     date: new Date("2022-11-07T00:00:00.101Z"),
     institute: "udemy",
     slug: "nest-udemy",
+    category: ["backend"],
   },
   {
     title: "Qwik",
@@ -247,6 +263,7 @@ export const certificates: Certificate[] = [
     date: new Date("2023-05-24T00:00:00.101Z"),
     institute: "devtalles",
     slug: "quik-devtalles",
+    category: ["frontend"],
   },
   {
     title: "AWS",
@@ -255,6 +272,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-10-15T00:00:00.101Z"),
     institute: "udemy",
     slug: "awsudemy",
+    category: ["cloud"],
   },
   {
     title: "Firebase",
@@ -264,6 +282,7 @@ export const certificates: Certificate[] = [
     date: new Date("2018-10-13T00:00:00.101Z"),
     institute: "EDTeam",
     slug: "firebase",
+    category: ["backend"],
   },
   {
     title: "Go",
@@ -272,6 +291,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-11-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "go",
+    category: ["backend"],
   },
   {
     title: "JavaScript",
@@ -280,6 +300,7 @@ export const certificates: Certificate[] = [
     date: new Date("2018-11-21T00:00:00.101Z"),
     institute: "EDTeam",
     slug: "javascript",
+    category: ["frontend"],
   },
   {
     title: "Aprender en linea",
@@ -289,6 +310,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-25T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziAprenderLinea",
+    category: ["otros"],
   },
   {
     title: "Arquitectura de Software",
@@ -298,6 +320,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-09-07T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziArquitecturaSoftware",
+    category: ["otros"],
   },
   {
     title: "Python",
@@ -307,6 +330,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-31T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziCursoBasicoPython",
+    category: ["backend"],
   },
   {
     title: "Finanzas personales",
@@ -316,6 +340,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-13T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziFinanzasPersonales",
+    category: ["otros"],
   },
   {
     title: "Base de datos",
@@ -325,6 +350,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-03-13T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziFundamentosDB",
+    category: ["backend"],
   },
   {
     title: "Gatsby",
@@ -334,6 +360,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-07-18T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziGatsby",
+    category: ["frontend"],
   },
   {
     title: "Git",
@@ -343,6 +370,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-29T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziGit",
+    category: ["otros"],
   },
   {
     title: "Go Básico",
@@ -352,6 +380,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-11-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziGo",
+    category: ["backend"],
   },
   {
     title: "Go intermedio",
@@ -362,6 +391,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-09-119T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziGoIntermedio",
+    category: ["backend"],
   },
   {
     title: "Inglés A1",
@@ -371,6 +401,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-11-26T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziInglesA1",
+    category: ["otros"],
   },
   {
     title: "Inglés básico",
@@ -381,6 +412,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-08-15T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziInglesBasico",
+    category: ["otros"],
   },
   {
     title: "Inglés principiante",
@@ -390,6 +422,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-08-04T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziInglesPrincipiante",
+    category: ["otros"],
   },
   {
     title: "Java",
@@ -399,6 +432,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-01-11T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJavaBasico",
+    category: ["backend"],
   },
   {
     title: "Java OOP",
@@ -408,6 +442,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-05-01T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJavaOOP",
+    category: ["backend"],
   },
   {
     title: "Java Spring",
@@ -417,6 +452,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-05-14T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJavaSpring",
+    category: ["backend"],
   },
   {
     title: "Jest",
@@ -426,6 +462,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-02-06T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJest",
+    category: ["frontend", "testing"],
   },
   {
     title: "Js",
@@ -435,6 +472,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-05-14T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJs",
+    category: ["frontend"],
   },
   {
     title: "JS ES 6",
@@ -444,6 +482,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-25T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziJsES6",
+    category: ["frontend"],
   },
   {
     title: "Data Science",
@@ -453,6 +492,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziNegociosDatascience",
+    category: ["otros"],
   },
   {
     title: "Next.js",
@@ -462,6 +502,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-06-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziNextJs",
+    category: ["frontend"],
   },
   {
     title: "OOP",
@@ -471,6 +512,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-02-20T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziOOP",
+    category: ["backend"],
   },
   {
     title: "Productividad",
@@ -480,6 +522,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-11-24T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziProductividad",
+    category: ["otros"],
   },
   {
     title: "Python",
@@ -490,6 +533,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-01-24T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziPythonPensamiento",
+    category: ["backend"],
   },
   {
     title: "React hooks",
@@ -499,6 +543,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-06-30T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziReactHooks",
+    category: ["frontend"],
   },
   {
     title: "React Router Redux",
@@ -508,6 +553,7 @@ export const certificates: Certificate[] = [
     date: new Date("2021-01-21T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziReactRouterRedux",
+    category: ["frontend"],
   },
   {
     title: "Redux",
@@ -517,6 +563,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-12-24T00:00:00.101Z"),
     institute: "platzi",
     slug: "platziRedux",
+    category: ["frontend"],
   },
   {
     title: "Redux React y GraphQl",
@@ -525,6 +572,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-07-05T00:00:00.101Z"),
     institute: "udemy",
     slug: "reduxReactGraphQl",
+    category: ["frontend"],
   },
   {
     title: "Rxjs",
@@ -533,6 +581,7 @@ export const certificates: Certificate[] = [
     date: new Date("2022-03-20T00:00:00.101Z"),
     institute: "udemy",
     slug: "rxjs",
+    category: ["frontend"],
   },
   {
     title: "Serverless AWS",
@@ -541,6 +590,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-05-29T00:00:00.101Z"),
     institute: "udemy",
     slug: "serverlessAWS",
+    category: ["cloud", "backend"],
   },
   {
     title: "Go",
@@ -549,6 +599,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-08-11T00:00:00.101Z"),
     institute: "udemy",
     slug: "udemygo",
+    category: ["backend"],
   },
   {
     title: "Redux",
@@ -557,6 +608,7 @@ export const certificates: Certificate[] = [
     date: new Date("2020-08-05T00:00:00.101Z"),
     institute: "udemy",
     slug: "udemyredux",
+    category: ["frontend"],
   },
   {
     title: "Css",
@@ -565,5 +617,6 @@ export const certificates: Certificate[] = [
     date: new Date("2018-10-23T00:00:00.101Z"),
     institute: "EDTeam",
     slug: "variablesCss",
+    category: ["frontend"],
   },
 ];

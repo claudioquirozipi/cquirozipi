@@ -9,7 +9,11 @@ interface Props {
 const { certificate } = Astro.props;
 ---
 
-<div class="certificate">
+<div
+  class="certificate"
+  data-categories={(certificate.category ?? []).join(" ")}
+  data-title={certificate.title}
+>
   <Image
     width={200}
     height={200}
