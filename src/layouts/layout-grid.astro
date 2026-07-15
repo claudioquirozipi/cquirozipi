@@ -33,7 +33,11 @@ const { title, backHref = "/", activeSection } = Astro.props;
     grid-template-rows: auto auto 1fr;
     grid-gap: var(--space-3, 1.5rem);
     height: 100%;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
     padding: 0 var(--space-2, 1rem) var(--space-3, 1.5rem);
+    box-sizing: border-box;
   }
   .header {
     display: flex;
