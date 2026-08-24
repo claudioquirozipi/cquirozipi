@@ -1,109 +1,120 @@
+export type ProjectStatus = 'active' | 'onhold';
+
 export interface Project {
   title: string;
   description: string;
-  projectImage: string;
+  story?: string;
+  techStack: string[];
+  projectImage?: string;
+  images?: string[];
+  videoUrl?: string;
   urlWeb?: string;
   urlGithub?: string;
+  featured: boolean;
+  status?: ProjectStatus;
   slug: string;
 }
 
 export const projects: Project[] = [
+  // Featured
+  {
+    title: 'Supermarket To-Do List',
+    description:
+      "A shared shopping list I built for myself: check off what I usually buy, walk through the house to see what's missing, then cross items off at the store. Synced live with my wife so either of us can update it.",
+    techStack: ['Angular', 'Go', 'PostgreSQL'],
+    projectImage: 'projects/supermarket-todolist.png',
+    urlWeb: 'https://supermarket-todo-list-angular.vercel.app/',
+    featured: true,
+    status: 'active',
+    slug: 'supermarket-todolist'
+  },
+  {
+    title: 'Estudies',
+    description:
+      "A personal wiki that grows as I learn — one page per topic, built for quick review whenever I need to refresh a concept. Actively used and updated.",
+    techStack: ['Astro'],
+    projectImage: 'projects/estudies.png',
+    urlWeb: 'https://estudies-brown.vercel.app/',
+    urlGithub: 'https://github.com/claudioquirozipi/estudies',
+    featured: true,
+    status: 'active',
+    slug: 'estudies'
+  },
+  {
+    title: 'Micartaapp',
+    description:
+      'A digital menu platform for restaurants: diners browse and order via QR code, kitchen and waitstaff manage orders from phone or tablet, with WhatsApp ordering built in.',
+    story:
+      "Started as a product I tried to sell as a business. It didn't find a customer, but it taught me a real lesson: build around one clear use case instead of chasing every feature a prospect asks for.",
+    techStack: ['Angular', 'Nest.js', 'PostgreSQL'],
+    projectImage: 'projects/micartaapp.png',
+    urlWeb: 'https://micartaapp.com/',
+    featured: true,
+    status: 'active',
+    slug: 'micartaapp'
+  },
+  {
+    title: 'Punto de equilibrio',
+    description:
+      'A break-even calculator: enter fixed and variable costs to see exactly how much you need to sell before turning a profit.',
+    techStack: ['React', 'Vite'],
+    projectImage: 'projects/punto-equilibrio.png',
+    videoUrl: 'https://www.youtube.com/watch?v=869D9l9WdLc',
+    urlWeb: 'https://punto-equilibrio-react.vercel.app/',
+    urlGithub: 'https://github.com/claudioquirozipi/punto-equilibrio-react',
+    featured: true,
+    status: 'active',
+    slug: 'punto-equilibrio'
+  },
   {
     title: 'Game',
-    description: 'Game made with the phaser library.',
+    description: '2D browser game built with the Phaser library.',
+    techStack: ['Phaser', 'JavaScript', 'Firebase'],
     projectImage: 'projects/game.png',
     urlWeb: 'https://hola2-fd53e.web.app/',
     urlGithub: 'https://github.com/claudioquirozipi/juegophaser',
+    featured: true,
+    status: 'active',
     slug: 'game'
   },
+
+  // Playground / secondary
   {
-    title: 'Tracsa',
-    description: 'Created with react, in firebase',
-    projectImage: 'projects/tracsa.png',
-    urlGithub: 'https://github.com/claudioquirozipi/tracsaReact',
-    slug: 'tracsa'
-  },
-  {
-    title: 'Sellboot',
-    description: 'Created with html and uploaded in godaddy',
-    projectImage: 'projects/sellboot.png',
-    urlGithub: 'https://github.com/claudioquirozipi/sellun',
-    slug: 'sellboot'
-  },
-  {
-    title: 'Wulpers',
-    description: 'Created with html and uploaded in godaddy',
-    projectImage: 'projects/wulpers.png',
-    urlGithub: 'https://github.com/claudioquirozipi/wulpers',
-    slug: 'wulpers'
-  },
-  {
-    title: 'Wulpers Studio',
-    description: 'Created with React and firebase',
-    projectImage: 'projects/wulpers-studio.png',
-    urlWeb: 'https://www.wulperstudio.com/',
-    urlGithub: 'https://github.com/claudioquirozipi/wulpers-studio-react',
-    slug: 'wulpers-studio'
-  },
-  {
-    title: 'Boolanews',
-    description: 'Created with js',
-    projectImage: 'projects/boolanews.png',
-    slug: 'boolanews'
-  },
-  {
-    title: 'Personal portfolio',
-    description: 'Old version of the Portfolio with React',
-    projectImage: 'projects/portfolio.png',
-    urlWeb: 'https://cquirozipi.firebaseapp.com/projects',
-    urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
-    slug: 'portfolio'
-  },
-  {
-    title: 'Accountant',
-    description: 'Personal project, accountant created with React',
-    projectImage: 'projects/accountant.png',
-    urlWeb: 'https://contador-55ade.firebaseapp.com/',
-    urlGithub: 'https://github.com/claudioquirozipi/contadorReact',
-    slug: 'accountant'
-  },
-  {
-    title: 'Screen meter',
-    description: 'Tool created to measure screen sizes.',
-    projectImage: 'projects/screen-meter.png',
-    urlWeb: 'https://medidorpantalla.firebaseapp.com/',
-    urlGithub: 'https://github.com/claudioquirozipi/cquirozipi',
-    slug: 'screen-meter'
+    title: 'Designs',
+    description:
+      'A playground of CSS/JS experiments — 3D transforms, hover animations, retro-style effects — plus small standalone tools, including a screen-size measuring tool I built for client handoffs.',
+    techStack: ['Next.js', 'CSS'],
+    projectImage: 'projects/designs.png',
+    urlWeb: 'https://designs-indol.vercel.app/',
+    featured: false,
+    status: 'active',
+    slug: 'designs'
   },
   {
     title: 'Cost calculator',
-    description: 'Tool to measure the costs of a dish in a restaurant.',
+    description:
+      'A tool to calculate the true cost of a dish in a restaurant, factoring in ingredients and portions.',
+    techStack: ['React', 'Firebase'],
     projectImage: 'projects/cost-calculator.png',
     urlWeb: 'https://calculadoradecostos.firebaseapp.com/',
     urlGithub: 'https://github.com/claudioquirozipi/calculadoradecostos',
+    featured: false,
+    status: 'active',
     slug: 'cost-calculator'
   },
+
+  // On hold
   {
-    title: 'Dashboard',
-    description: 'Practice a dashboard with react and bootstrap',
-    projectImage: 'projects/dashboard.png',
-    urlWeb: 'https://dashboard-a0059.web.app/',
-    urlGithub: 'https://github.com/claudioquirozipi/React-Bootstrap-Dashboard',
-    slug: 'dashboard'
-  },
-  {
-    title: 'MangoPP',
-    description: 'Personal blog with react and firebase',
-    projectImage: 'projects/mangopp.png',
-    urlWeb: 'https://mangopp.com/',
-    urlGithub: 'https://github.com/claudioquirozipi/mangopp',
-    slug: 'mangopp'
-  },
-  {
-    title: 'Mango lybrary',
-    description: 'Personal jewelery for landing page',
-    projectImage: 'projects/mangoly.jpg',
-    urlGithub: 'https://github.com/claudioquirozipi/mangoly',
-    slug: 'mangoly'
+    title: 'Noduza',
+    description:
+      'A business management system — inventory, products, sales and more — built under my own personal-brand styling.',
+    story:
+      'I put a huge number of hours into this, but the feature list kept growing without a clear customer, and it never shipped. This is exactly what pushed me to build Micartaapp around a single, focused feature instead.',
+    techStack: ['Angular', 'Nest.js', 'PostgreSQL'],
+    projectImage: 'projects/noduza.png',
+    urlWeb: 'https://noduza.com/',
+    featured: false,
+    status: 'onhold',
+    slug: 'noduza'
   }
 ]

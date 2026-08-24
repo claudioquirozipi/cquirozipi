@@ -1,25 +1,46 @@
 ---
 import type { Project } from "../data/projects";
 import { Image } from "astro:assets";
-import { getImage } from "../utils/images";
+import { getImageSafe } from "../utils/images";
 interface Props {
   project: Project;
 }
 
 const { project } = Astro.props;
+const image = getImageSafe(project.projectImage);
 ---
 
 <div class="certificate">
-  <Image
-    width={200}
-    height={200}
-    fit="contain"
-    class="image"
-    src={getImage(project.projectImage)}
-    alt=""
-  />
-  <h2 class="title">{project.title}</h2>
+  {
+    image ? (
+      <Image
+        width={200}
+        height={200}
+        fit="contain"
+        class="image"
+        src={image}
+        alt=""
+      />
+    ) : (
+      <div class="image image-placeholder" aria-hidden="true">
+        {project.title.charAt(0)}
+      </div>
+    )
+  }
+  <h2 class="title">
+    {project.title}
+    {project.status === "onhold" && <span class="badge">On hold</span>}
+  </h2>
   <p class="description">{project.description}</p>
+  {
+    project.techStack.length > 0 && (
+      <ul class="tech-stack">
+        {project.techStack.map((tech) => (
+          <li class="tech">{tech}</li>
+        ))}
+      </ul>
+    )
+  }
   <div class="links">
     {
       project.urlGithub && (
@@ -58,17 +79,57 @@ const { project } = Astro.props;
     object-position: center;
     margin-bottom: var(--space-1, 0.5rem);
   }
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--glass-border, rgba(255, 255, 255, 0.08));
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
   .title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1, 0.5rem);
     margin: 0;
     color: var(--color-text-main, #f8f9fa);
     font-size: 1.1rem;
     font-weight: 600;
+  }
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-muted, #d2b4de);
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
   }
   .description {
     margin: 0;
     color: var(--color-text-muted, #d2b4de);
     font-size: 0.9rem;
     font-weight: 300;
+  }
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tech {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-primary, #d66879);
+    background: var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
   }
   .links {
     margin-top: auto;

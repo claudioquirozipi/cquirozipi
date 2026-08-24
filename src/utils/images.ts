@@ -13,3 +13,9 @@ export function getImage(path: string): ImageMetadata {
   }
   return mod.default;
 }
+
+export function getImageSafe(path?: string): ImageMetadata | undefined {
+  if (!path) return undefined;
+  const key = `/src/assets/img/${path}`;
+  return images[key]?.default;
+}
