@@ -133,7 +133,7 @@ export const technologies : Technology[]= [
     {
       title: 'Nest.js',
       technologyImage: 'technologies/nestjs.svg',
-      slug: 'css copy 2',
+      slug: '30nestjs',
       category: ['backend']
     },
     { title: 'Lit', technologyImage: 'technologies/lit.png', slug: '25lit',
@@ -157,5 +157,29 @@ export const technologies : Technology[]= [
       technologyImage: 'technologies/open-cells.svg',
       slug: '29cells',
       category: ['frontend']
+    },
+    {
+      title: 'Angular',
+      technologyImage: 'technologies/angular.svg',
+      slug: '31angular',
+      category: ['frontend']
+    },
+    {
+      title: 'PostgreSQL',
+      technologyImage: 'technologies/postgresql.svg',
+      slug: '32postgresql',
+      category: ['basededatos']
+    },
+    {
+      title: 'Astro',
+      technologyImage: 'technologies/astro.svg',
+      slug: '33astro',
+      category: ['frontend']
+    },
+    {
+      title: 'Vite',
+      technologyImage: 'technologies/vite.svg',
+      slug: '34vite',
+      category: ['herramientas']
     }
   ]

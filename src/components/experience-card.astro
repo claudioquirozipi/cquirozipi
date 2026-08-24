@@ -1,9 +1,9 @@
 ---
 import type { Company } from "../data/experience";
-import { technologies } from "../data/technologies";
 import { Image } from "astro:assets";
 import { formatDate } from "../utils/functions/formatDate";
 import { getImage } from "../utils/images";
+import { findTechnologyImage } from "../utils/technologies";
 
 interface Props {
   company: Company;
@@ -16,19 +16,6 @@ const currentRole = company.roles[company.roles.length - 1];
 
 function getInitial(name: string) {
   return name.trim().charAt(0).toUpperCase();
-}
-
-function normalizeTechName(name: string) {
-  return name
-    .toLowerCase()
-    .replace(/\.js$/, "")
-    .replace(/[^a-z0-9]/g, "");
-}
-
-function findTechnologyImage(name: string) {
-  const target = normalizeTechName(name);
-  return technologies.find((t) => normalizeTechName(t.title) === target)
-    ?.technologyImage;
 }
 ---
 

@@ -2,6 +2,7 @@
 import type { Project } from "../data/projects";
 import { Image } from "astro:assets";
 import { getImageSafe } from "../utils/images";
+import { findTechnologyImage } from "../utils/technologies";
 interface Props {
   project: Project;
 }
@@ -35,10 +36,23 @@ const image = getImageSafe(project.projectImage);
   {
     project.techStack.length > 0 && (
       <ul class="tech-stack">
-        {project.techStack.map((tech) => (
-          <li class="tech">{tech}</li>
-        ))}
+        {project.techStack.map((tech) => {
+          const icon = findTechnologyImage(tech);
+          return (
+            <li class="tech">
+              {icon && (
+                <Image width={14} class="techIcon" src={getImageSafe(icon)!} alt="" />
+              )}
+              <span>{tech}</span>
+            </li>
+          );
+        })}
       </ul>
+    )
+  }
+  {
+    project.hosting.length > 0 && (
+      <p class="hosting">Hosted on {project.hosting.join(" + ")}</p>
     )
   }
   <div class="links">
@@ -124,12 +138,28 @@ const image = getImageSafe(project.projectImage);
     list-style: none;
   }
   .tech {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.7rem;
     font-weight: 500;
     color: var(--color-primary, #d66879);
     background: var(--glass-border, rgba(255, 255, 255, 0.08));
     border-radius: 999px;
     padding: 0.2rem 0.6rem;
+  }
+  .techIcon {
+    width: 0.85rem;
+    height: 0.85rem;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+  .hosting {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-style: italic;
   }
   .links {
     margin-top: auto;
