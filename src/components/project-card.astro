@@ -65,6 +65,13 @@ const image = getImageSafe(project.projectImage);
         </a>
       )
     }
+    {
+      project.videoUrl && (
+        <a class="link" target="_blank" href={project.videoUrl}>
+          Video →
+        </a>
+      )
+    }
   </div>
 </div>
 
