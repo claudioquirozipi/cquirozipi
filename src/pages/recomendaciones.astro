@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { recommendations } from "../data/recommendations";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import { formatDate } from "../utils/functions/formatDate";
+import { Image } from "astro:assets";
+import { getImage } from "../utils/images";
+
+function getInitial(name: string) {
+  return name.trim().charAt(0).toUpperCase();
+}
+---
+
+<Layout title="Recomendaciones | Claudio Quiroz">
+  <LayoutGrid title="Recomendaciones" activeSection="recomendaciones">
+    <Avatar slot="avatar" variant="header" />
+    <main class="main">
+      {
+        recommendations.map((r) => (
+          <article class="recommendation">
+            <div class="header">
+              {r.photo ? (
+                <Image
+                  width={48}
+                  height={48}
+                  class="photo"
+                  src={getImage(r.photo)}
+                  alt={r.name}
+                />
+              ) : (
+                <span class="photoInitial">{getInitial(r.name)}</span>
+              )}
+              <div class="headerText">
+                <p class="author">
+                  {r.name}
+                  {r.company && `, ${r.company}`}
+                </p>
+                <p class="role">{r.role}</p>
+              </div>
+            </div>
+            <p class="quote">“{r.quote}”</p>
+            <div class="footer">
+              {(r.date || r.context) && (
+                <p class="meta">
+                  {r.date && formatDate(r.date)}
+                  {r.date && r.context && " · "}
+                  {r.context}
+                </p>
+              )}
+              {r.linkedinUrl && (
+                <a
+                  class="link"
+                  href={r.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver perfil de LinkedIn →
+                </a>
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .recommendation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--space-4, 2rem);
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    border-radius: 24px;
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .photo {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .photoInitial {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: var(--color-secondary, #f39c12);
+    color: var(--color-bg, #2d1635);
+  }
+  .headerText {
+    min-width: 0;
+  }
+  .author {
+    margin: 0;
+    color: var(--color-primary, #d66879);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .role {
+    margin: 0.15rem 0 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+  .quote {
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .meta {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+  .link {
+    color: var(--color-primary, #d66879);
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: var(--color-secondary, #f39c12);
+  }
+</style>

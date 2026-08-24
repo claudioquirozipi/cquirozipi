@@ -1,0 +1,193 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { experiences } from "../data/experience";
+import { profile } from "../data/profile";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import { getDateDifference } from "../utils/functions/getDateDifference";
+
+const { years } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
+---
+
+<Layout title="Sobre mí | Claudio Quiroz">
+  <LayoutGrid title="Sobre mí" activeSection="sobre-mi">
+    <Avatar slot="avatar" variant="header" />
+    <main class="main">
+      <div class="grid">
+        <section class="card lead">
+          <p class="leadText">
+            Soy {profile.name}, {profile.title.toLowerCase()} con {years}+
+            años de experiencia construyendo aplicaciones web con React,
+            Node.js y TypeScript.
+          </p>
+        </section>
+
+        <section class="card block history">
+          <h2 class="blockTitle">Mi historia</h2>
+          <p class="text">{profile.story}</p>
+        </section>
+
+        <section class="card block lookingFor">
+          <h2 class="blockTitle">Qué busco</h2>
+          <p class="text">{profile.lookingFor}</p>
+        </section>
+
+        <section class="card block workingStyle">
+          <h2 class="blockTitle">Cómo trabajo</h2>
+          <p class="text">{profile.workingStyle}</p>
+        </section>
+
+        <section class="card block interests">
+          <h2 class="blockTitle">Fuera del código</h2>
+          <p class="text">{profile.interests}</p>
+        </section>
+
+        <section class="card facts">
+          <div class="fact">
+            <h3 class="factLabel">Disponibilidad</h3>
+            <p class="factValue">{profile.availability}</p>
+          </div>
+          <div class="fact">
+            <h3 class="factLabel">Ubicación</h3>
+            <p class="factValue">{profile.location}</p>
+            <p class="factSub">{profile.relocation}</p>
+          </div>
+          <div class="fact">
+            <h3 class="factLabel">Idiomas</h3>
+            <p class="factValue">
+              {profile.languages.map((l) => `${l.name} (${l.level})`).join(" · ")}
+            </p>
+          </div>
+          <div class="fact">
+            <h3 class="factLabel">Educación</h3>
+            <p class="factValue">{profile.education.degree}</p>
+            <p class="factSub">{profile.education.institution}</p>
+          </div>
+        </section>
+      </div>
+
+      <a class="cvLink" href="/cv">Ver / descargar CV →</a>
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+  }
+  .card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+  }
+  .lead {
+    grid-column: span 6;
+  }
+  .history {
+    grid-column: span 4;
+  }
+  .lookingFor {
+    grid-column: span 2;
+  }
+  .workingStyle {
+    grid-column: span 3;
+  }
+  .interests {
+    grid-column: span 3;
+  }
+  .leadText {
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  @media (max-width: 860px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .lead,
+    .history,
+    .lookingFor,
+    .workingStyle,
+    .interests,
+    .facts {
+      grid-column: span 1;
+    }
+    .facts {
+      grid-template-columns: 1fr;
+    }
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .blockTitle {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary, #f39c12);
+  }
+  .text {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .facts {
+    grid-column: span 6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .fact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .factLabel {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary, #d66879);
+  }
+  .factValue {
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 0.9rem;
+  }
+  .factSub {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.78rem;
+  }
+  .cvLink {
+    align-self: flex-start;
+    color: var(--color-primary, #d66879);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cvLink:hover {
+    color: var(--color-secondary, #f39c12);
+  }
+</style>

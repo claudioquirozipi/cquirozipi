@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { technologies } from "../data/technologies";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import TechnologiesCard from "../components/technologies-card.astro";
+
+const categoryLabels: Record<string, string> = {
+  todos: "Todos",
+  frontend: "Frontend",
+  backend: "Backend",
+  lenguajes: "Lenguajes",
+  basededatos: "Bases de datos",
+  cloud: "Cloud",
+  herramientas: "Herramientas",
+};
+const usedCategories = new Set(technologies.flatMap((t) => t.category ?? []));
+const filters = [
+  "todos",
+  ...Object.keys(categoryLabels).filter(
+    (c) => c !== "todos" && usedCategories.has(c)
+  ),
+];
+---
+
+<Layout title="Tecnologías | Claudio Quiroz">
+  <LayoutGrid title="Tecnologías" activeSection="tecnologias">
+    <Avatar slot="avatar" variant="header" />
+    <div class="controls">
+      <input
+        type="search"
+        id="techSearch"
+        class="searchInput"
+        placeholder="Buscar tecnología..."
+        aria-label="Buscar tecnologías por nombre"
+      />
+      <div class="filterBar" role="group" aria-label="Filtrar tecnologías por categoría">
+        {
+          filters.map((filter, i) => (
+            <button
+              type="button"
+              class={`chip ${i === 0 ? "active" : ""}`}
+              data-filter={filter}
+            >
+              {categoryLabels[filter]}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+    <main class="main" id="techGrid">
+      {
+        technologies.map((technology) => (
+          <TechnologiesCard technology={technology} />
+        ))
+      }
+    </main>
+  </LayoutGrid>
+</Layout>
+
+<script>
+  function initTechnologyFilter() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>(
+      ".filterBar .chip"
+    );
+    const cards = document.querySelectorAll<HTMLElement>("#techGrid .card");
+    const searchInput = document.querySelector<HTMLInputElement>("#techSearch");
+    if (!buttons.length || !cards.length || !searchInput) return;
+
+    let activeFilter = "todos";
+
+    const applyFilters = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      cards.forEach((card) => {
+        const cats = (card.dataset.categories ?? "").split(" ");
+        const title = (card.dataset.title ?? "").toLowerCase();
+        const matchesCategory = activeFilter === "todos" || cats.includes(activeFilter);
+        const matchesSearch = !query || title.includes(query);
+        card.style.display = matchesCategory && matchesSearch ? "" : "none";
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter ?? "todos";
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  document.addEventListener("astro:page-load", initTechnologyFilter);
+</script>
+
+<style>
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: var(--space-2, 1rem);
+  }
+  .searchInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 0.9rem;
+    font-family: inherit;
+  }
+  .searchInput::placeholder {
+    color: var(--color-text-muted, #d2b4de);
+  }
+  .searchInput:focus {
+    outline: 2px solid var(--color-secondary, #f39c12);
+    outline-offset: 1px;
+  }
+  .filterBar {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scrollbar-width: none;
+  }
+  .filterBar::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+    color: var(--color-text-muted, #d2b4de);
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  .chip:hover {
+    background: var(--glass-bg-strong, rgba(45, 22, 53, 0.6));
+    color: var(--color-text-main, #f8f9fa);
+  }
+  .chip.active {
+    background: rgba(243, 156, 18, 0.22);
+    border-color: rgba(243, 156, 18, 0.5);
+    color: var(--color-secondary, #f39c12);
+    font-weight: 600;
+  }
+  .main {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 2rem 1rem;
+  }
+  .controls {
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>

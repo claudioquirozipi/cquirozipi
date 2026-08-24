@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { experiences } from "../data/experience";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import ExperienceCard from "../components/experience-card.astro";
+import { getDateDifference } from "../utils/functions/getDateDifference";
+
+const { years, months, days } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
+---
+
+<Layout title="Experiencia | Claudio Quiroz">
+  <LayoutGrid title="Experiencia" activeSection="experiencia">
+    <Avatar slot="avatar" variant="header" />
+
+    <main class="main">
+      <h2 class="title">
+        {`${years} años ${months} meses y ${days} días de experiencia`}
+      </h2>
+      <div>
+        {
+          experiences.map((company, i) => (
+            <ExperienceCard
+              company={company}
+              showLineAfter={i !== 0}
+              showLineBefore={i !== experiences.length - 1}
+            />
+          ))
+        }
+      </div>
+    </main>
+  </LayoutGrid>
+</Layout>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 2rem;
+  }
+  .title {
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center;
+    color: var(--color-text-muted, #d2b4de);
+    font-weight: 400;
+  }
+</style>

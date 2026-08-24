@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta atardecer (derivada de src/assets/img/site/background.png) */
+  --color-bg-dark: #1f1424;
+  --color-primary: #d66879;
+  --color-secondary: #f39c12;
+  --color-text-main: #f8f9fa;
+  --color-text-muted: #d2b4de;
+
+  /* Tipografía */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Espaciado base 8px */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(45, 22, 53, 0.4);
+  --glass-bg-strong: rgba(45, 22, 53, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(16px) saturate(120%);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Color por defecto de los íconos (src/icons/*.astro) en todo el sitio */
+  --icon-fill: var(--color-primary);
+  --icon-stroke: var(--color-secondary);
+  --icon-glow: var(--color-secondary);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}

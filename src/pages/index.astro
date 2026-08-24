@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Avatar from "../components/avatar.astro";
+import SectionCard from "../components/section-card.astro";
+import AboutIcon from "../icons/about-icon.astro";
+import ExperienceIcon from "../icons/experience-icon.astro";
+import ProjectIcon from "../icons/project-icon.astro";
+import CertificatesIcon from "../icons/certificates-icon.astro";
+import RecommendationsIcon from "../icons/recommendations-icon.astro";
+import TechnologiesIcon from "../icons/technologies-icon.astro";
+import { experiences } from "../data/experience";
+import { getDateDifference } from "../utils/functions/getDateDifference";
+
+const { years } = getDateDifference(
+  experiences[experiences.length - 1].startDate
+);
+---
+
+<Layout title="Claudio Quiroz | Fullstack Developer">
+  <main>
+    <div class="bento">
+      <div class="photoTile">
+        <Avatar variant="photo" href="/sobre-mi" />
+      </div>
+      <SectionCard
+        area="about"
+        href="/sobre-mi"
+        title="Ing. Claudio Quiroz"
+        description="Fullstack Developer"
+        index={0}
+      >
+        <AboutIcon />
+      </SectionCard>
+      <SectionCard
+        area="experience"
+        href="/experiencia"
+        title="Experiencia"
+        description={`${years}+ años construyendo software.`}
+        index={1}
+      >
+        <ExperienceIcon />
+      </SectionCard>
+      <SectionCard
+        area="technologies"
+        href="/tecnologias"
+        title="Tecnologías"
+        description="Mi stack."
+        index={2}
+      >
+        <TechnologiesIcon />
+      </SectionCard>
+      <SectionCard
+        area="certificates"
+        href="/certificados"
+        title="Certificados"
+        description="Formación y cursos."
+        index={3}
+      >
+        <CertificatesIcon />
+      </SectionCard>
+      <SectionCard
+        area="projects"
+        href="/proyectos"
+        title="Proyectos"
+        description="Cosas que construí."
+        index={4}
+      >
+        <ProjectIcon />
+      </SectionCard>
+      <SectionCard
+        area="recommendations"
+        href="/recomendaciones"
+        title="Recomendaciones"
+        description="Lo que dicen de trabajar conmigo."
+        index={5}
+      >
+        <RecommendationsIcon />
+      </SectionCard>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+  }
+  .bento {
+    display: grid;
+    flex: 1;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+    "photo photo technologies technologies experience experience"
+    "about about about about experience experience"
+    "certificates certificates recommendations recommendations experience experience"
+    "certificates certificates recommendations recommendations experience experience"
+    "certificates certificates projects projects projects projects"
+    "certificates certificates projects projects projects projects"
+    "certificates certificates projects projects projects projects";
+
+    gap: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    main {
+      height: 100%;
+    }
+    .bento {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      grid-template-areas:
+        "photo photo about about about"
+        "photo photo about about about"
+        "experience experience technologies technologies technologies"
+        "experience experience technologies technologies technologies"
+        "certificates certificates certificates projects projects"
+        "certificates certificates certificates projects projects"
+        "recommendations recommendations recommendations recommendations recommendations"
+        "recommendations recommendations recommendations recommendations recommendations";
+    }
+  }
+  .photoTile {
+    grid-area: photo;
+  }
+</style>

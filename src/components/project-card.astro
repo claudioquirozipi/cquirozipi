@@ -1,0 +1,173 @@
+---
+import type { Project } from "../data/projects";
+import { Image } from "astro:assets";
+import { getImageSafe } from "../utils/images";
+import { findTechnologyImage } from "../utils/technologies";
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const image = getImageSafe(project.projectImage);
+---
+
+<div class="certificate">
+  {
+    image ? (
+      <Image
+        width={200}
+        height={200}
+        fit="contain"
+        class="image"
+        src={image}
+        alt=""
+      />
+    ) : (
+      <div class="image image-placeholder" aria-hidden="true">
+        {project.title.charAt(0)}
+      </div>
+    )
+  }
+  <h2 class="title">
+    {project.title}
+    {project.status === "onhold" && <span class="badge">On hold</span>}
+  </h2>
+  <p class="description">{project.description}</p>
+  {
+    project.techStack.length > 0 && (
+      <ul class="tech-stack">
+        {project.techStack.map((tech) => {
+          const icon = findTechnologyImage(tech);
+          return (
+            <li class="tech">
+              {icon && (
+                <Image width={14} class="techIcon" src={getImageSafe(icon)!} alt="" />
+              )}
+              <span>{tech}</span>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+  <div class="links">
+    {
+      project.urlGithub && (
+        <a class="link" target="_blank" href={project.urlGithub}>
+          GitHub →
+        </a>
+      )
+    }
+    {
+      project.urlWeb && (
+        <a class="link" target="_blank" href={project.urlWeb}>
+          Link →
+        </a>
+      )
+    }
+    {
+      project.videoUrl && (
+        <a class="link" target="_blank" href={project.videoUrl}>
+          Video →
+        </a>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .certificate {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 0.5rem);
+    padding: var(--space-4, 2rem);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+  }
+  .image {
+    width: 100%;
+    height: 10rem;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: var(--space-1, 0.5rem);
+  }
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--glass-border, rgba(255, 255, 255, 0.08));
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1, 0.5rem);
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-muted, #d2b4de);
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+  }
+  .description {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tech {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-primary, #d66879);
+    background: var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+  .techIcon {
+    width: 0.85rem;
+    height: 0.85rem;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+  .links {
+    margin-top: auto;
+    padding-top: var(--space-1, 0.5rem);
+    display: flex;
+    gap: var(--space-2, 1rem);
+  }
+  .link {
+    color: var(--color-primary, #d66879);
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: var(--color-secondary, #f39c12);
+  }
+</style>

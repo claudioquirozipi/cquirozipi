@@ -1,0 +1,72 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { certificates } from "../../data/certificates";
+import Avatar from "../../components/avatar.astro";
+import LayoutGrid from "../../layouts/layout-grid.astro";
+import { Image } from "astro:assets";
+import { formatDate } from "../../utils/functions/formatDate";
+import { getImage } from "../../utils/images";
+
+export function getStaticPaths() {
+  return certificates.flatMap((data) => [{ params: { slug: data.slug } }]);
+}
+const { slug } = Astro.params;
+const certificate = certificates.find((data) => data.slug === slug);
+---
+
+<Layout title={`${certificate!.title} | Claudio Quiroz`}>
+  <LayoutGrid title={certificate!.title} backHref="/certificados" activeSection="certificados">
+    <Avatar slot="avatar" variant="header" />
+    <main class="main">
+      <Image
+        class="image"
+        src={getImage(certificate!.certificates_image)}
+        alt={certificate!.title}
+        width={400}
+        height={400}
+        fit="contain"
+      />
+      <p class="text">{certificate!.description}</p>
+      <p class="text">{`Fecha: ${formatDate(certificate!.date)}`}</p>
+      <p class="text">{`Instituto: ${certificate!.institute}`}</p>
+      {
+        certificate?.url && (
+          <a class="link" href={certificate.url} target="_blank">
+            Ver credencial →
+          </a>
+        )
+      }
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--space-2, 1rem);
+    padding: var(--space-4, 2rem);
+    max-width: 480px;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+  }
+  .image {
+    border-radius: 12px;
+  }
+  .text {
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-weight: 300;
+  }
+  .link {
+    color: var(--color-primary, #d66879);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: var(--color-secondary, #f39c12);
+  }
+</style>

@@ -1,0 +1,85 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  index?: number;
+  area: string;
+}
+const { href, title, description, index = 0, area } = Astro.props;
+---
+
+<a
+  href={href}
+  class="card"
+  style={`grid-area: ${area}; --delay: ${index * 0.12}s`}
+>
+  <div class="icon"><slot /></div>
+  <h2 class="title">{title}</h2>
+  <p class="description">{description}</p>
+  <span class="cta">Ver más →</span>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 0.5rem);
+    padding: var(--space-4, 2rem);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    /* paleta que heredan los íconos slotted (ver src/icons/*) */
+    --icon-fill: var(--color-primary, #d66879);
+  }
+  .card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: var(--glass-bg-strong, rgba(45, 22, 53, 0.6));
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .card {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 0.5s ease-out forwards;
+      animation-delay: calc(1.8s + var(--delay));
+    }
+  }
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .title {
+    margin: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-family: var(--font-heading, serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .description {
+    margin: 0;
+    color: var(--color-text-muted, #d2b4de);
+    font-family: var(--font-body, sans-serif);
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+  .cta {
+    margin-top: auto;
+    padding-top: var(--space-1, 0.5rem);
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.75rem;
+    color: var(--color-primary, #d66879);
+  }
+</style>

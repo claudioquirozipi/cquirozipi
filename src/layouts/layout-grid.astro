@@ -1,0 +1,87 @@
+---
+import SectionNav from "../components/section-nav.astro";
+
+interface Props {
+  title: string;
+  backHref?: string;
+  activeSection?: string;
+}
+const { title, backHref = "/", activeSection } = Astro.props;
+---
+
+<main class="main">
+  <div class="header">
+    <a href={backHref} class="backButton" aria-label="Volver" transition:name="back-button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </a>
+    <slot name="avatar" />
+  </div>
+  <div class="titleContainer">
+    <h1 class="title">{title}</h1>
+    {activeSection && <SectionNav active={activeSection} />}
+  </div>
+  <div class="center">
+    <slot />
+  </div>
+</main>
+
+<style>
+  .main {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: var(--space-3, 1.5rem);
+    height: 100%;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--space-2, 1rem) var(--space-3, 1.5rem);
+    box-sizing: border-box;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2, 1rem);
+    width: 100%;
+  }
+  .backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    background: var(--glass-bg, rgba(45, 22, 53, 0.4));
+    backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px) saturate(120%));
+    box-shadow: var(--glass-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.37));
+    color: var(--color-text-main, #f8f9fa);
+    transition: background 0.2s ease-in-out;
+  }
+  .backButton:hover {
+    background: var(--glass-bg-strong, rgba(45, 22, 53, 0.6));
+  }
+  .titleContainer {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .title {
+    margin: 0;
+    min-width: 0;
+    color: var(--color-text-main, #f8f9fa);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    overflow-wrap: break-word;
+  }
+  .center {
+    overflow-y: auto;
+  }
+</style>

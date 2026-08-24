@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { projects } from "../data/projects";
+import Avatar from "../components/avatar.astro";
+import LayoutGrid from "../layouts/layout-grid.astro";
+import ProjectCard from "../components/project-card.astro";
+---
+
+<Layout title="Proyectos | Claudio Quiroz">
+  <LayoutGrid title="Proyectos" activeSection="proyectos">
+    <Avatar slot="avatar" variant="header" />
+
+    <main class="main">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </main>
+  </LayoutGrid>
+</Layout>
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 3rem 1rem;
+  }
+</style>
