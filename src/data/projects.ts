@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   story?: string;
   techStack: string[];
-  hosting: string[];
   projectImage?: string;
   images?: string[];
   videoUrl?: string;
@@ -23,9 +22,8 @@ export const projects: Project[] = [
     description:
       "A shared shopping list I built for myself: check off what I usually buy, walk through the house to see what's missing, then cross items off at the store. Synced live with my wife so either of us can update it.",
     story:
-      "Currently hosted on Vercel (frontend) and Railway (backend/database). I'm planning to migrate it to Google Cloud Platform as a hands-on way to learn GCP.",
-    techStack: ['Angular', 'Golang', 'PostgreSQL'],
-    hosting: ['Vercel', 'Railway'],
+      "I'm planning to migrate this from Vercel/Railway to Google Cloud Platform as a hands-on way to learn GCP.",
+    techStack: ['Angular', 'Golang', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/supermarket-todolist.png',
     urlWeb: 'https://supermarket-todo-list-angular.vercel.app/',
     featured: true,
@@ -36,8 +34,7 @@ export const projects: Project[] = [
     title: 'Estudies',
     description:
       "A personal wiki that grows as I learn — one page per topic, built for quick review whenever I need to refresh a concept. Actively used and updated.",
-    techStack: ['Astro'],
-    hosting: ['Vercel'],
+    techStack: ['Astro', 'Vercel'],
     projectImage: 'projects/estudies.png',
     urlWeb: 'https://estudies-brown.vercel.app/',
     urlGithub: 'https://github.com/claudioquirozipi/estudies',
@@ -51,8 +48,7 @@ export const projects: Project[] = [
       'A digital menu platform for restaurants: diners browse and order via QR code, kitchen and waitstaff manage orders from phone or tablet, with WhatsApp ordering built in.',
     story:
       "Started as a product I tried to sell as a business. It didn't find a customer, but it taught me a real lesson: build around one clear use case instead of chasing every feature a prospect asks for.",
-    techStack: ['Angular', 'Nest.js', 'PostgreSQL'],
-    hosting: ['Vercel', 'Railway'],
+    techStack: ['Angular', 'Nest.js', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/micartaapp.png',
     urlWeb: 'https://micartaapp.com/',
     featured: true,
@@ -63,8 +59,7 @@ export const projects: Project[] = [
     title: 'Punto de equilibrio',
     description:
       'A break-even calculator: enter fixed and variable costs to see exactly how much you need to sell before turning a profit.',
-    techStack: ['React', 'Vite'],
-    hosting: ['Vercel'],
+    techStack: ['React', 'Vite', 'Vercel'],
     projectImage: 'projects/punto-equilibrio.png',
     videoUrl: 'https://www.youtube.com/watch?v=869D9l9WdLc',
     urlWeb: 'https://punto-equilibrio-react.vercel.app/',
@@ -77,7 +72,6 @@ export const projects: Project[] = [
     title: 'Game',
     description: '2D browser game built with the Phaser library.',
     techStack: ['Phaser', 'JavaScript', 'Firebase'],
-    hosting: ['Firebase'],
     projectImage: 'projects/game.png',
     urlWeb: 'https://hola2-fd53e.web.app/',
     urlGithub: 'https://github.com/claudioquirozipi/juegophaser',
@@ -91,8 +85,7 @@ export const projects: Project[] = [
     title: 'Designs',
     description:
       'A playground of CSS/JS experiments — 3D transforms, hover animations, retro-style effects — plus small standalone tools, including a screen-size measuring tool I built for client handoffs.',
-    techStack: ['Next.js', 'CSS'],
-    hosting: ['Vercel'],
+    techStack: ['Next.js', 'CSS', 'Vercel'],
     projectImage: 'projects/designs.png',
     urlWeb: 'https://designs-indol.vercel.app/',
     featured: false,
@@ -104,7 +97,6 @@ export const projects: Project[] = [
     description:
       'A tool to calculate the true cost of a dish in a restaurant, factoring in ingredients and portions.',
     techStack: ['React', 'Firebase'],
-    hosting: ['Firebase'],
     projectImage: 'projects/cost-calculator.png',
     urlWeb: 'https://calculadoradecostos.firebaseapp.com/',
     urlGithub: 'https://github.com/claudioquirozipi/calculadoradecostos',
@@ -120,8 +112,7 @@ export const projects: Project[] = [
       'A business management system — inventory, products, sales and more — built under my own personal-brand styling.',
     story:
       'I put a huge number of hours into this, but the feature list kept growing without a clear customer, and it never shipped. This is exactly what pushed me to build Micartaapp around a single, focused feature instead.',
-    techStack: ['Angular', 'Nest.js', 'PostgreSQL'],
-    hosting: ['Vercel', 'Railway'],
+    techStack: ['Angular', 'Nest.js', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/noduza.png',
     urlWeb: 'https://noduza.com/',
     featured: false,

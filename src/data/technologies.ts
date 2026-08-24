@@ -181,5 +181,17 @@ export const technologies : Technology[]= [
       technologyImage: 'technologies/vite.svg',
       slug: '34vite',
       category: ['herramientas']
+    },
+    {
+      title: 'Vercel',
+      technologyImage: 'technologies/vercel.svg',
+      slug: '35vercel',
+      category: ['cloud']
+    },
+    {
+      title: 'Railway',
+      technologyImage: 'technologies/railway.svg',
+      slug: '36railway',
+      category: ['cloud']
     }
   ]
