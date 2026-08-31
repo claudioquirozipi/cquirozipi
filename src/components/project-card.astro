@@ -46,7 +46,7 @@ const gallery = (project.images ?? [])
   }
   <h2 class="title">
     {project.title}
-    {project.status === "onhold" && <span class="badge">On hold</span>}
+    {project.status === "onhold" && <span class="badge">En pausa</span>}
   </h2>
   <p class="description">{project.description}</p>
   {
@@ -77,7 +77,7 @@ const gallery = (project.images ?? [])
     {
       project.urlWeb && (
         <a class="link" target="_blank" href={project.urlWeb}>
-          Link →
+          Ver sitio →
         </a>
       )
     }
