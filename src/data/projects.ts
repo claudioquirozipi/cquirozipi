@@ -18,13 +18,19 @@ export interface Project {
 export const projects: Project[] = [
   // Featured
   {
-    title: 'Supermarket To-Do List',
+    title: 'Lista de Compras Compartida',
     description:
-      "A shared shopping list I built for myself: check off what I usually buy, walk through the house to see what's missing, then cross items off at the store. Synced live with my wife so either of us can update it.",
+      'Una lista de compras que construí para mi propio uso: marco lo que suelo comprar, reviso la casa para ver qué falta y luego voy tachando los productos en la tienda. Se sincroniza en tiempo real con mi esposa para que cualquiera de los dos pueda actualizarla.',
     story:
-      "I'm planning to migrate this from Vercel/Railway to Google Cloud Platform as a hands-on way to learn GCP.",
+      'Estoy planeando migrarlo de Vercel/Railway a Google Cloud Platform como una forma práctica de aprender GCP.',
     techStack: ['Angular', 'Golang', 'PostgreSQL', 'Vercel', 'Railway'],
-    projectImage: 'projects/supermarket-todolist.png',
+    projectImage: 'projects/supermarket-todolist-agregar.jpg',
+    images: [
+      'projects/supermarket-todolist-agregar.jpg',
+      'projects/supermarket-todolist-planificar.jpg',
+      'projects/supermarket-todolist-comprar.jpg'
+    ],
+    videoUrl: 'https://youtube.com/shorts/GDOnEjvEDWs?feature=share',
     urlWeb: 'https://supermarket-todo-list-angular.vercel.app/',
     featured: true,
     status: 'active',
@@ -33,7 +39,7 @@ export const projects: Project[] = [
   {
     title: 'Estudies',
     description:
-      "A personal wiki that grows as I learn — one page per topic, built for quick review whenever I need to refresh a concept. Actively used and updated.",
+      'Una wiki personal que crece a medida que aprendo — una página por cada tema, pensada para repasar rápido cualquier concepto cuando lo necesito. La uso y actualizo activamente.',
     techStack: ['Astro', 'Vercel'],
     projectImage: 'projects/estudies.png',
     urlWeb: 'https://estudies-brown.vercel.app/',
@@ -45,9 +51,9 @@ export const projects: Project[] = [
   {
     title: 'Micartaapp',
     description:
-      'A digital menu platform for restaurants: diners browse and order via QR code, kitchen and waitstaff manage orders from phone or tablet, with WhatsApp ordering built in.',
+      'Una plataforma de menú digital para restaurantes: los comensales navegan y piden mediante código QR, mientras cocina y meseros gestionan los pedidos desde el celular o tablet, con pedidos por WhatsApp integrados.',
     story:
-      "Started as a product I tried to sell as a business. It didn't find a customer, but it taught me a real lesson: build around one clear use case instead of chasing every feature a prospect asks for.",
+      'Empezó como un producto que intenté vender como negocio. No encontró un cliente, pero me dejó una lección real: construir en torno a un caso de uso claro en lugar de perseguir cada función que pide un prospecto.',
     techStack: ['Angular', 'Nest.js', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/micartaapp.png',
     urlWeb: 'https://micartaapp.com/',
@@ -56,9 +62,9 @@ export const projects: Project[] = [
     slug: 'micartaapp'
   },
   {
-    title: 'Punto de equilibrio',
+    title: 'Punto de Equilibrio',
     description:
-      'A break-even calculator: enter fixed and variable costs to see exactly how much you need to sell before turning a profit.',
+      'Una calculadora de punto de equilibrio: ingresa los costos fijos y variables para saber exactamente cuánto necesitas vender antes de empezar a generar ganancias.',
     techStack: ['React', 'Vite', 'Vercel'],
     projectImage: 'projects/punto-equilibrio.png',
     videoUrl: 'https://www.youtube.com/watch?v=869D9l9WdLc',
@@ -69,8 +75,8 @@ export const projects: Project[] = [
     slug: 'punto-equilibrio'
   },
   {
-    title: 'Game',
-    description: '2D browser game built with the Phaser library.',
+    title: 'Videojuego 2D con Phaser',
+    description: 'Un videojuego 2D para navegador construido con la librería Phaser.',
     techStack: ['Phaser', 'JavaScript', 'Firebase'],
     projectImage: 'projects/game.png',
     urlWeb: 'https://hola2-fd53e.web.app/',
@@ -82,9 +88,9 @@ export const projects: Project[] = [
 
   // Playground / secondary
   {
-    title: 'Designs',
+    title: 'Playground de Diseño',
     description:
-      'A playground of CSS/JS experiments — 3D transforms, hover animations, retro-style effects — plus small standalone tools, including a screen-size measuring tool I built for client handoffs.',
+      'Un playground de experimentos en CSS/JS — transformaciones 3D, animaciones al pasar el cursor, efectos estilo retro — además de pequeñas herramientas independientes, incluyendo una herramienta para medir el tamaño de pantalla que construí para entregas a clientes.',
     techStack: ['Next.js', 'CSS', 'Vercel'],
     projectImage: 'projects/designs.png',
     urlWeb: 'https://designs-indol.vercel.app/',
@@ -93,9 +99,9 @@ export const projects: Project[] = [
     slug: 'designs'
   },
   {
-    title: 'Cost calculator',
+    title: 'Calculadora de Costos',
     description:
-      'A tool to calculate the true cost of a dish in a restaurant, factoring in ingredients and portions.',
+      'Una herramienta para calcular el costo real de un plato en un restaurante, considerando ingredientes y porciones.',
     techStack: ['React', 'Firebase'],
     projectImage: 'projects/cost-calculator.png',
     urlWeb: 'https://calculadoradecostos.firebaseapp.com/',
@@ -109,9 +115,9 @@ export const projects: Project[] = [
   {
     title: 'Noduza',
     description:
-      'A business management system — inventory, products, sales and more — built under my own personal-brand styling.',
+      'Un sistema de gestión empresarial — inventario, productos, ventas y más — desarrollado bajo mi propia marca personal.',
     story:
-      'I put a huge number of hours into this, but the feature list kept growing without a clear customer, and it never shipped. This is exactly what pushed me to build Micartaapp around a single, focused feature instead.',
+      'Invertí una gran cantidad de horas en esto, pero la lista de funcionalidades seguía creciendo sin un cliente claro y nunca llegó a lanzarse. Esto fue justamente lo que me impulsó a construir Micartaapp alrededor de una única función bien definida.',
     techStack: ['Angular', 'Nest.js', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/noduza.png',
     urlWeb: 'https://noduza.com/',
