@@ -25,6 +25,7 @@ export const projects: Project[] = [
       "I'm planning to migrate this from Vercel/Railway to Google Cloud Platform as a hands-on way to learn GCP.",
     techStack: ['Angular', 'Golang', 'PostgreSQL', 'Vercel', 'Railway'],
     projectImage: 'projects/supermarket-todolist.png',
+    videoUrl: 'https://youtube.com/shorts/GDOnEjvEDWs?feature=share',
     urlWeb: 'https://supermarket-todo-list-angular.vercel.app/',
     featured: true,
     status: 'active',
