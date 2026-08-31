@@ -24,7 +24,12 @@ export const projects: Project[] = [
     story:
       "I'm planning to migrate this from Vercel/Railway to Google Cloud Platform as a hands-on way to learn GCP.",
     techStack: ['Angular', 'Golang', 'PostgreSQL', 'Vercel', 'Railway'],
-    projectImage: 'projects/supermarket-todolist.png',
+    projectImage: 'projects/supermarket-todolist-agregar.jpg',
+    images: [
+      'projects/supermarket-todolist-agregar.jpg',
+      'projects/supermarket-todolist-planificar.jpg',
+      'projects/supermarket-todolist-comprar.jpg'
+    ],
     videoUrl: 'https://youtube.com/shorts/GDOnEjvEDWs?feature=share',
     urlWeb: 'https://supermarket-todo-list-angular.vercel.app/',
     featured: true,
